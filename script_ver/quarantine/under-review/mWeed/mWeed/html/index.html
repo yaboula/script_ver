@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./app/vue.global.js"></script>
+    <script src="./app/vuex.global.js"></script>
+    <link rel="stylesheet" href="./css/reset-inputs.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div id="app" >
+        <div class="destroy-modal" v-if="showDestroyModal">
+            <div class="blur" @click.self="SetShowDestroyModal(false)">
+
+            </div>
+            <div class="container" >
+                <h1>{{weedTranslation["WARNING"]}}</h1>
+                <p>{{seedType == 'indica_seed' ? itemNames['indica_weed'].label : itemNames['sativa_weed'].label }}</p>
+                <div class="buttons"> 
+                    <div class="button confirm" @click="DestroyWeed">{{weedTranslation["YES"]}}</div>
+                    <div class="button cancel" @click="SetShowDestroyModal(false)">{{weedTranslation["NO"]}}</div>                
+                </div>
+            </div>
+        </div>
+        <div v-if="activePage" class="notification-container">
+            <div class="fade" v-for="notification in notifications">
+                {{notification.text}}
+            </div>
+        </div>
+        <component :key="activePage" v-if="activePage" :is="activePage"></component>
+
+
+    </div>
+</body>
+
+<script type="module" src="./app/utils/importTemplate.js"></script>
+
+<script type="module" src="./app/index.js"></script>
+
+
+</html>

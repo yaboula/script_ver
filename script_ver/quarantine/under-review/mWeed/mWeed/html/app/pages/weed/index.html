@@ -1,0 +1,120 @@
+<div class="weeds">    
+    <img class="overlay" src="./assets/images/overlay.png">
+    <menuheader :title="weedTranslation.TITLE"></menuheader>
+    <div class="line">
+        <div class="line-inner"></div>
+    </div>
+    <div class="sections">
+        <div>
+            <div class="dealer-name">
+                <img src="./assets/images/npc-name-line.png">
+                <p>{{GetSelectedWeedData ? GetSelectedWeedData.seedType ? GetSelectedWeedData.seedType == itemNames['indica_seed'].name ? itemNames['indica_weed'].label : itemNames['sativa_weed'].label : weedTranslation['PLANT_WEED'] : weedTranslation['PLANT_WEED']}}</p>
+                <img src="./assets/images/npc-name-line.png">
+            </div>
+            <div class="weeds-container">
+                <div class="weeds-wrapper">
+                    <template
+                        v-if="selectedField.index && selectedField.block && selectedField.nearArea && (!selectedField.tempIndex && !selectedField.tempBlock)">
+                        <process fontSize="1.75rem" color='#FFD6A7' shadow='0px 0px 53px rgba(255, 214, 167, 0.45)' maxProgress=4 :completedProgress=GetCompletedProgress :title=GetProgressTitle>
+                        </process>
+                        <template  v-if="!GetSelectedWeedData || (GetSelectedWeedData && GetSelectedWeedData.growth == false)">
+                            <div class="weed-item-container">
+                                <img v-if="GetSelectedWeedData && (GetSelectedWeedData.currentProgress == 2 || GetSelectedWeedData.currentProgress == 3)"
+                                    @click="PrevItem" class="weed-item-select-left" src="./assets/images/left-arrow.png">
+                                <img v-if="GetSelectedWeedData &&  (GetSelectedWeedData.currentProgress == 2 || GetSelectedWeedData.currentProgress == 3)"
+                                    @click="NextItem" class="weed-item-select-right" src="./assets/images/right-arrow.png">
+                                <div class="weed-item-wrapper">
+                                    <div class="item-blur">
+                                        <img class="item-blur-image" :src="GetRequiredItemImage[0]">
+                                        <img :src="GetRequiredItemImage[0]">
+                                    </div>
+                                    <p>{{GetRequiredItemImage[1]}}</p>
+                                </div>
+                            </div>
+                            <div class="step-container">
+                                <p class="step">{{weedTranslation['STEP'].format(GetSelectedWeedData ? GetSelectedWeedData.currentProgress : 1)}}</p>
+                                <p class="step-desc">
+                                    {{GetProgressDesc}}
+    
+                                </p>
+                            </div>
+                            <div  class="action-button" @click="WeedAction('dig')">
+                                {{GetProgressLabel}}
+                            </div>
+                        </template>
+                        <div class="weed-growth-container" v-else>
+                            <div class="weed-growth-left">
+                                <process fontSize="1.125rem" color="#A7FFFF" shadow="0px 0px 53px rgba(167, 255, 255, 0.45)" maxProgress=4 :completedProgress=GetSelectedWeedData.water :title="weedTranslation['WATER']">
+                                </process>
+                                <div class="water-box" @click="WeedAction('water')">
+                                    <img src="./assets/images/water.png">
+
+                                </div>
+                                <!-- WeedAction('trash') -->
+                                <div class="trash-box" @click="SetShowDestroyModal(true);SetSeedType(GetSelectedWeedData.seedType)">
+                                    <img src="./assets/images/trash.png">
+
+                                </div>
+                            </div>
+                            <div class="weed-growth-right">
+                                <process fontSize="1.125rem" color="#CEFFA7" shadow="0px 0px 53px rgba(167, 255, 255, 0.45)" maxProgress=4 :completedProgress=GetSelectedWeedData.flounder :title="weedTranslation['FLOUNDERING']">
+                                </process>
+                                <div class="floundering-box" @click="WeedAction('flounder')">
+                                    <img src="./assets/images/flounder.png">
+                                </div>
+                                <div  @click="WeedAction('harvest')" class="scissors-box">
+                                    <img src="./assets/images/scissors.png">
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                    </template>
+
+                    <template v-else>
+                        
+                        {{weedTranslation["SELECT_FIELD"]}}
+                    </template>
+                </div>
+                <img v-if="selectedField.index && selectedField.block && selectedField.nearArea && !selectedField.tempIndex && !selectedField.tempBlock"
+                    class="process-img" :src="GetProgressImg">
+
+            </div>
+        </div>
+        <div>
+            <progressbar v-if="progressbar.interval" :text="progressbar.text" :progress="progressbar.percentage">
+            </progressbar>
+        </div>
+        <div>
+            <div class="dealer-name">
+                <img src="./assets/images/npc-name-line.png">
+                <p>{{weedTranslation["WEED_FARM"]}}</p>
+                <img src="./assets/images/npc-name-line.png">
+            </div>
+            <div class="weeds-container">
+
+                <div>
+                    <div @click="SelectField('block_1', n)" v-for="n in 10" class="weed-select"
+                        :class="GetWeedClass('block_1', n)">
+                        <img :src="GetWeedImg('block_1', n)">
+
+                    </div>
+                </div>
+                <div>
+                    <div @click="SelectField('block_2', n)" v-for="n in 10" class="weed-select"
+                        :class="GetWeedClass('block_2', n)">
+                        <img :src="GetWeedImg('block_2', n)">
+
+                    </div>
+                </div>
+                <div>
+                    <div @click="SelectField('block_3', n)" v-for="n in 10" class="weed-select"
+                        :class="GetWeedClass('block_3', n)">
+                        <img :src="GetWeedImg('block_3', n)">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,137 @@
+<div class="dealer" >
+    <img class="overlay" src="./assets/images/overlay.png">
+    <menuheader :title="dealerTranslation.TITLE"></menuheader>
+    <div class="line">
+        <div class="line-inner"></div>
+    </div>
+
+    <div class="sections">
+        <!-- Dealer name  -->
+        <div>
+            <div class="dealer-name">
+                <img src="./assets/images/npc-name-line.png">
+                <p>{{dealerName}}</p>
+                <img src="./assets/images/npc-name-line.png">
+
+            </div>
+            <div class="dealer-action-button"
+                @click="setCurrentDealerAction(currentDealerAction == 'buy' ? 'sell' : 'buy')">
+                {{currentDealerAction == 'buy' ? dealerTranslation.SELL_WEEDS : dealerTranslation.BUY_INGREDIENTS}}
+
+            </div>
+        </div>
+
+        <!-- Dealer items  -->
+        <div>
+            <header>
+                <h1> {{currentDealerAction == 'buy' ? dealerTranslation.WEED_INGREDIENTS  : dealerTranslation.SELL_WEEDS}} </h1>
+                <p>{{currentDealerAction == 'buy' ? dealerTranslation.BUY_WEEDS_DESC.format(playerName) : dealerTranslation.SELL_WEEDS_DESC.format(playerName)}} </p>
+            </header>
+            <section>
+                <div>
+                    <div>
+                        <p>{{dealerTranslation.WEED_INGREDIENTS}}</p>
+                    </div>
+                    <div v-if="currentDealerAction == 'sell'">
+                        <p>{{dealerTranslation.INVENTORY}}</p>
+                    </div>
+                    <div v-else>
+                        <p>{{dealerTranslation.INFO}}</p>
+                    </div>                    
+                </div>
+                <div>
+                    <div class="dealer-items"  v-if="currentDealerAction == 'sell'">
+                        <div @mouseover="hoverItem(item)" @mouseleave="unHoverItem" @click="addToSellItemCart(item, 1)" class="dealer-item" :class="{selected: selectedItem?.name == item.name}" v-for="item in sellableItems">
+                            <p class="item-price">${{item.price}}</p>
+                            <div class="item-blur">
+                                <img :src="'./assets/item_images/'+item.name+'.png'" class="item-blur-image">
+                                <img :src="'./assets/item_images/'+item.name+'.png'" class="item-image">
+                            </div>
+                            <div class="item-line"></div>
+                            <img src="./assets/images/basket.png" class="item-basket">
+                            <p class="item-name">{{item.label}}</p>
+                        </div>
+                    </div>
+                    <div class="dealer-items"  v-else>
+                        <div class="dealer-item" @mouseover="hoverItem(item)" @mouseleave="unHoverItem" @click="addToBuyItemCart(item)" v-for="item in buyableItems">
+                            <p class="item-price">$ {{item.price}}</p>
+                            <div class="item-blur">
+                                <img :src="'./assets/item_images/'+item.name+'.png'" class="item-blur-image">
+                                <img :src="'./assets/item_images/'+item.name+'.png'" class="item-image">
+                            </div>
+                            <div class="item-line"></div>
+                            <img src="./assets/images/basket.png" class="item-basket">
+                            <p class="item-name">{{item.label}}</p>
+                        </div>
+                    </div>
+                
+                    <!-- Dealer Box  -->
+                    <div v-if="hoverItemData"  class="dealer-box">
+                        <h1  v-if="currentDealerAction == 'sell'" v-html="dealerTranslation.ITEM_INFO.format(hoverItemData.amount, hoverItemData.label)"></h1>
+                        <h1  v-else>{{hoverItemData.label}} </h1>
+                       
+                        <div class="item-line"></div>
+                        <div v-if="currentDealerAction == 'sell'" class="dealer-box-button" @click="addToSellItemCart(hoverItemData, hoverItemData.amount)">
+                            {{dealerTranslation.ADD_ALL}}
+                        </div>
+                        <div v-else>
+                            <img :src="'./assets/item_images/'+hoverItemData.name+'.png'">
+                            <p>{{getBuyableItemByName(hoverItemData.name).info}}</p>
+                        </div>
+                    </div>
+                    <div v-else-if="selectedItem && currentDealerAction == 'sell'"  class="dealer-box">
+                        <h1 v-html="dealerTranslation.ITEM_INFO.format(selectedItem.amount, selectedItem.label)"></h1>
+                        <div class="item-line"></div>
+                        <div class="dealer-box-button" @click="addToSellItemCart(selectedItem, selectedItem.amount)">
+                            {{dealerTranslation.ADD_ALL}}
+                        </div>
+                    </div>
+                    <div v-else class="dealer-box">
+                        <h1 v-if="currentDealerAction == 'sell'" > {{dealerTranslation.HOVER_INFO}}</h1>
+                        <h1 v-else>{{dealerTranslation.HOVER_INFO_2}}</h1>  
+                        <div class="item-line"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Cart  -->
+        <div>
+            <header>
+                <h1> {{currentDealerAction == 'buy' ? dealerTranslation.YOUR_CART : dealerTranslation.YOUR_DRUGS}} </h1>
+                <p><span>{{dealerTranslation.TOTAL.format(currentDealerAction == 'buy' ? getBuyItemCartTotalAmount : getSellItemCartTotalAmount)}}</span></p>
+                <p> {{currentDealerAction == 'buy' ? dealerTranslation.PAYMENT_METHOD : dealerTranslation.VIEW}}</p>
+            </header>
+            <section>
+                <div class="cart-items" v-if="currentDealerAction == 'buy'">
+                    <div class="cart-item" v-for="item in buyItemCart">
+                        <p class="item-name">{{getBuyableItemByName(item.name).label}}</p>
+                        <div class="cart-actions">
+                            <p class="item-price">$ {{getBuyableItemByName(item.name).price * item.amount}}</p>
+                            <img src="./assets/images/minus.png" @click="removeFromBuyItemCart(item)">
+                            <p class="item-amount">x{{item.amount}}</p>
+                            <img src="./assets/images/plus.png" @click="addToBuyItemCart(item)">
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-items" v-else>
+                    <div class="cart-item" v-for="item in sellItemCart">
+                        <p class="item-name">{{getSellableItemByName(item.name).label}}</p>
+                        <div class="cart-actions">
+                            <p class="item-price">$ {{getSellableItemByName(item.name).price * item.amount}}</p>
+                            <img src="./assets/images/minus.png" @click="removeFromSellItemCart(item)">
+                            <p class="item-amount">x{{item.amount}}</p>
+                            <img src="./assets/images/plus.png" @click="addToSellItemCart(item, 1)">
+                        </div>
+                    </div>
+                </div>                                              
+                <div class="cart-button" v-if="currentDealerAction==='buy'" @click="buyItems">
+                   {{dealerTranslation.BUY}}
+                </div>
+                <div class="cart-button" v-else @click="sellItems">
+                    {{dealerTranslation.SELL}}
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

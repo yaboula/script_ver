@@ -1,0 +1,2022 @@
+@font-face {
+    font-family: "Proxima Nova";
+    src: url(../assets/fonts/Proxima-Nova.otf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*:focus {
+    outline: none;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#app {
+    width: 100%;
+    height: 100%;
+    font-family: "Proxima Nova";
+    display: none;
+    .destroy-modal {
+        .blur {
+            position: absolute;
+            left: 0%;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(0.5rem);
+            z-index: 4;
+        }
+        .container {
+            position: absolute;
+            z-index: 5;
+            left: 50%;
+            top: 50%;
+            justify-content: center;
+            transform: translate(-50%, -50%);
+            width: 29.3125rem;
+            height: 12.6875rem;
+            background: #d9d9d9;
+            box-shadow: 0rem 0.9375rem 2.25rem -0.375rem rgba(217, 217, 217, 0.13);
+            border-radius: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 0.7rem;
+            padding: 1rem;
+            h1 {
+                font-style: normal;
+                font-weight: 800;
+                font-size: 1.25rem;
+                line-height: 99.5%;
+                /* identical to box height, or 1.25rem */
+
+                text-align: right;
+                letter-spacing: 0.03em;
+
+                color: #5f5f5f;
+            }
+            p {
+                font-style: normal;
+                font-weight: 800;
+                font-size: 1.25rem;
+                line-height: 99.5%;
+                /* identical to box height, or 1.25rem */
+
+                text-align: right;
+                letter-spacing: 0.03em;
+
+                color: rgba(95, 95, 95, 0.76);
+            }
+            .buttons {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                column-gap: 0.625rem;
+                .button {
+                    width: 7.375rem;
+                    height: 2.625rem;
+                    border-radius: 0.3125rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-style: normal;
+                    font-weight: 800;
+                    font-size: 0.75rem;
+                    line-height: 99.5%;
+                    cursor: pointer;
+                    leading-trim: both;
+                    text-edge: cap;
+                    letter-spacing: 0.03em;
+                }
+                .button.confirm {
+                    background: #ff7878;
+                    color: #743636;
+                }
+                .button.cancel {
+                    background: #565454;
+                    color: #f2f2f2;
+                }
+            }
+        }
+    }
+    .progressbar-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.4rem;
+        p {
+            font-family: "Proxima Nova";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 0.9375rem;
+            line-height: 99.5%;
+            letter-spacing: 0.03em;
+            color: #ffffff;
+        }
+        .progressbar {
+            width: 100%;
+            height: 0.3125rem;
+            background: rgba(217, 217, 217, 0.19);
+            border-radius: 0.75rem;
+            div {
+                height: 100%;
+                width: 100%;
+                background: #ffd6a7;
+                transition: width 0.2s ease;
+                border-radius: 0.75rem;
+            }
+        }
+    }
+    .process-container {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.5rem;
+        align-items: center;
+        width: 100%;
+
+        h1 {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 1.75rem;
+            line-height: 99.5%;
+            leading-trim: both;
+            text-edge: cap;
+            letter-spacing: 0.11em;
+            color: #ffd6a7;
+            text-shadow: 0rem 0rem 3.3125rem rgba(255, 214, 167, 0.45);
+        }
+        .process-flex {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            column-gap: 0.3rem;
+            div {
+                flex: 1;
+                height: 0.5rem;
+                background: rgba(217, 217, 217, 0.14);
+            }
+            div.completed {
+                background: #ffd6a7;
+                box-shadow: 0rem 0rem 3.3125rem rgba(255, 214, 167, 0.45);
+            }
+        }
+    }
+    .notification-container {
+        width: 100%;
+        height: 2rem;
+        position: absolute;
+        z-index: 11;
+        left: 0;
+        bottom: 0;
+        div {
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 157, 157, 0.36);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Proxima Nova";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 0.75rem;
+            line-height: 0.9375rem;
+
+            leading-trim: both;
+            text-edge: cap;
+            letter-spacing: 0.03em;
+
+            color: #ffffff;
+        }
+        .fade {
+            animation: fade 0.5s;
+        }
+    }
+    @keyframes fade {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+}
+
+.grinder {
+    width: 100%;
+    height: 100%;
+    background-image: url(../assets/images/overlay-weed.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color: white;
+    display: flex;
+
+    flex-direction: column;
+    .overlay {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 18.4375rem;
+        height: auto;
+        object-fit: cover;
+    }
+
+    & > header {
+        height: 5.75rem;
+        position: relative;
+
+        .logo {
+            max-width: 10.8125rem;
+            max-height: 3.375rem;
+            object-fit: cover;
+            position: absolute;
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        h1 {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 1.75rem;
+            line-height: 99.5%;
+            /* identical to box height, or 1.75rem */
+            letter-spacing: 0.11em;
+
+            color: #ffffff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            text-shadow: 0rem 0rem 2.1875rem rgba(255, 255, 255, 0.45);
+        }
+
+        .profile-picture-container {
+            display: flex;
+            position: absolute;
+
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            align-items: center;
+            column-gap: 0.625rem;
+            div {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                row-gap: 0.3125rem;
+            }
+            div p:first-child {
+                font-style: normal;
+                font-weight: 700;
+                font-size: 1rem;
+                line-height: 99.5%;
+                /* identical to box height, or 1rem */
+                text-align: right;
+                letter-spacing: 0.11em;
+                color: #eeeeee;
+            }
+            div p:last-child {
+                font-style: normal;
+                font-weight: 700;
+                font-size: 0.75rem;
+                line-height: 99.5%;
+                /* identical to box height, or 0.75rem */
+
+                text-align: right;
+                letter-spacing: 0.11em;
+
+                color: rgba(238, 238, 238, 0.5);
+            }
+
+            .profile-picture-image {
+                border: 0.125rem solid white;
+                border-radius: 50%;
+                width: 3.125rem;
+                height: 3.125rem;
+                object-fit: cover;
+            }
+        }
+    }
+    .line {
+        width: 97%;
+        margin: 0 auto;
+        height: 0.0625rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(255, 255, 255, 0.27);
+        .line-inner {
+            width: 20%;
+            height: 100%;
+            background-color: white;
+        }
+    }
+
+    .sections {
+        display: flex;
+        padding: 2rem 3rem;
+        padding-bottom: 3.2rem;
+        column-gap: 0.3125rem;
+        position: relative;
+        z-index: 3;
+        flex: 1;
+        .process-img {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .grinder-header {
+            font-family: "Proxima Nova";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 1.75rem;
+            line-height: 99.5%;
+            leading-trim: both;
+            text-edge: cap;
+            text-align: right;
+            letter-spacing: 0.11em;
+
+            color: #ffd6a7;
+
+            text-shadow: 0rem 0rem 3.3125rem rgba(255, 214, 167, 0.45);
+        }
+        & > div:nth-of-type(1) {
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+            row-gap: 0.7rem;
+
+            .dealer-name {
+                column-gap: 0.3125rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                p {
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 1.75rem;
+                    line-height: 99.5%;
+                    leading-trim: both;
+                    text-edge: cap;
+                    letter-spacing: 0.11em;
+                    color: #ffd6a7;
+                    text-shadow: 0rem 0rem 3.3125rem rgba(255, 214, 167, 0.45);
+                }
+                img {
+                    width: 4.0625rem;
+                    height: 1.0625rem;
+                    object-fit: cover;
+                }
+            }
+
+            .weeds-container {
+                background-image: url(../assets/images/weed-container.png);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                flex: 1;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                position: relative;
+                .weeds-wrapper {
+                    width: 90%;
+                    height: 100%;
+
+                    padding-top: 1.5rem;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    position: relative;
+
+                    .item-container-line {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                    .weed-item-container {
+                        width: 13.625rem;
+                        height: 13.625rem;
+                        background-image: url(../assets/images/weed-item-container.png);
+                        background-repeat: no-repeat;
+                        background-size: 100% 100%;
+                        display: flex;
+                        filter: drop-shadow(0rem 0rem 2.9375rem rgba(255, 214, 167, 0.24));
+                        align-items: center;
+                        position: relative;
+                        z-index: 3;
+                        justify-content: center;
+                        bottom: 3.5rem;
+                        .weed-item-select-left {
+                            width: 1.2625rem;
+                            height: 2.6375rem;
+                            object-fit: cover;
+                            position: absolute;
+                            left: 1.6rem;
+                            top: 50%;
+                            transform: translateY(-100%);
+                            cursor: pointer;
+                        }
+
+                        .weed-item-select-right {
+                            width: 1.2625rem;
+                            height: 2.6375rem;
+                            object-fit: cover;
+                            position: absolute;
+                            right: 1.6rem;
+                            top: 50%;
+                            transform: translateY(-100%);
+                            cursor: pointer;
+                        }
+
+                        .weed-item-wrapper {
+                            position: absolute;
+                            left: 50%;
+                            top: 50%;
+                            transform: translate(-50%, -50%);
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            row-gap: 0.25rem;
+                            .item-blur {
+                                display: flex;
+                                flex-direction: column;
+                                position: relative;
+                                .item-blur-image {
+                                    position: absolute;
+                                    filter: blur(1.5rem);
+                                }
+                                img {
+                                    width: 4.3125rem;
+                                    height: auto;
+                                    object-fit: cover;
+                                }
+                            }
+                            p {
+                                font-family: "Proxima Nova";
+                                font-style: normal;
+                                font-weight: 700;
+                                font-size: 0.625rem;
+                                line-height: 99.5%;
+                                /* identical to box height, or 0.625rem */
+
+                                letter-spacing: 0.03em;
+
+                                color: #ffd6a7;
+                            }
+                        }
+                    }
+                    .weed-item-container-big {
+                        background-image: url(../assets/images/weed-item-container-2.png);
+                        width: 19.5rem;
+                        bottom: 0;
+
+                        height: 22.5rem;
+                        .weed-item-wrapper {
+                            top: 43%;
+                        }
+                    }
+                    .weed-item-bottom {
+                        position: absolute;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        bottom: 2rem;
+                        width: 100%;
+                    }
+                    .step-container {
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 0.5rem;
+                        margin-bottom: 0.75rem;
+                        position: relative;
+                        .step {
+                            font-family: "Proxima Nova";
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 0.9375rem;
+                            line-height: 99.5%;
+
+                            letter-spacing: 0.03em;
+                            color: #ffd6a7;
+                        }
+                        .step-desc {
+                            font-family: "Proxima Nova";
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 0.9375rem;
+                            line-height: 99.5%;
+
+                            letter-spacing: 0.03em;
+
+                            color: #ffffff;
+                        }
+                    }
+                    .action-button {
+                        width: 100%;
+                        height: 4.3125rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        background: #ffd6a7;
+                        border-radius: 0.3125rem;
+                        font-family: "Proxima Nova";
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 1.25rem;
+                        line-height: 99.5%;
+                        cursor: pointer;
+                        leading-trim: both;
+                        text-edge: cap;
+                        letter-spacing: 0.03em;
+                        transition: all 0.25s ease;
+                        color: #a48a6d;
+                        position: relative;
+
+                        &:hover {
+                            opacity: 0.9;
+                        }
+                    }
+                }
+            }
+        }
+        & > div:nth-of-type(2) {
+            flex: 7;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            position: relative;
+            padding: 0 7.5rem;
+            .roll-reward {
+                position: absolute;
+                left: 50%;
+                top: 35%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                row-gap: 3rem;
+                .roll-header {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    column-gap: 0.7rem;
+                    div {
+                        width: 17.1875rem;
+                        height: 0.0625rem;
+                        background-color: rgba(255, 255, 255, 0.27);
+                    }
+                    h1 {
+                        font-family: "Proxima Nova";
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 1.75rem;
+                        line-height: 99.5%;
+
+                        leading-trim: both;
+                        text-edge: cap;
+                        text-align: right;
+                        letter-spacing: 0.11em;
+
+                        color: #ffd6a7;
+
+                        text-shadow: 0rem 0rem 3.3125rem rgba(255, 214, 167, 0.45);
+                    }
+                }
+                .roll-item-text {
+                    font-family: "Proxima Nova";
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 1.25rem;
+                    line-height: 99.5%;
+
+                    leading-trim: both;
+                    text-edge: cap;
+                    text-align: right;
+                    letter-spacing: 0.11em;
+
+                    color: #ffffff;
+
+                    text-shadow: 0rem 0rem 3.3125rem rgba(255, 214, 167, 0.45);
+                }
+                .roll-item-container {
+                    width: 19.6169rem;
+                    height: 19.6169rem;
+                    background-image: url(../assets/images/weed-item-container.png);
+                    background-repeat: no-repeat;
+                    background-size: 100% 100%;
+                    display: flex;
+                    filter: drop-shadow(0rem 0rem 2.9375rem rgba(255, 214, 167, 0.24));
+                    align-items: center;
+                    position: relative;
+                    z-index: 3;
+                    justify-content: center;
+                    .roll-item-select-left {
+                        width: 1.2625rem;
+                        height: 2.6375rem;
+                        object-fit: cover;
+                        position: absolute;
+                        left: -1rem;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        cursor: pointer;
+                    }
+
+                    .roll-item-select-right {
+                        width: 1.2625rem;
+                        height: 2.6375rem;
+                        object-fit: cover;
+                        position: absolute;
+                        right: -1rem;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        cursor: pointer;
+                    }
+
+                    .roll-item-wrapper {
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        row-gap: 0.5rem;
+                        .item-blur {
+                            display: flex;
+                            flex-direction: column;
+                            position: relative;
+                            .item-blur-image {
+                                position: absolute;
+                                width: 8.3125rem;
+                                height: auto;
+                                object-fit: cover;
+                                filter: blur(1.5rem);
+                            }
+                            img {
+                                width: 8.3125rem;
+                                height: auto;
+                                object-fit: cover;
+                            }
+                        }
+                        p {
+                            font-family: "Proxima Nova";
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 1rem;
+                            line-height: 99.5%;
+                            /* identical to box height, or 0.625rem */
+
+                            letter-spacing: 0.03em;
+
+                            color: #ffd6a7;
+                        }
+                    }
+                }
+                .roll-item-container.lemon_haze_joint{
+                    background-image: url(../assets/images/lemon_haze_joint_item_container.png);
+                    p {
+                        color: #FFF6A7;
+                    }
+                }
+                .roll-item-container.purple_haze_joint{
+                    background-image: url(../assets/images/purple_haze_joint_item_container.png);
+                    p {
+                        color: #FFA7FB;
+                    }
+                }
+
+            }
+        }
+        & > div:nth-of-type(3) {
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+            row-gap: 0.7rem;
+            .dealer-name {
+                column-gap: 0.3125rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                p {
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 1.75rem;
+                    line-height: 99.5%;
+                    leading-trim: both;
+                    text-edge: cap;
+                    letter-spacing: 0.11em;
+                    color: #ffd6a7;
+                    text-shadow: 0rem 0rem 3.3125rem rgba(255, 214, 167, 0.45);
+                }
+                img {
+                    width: 4.0625rem;
+                    height: 1.0625rem;
+                    object-fit: cover;
+                }
+            }
+            .weeds-container {
+                background-image: url(../assets/images/weed-container.png);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                flex: 1;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                position: relative;
+                .weeds-wrapper {
+                    width: 90%;
+                    height: 100%;
+
+                    padding-top: 1.5rem;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    position: relative;
+
+                    .item-container-line {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                    .weed-item-container {
+                        width: 13.625rem;
+                        height: 13.625rem;
+                        background-image: url(../assets/images/weed-item-container.png);
+                        background-repeat: no-repeat;
+                        background-size: 100% 100%;
+                        display: flex;
+                        filter: drop-shadow(0rem 0rem 2.9375rem rgba(255, 214, 167, 0.24));
+                        align-items: center;
+                        position: relative;
+                        z-index: 3;
+                        justify-content: center;
+                        bottom: 3.5rem;
+                        .weed-item-select-left {
+                            width: 1.2625rem;
+                            height: 2.6375rem;
+                            object-fit: cover;
+                            position: absolute;
+                            left: 1.6rem;
+                            top: 50%;
+                            transform: translateY(-100%);
+                            cursor: pointer;
+                        }
+
+                        .weed-item-select-right {
+                            width: 1.2625rem;
+                            height: 2.6375rem;
+                            object-fit: cover;
+                            position: absolute;
+                            right: 1.6rem;
+                            top: 50%;
+                            transform: translateY(-100%);
+                            cursor: pointer;
+                        }
+
+                        .weed-item-wrapper {
+                            position: absolute;
+                            left: 50%;
+                            top: 50%;
+                            transform: translate(-50%, -50%);
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            row-gap: 0.25rem;
+                            .item-blur {
+                                display: flex;
+                                flex-direction: column;
+                                position: relative;
+                                .item-blur-image {
+                                    position: absolute;
+                                    filter: blur(1.5rem);
+                                }
+                                img {
+                                    width: 4.3125rem;
+                                    height: auto;
+                                    object-fit: cover;
+                                }
+                            }
+                            p {
+                                font-family: "Proxima Nova";
+                                font-style: normal;
+                                font-weight: 700;
+                                font-size: 0.625rem;
+                                line-height: 99.5%;
+                                /* identical to box height, or 0.625rem */
+
+                                letter-spacing: 0.03em;
+
+                                color: #ffd6a7;
+                            }
+                        }
+                    }
+                    .weed-item-container-big {
+                        background-image: url(../assets/images/weed-item-container-2.png);
+                        width: 19.5rem;
+                        bottom: 0;
+
+                        height: 22.5rem;
+                        .weed-item-wrapper {
+                            top: 43%;
+                        }
+                    }
+                    .weed-item-bottom {
+                        position: absolute;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        bottom: 2rem;
+                        width: 100%;
+                    }
+                    .step-container {
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 0.5rem;
+                        margin-bottom: 0.75rem;
+                        position: relative;
+                        .step {
+                            font-family: "Proxima Nova";
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 0.9375rem;
+                            line-height: 99.5%;
+
+                            letter-spacing: 0.03em;
+                            color: #ffd6a7;
+                        }
+                        .step-desc {
+                            font-family: "Proxima Nova";
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 0.9375rem;
+                            line-height: 99.5%;
+
+                            letter-spacing: 0.03em;
+
+                            color: #ffffff;
+                        }
+                    }
+                    .action-button {
+                        width: 100%;
+                        height: 4.3125rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        background: #ffd6a7;
+                        border-radius: 0.3125rem;
+                        font-family: "Proxima Nova";
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 1.25rem;
+                        line-height: 99.5%;
+                        cursor: pointer;
+                        leading-trim: both;
+                        text-edge: cap;
+                        letter-spacing: 0.03em;
+                        transition: all 0.25s ease;
+                        color: #a48a6d;
+                        position: relative;
+
+                        &:hover {
+                            opacity: 0.9;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.weeds {
+    width: 100%;
+    height: 100%;
+    background-image: url(../assets/images/overlay-weed.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color: white;
+    display: flex;
+
+    flex-direction: column;
+    .overlay {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 18.4375rem;
+        height: auto;
+        object-fit: cover;
+    }
+
+    & > header {
+        height: 5.75rem;
+        position: relative;
+
+        .logo {
+            max-width: 10.8125rem;
+            max-height: 3.375rem;
+            object-fit: cover;
+            position: absolute;
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        h1 {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 1.75rem;
+            line-height: 99.5%;
+            /* identical to box height, or 1.75rem */
+            letter-spacing: 0.11em;
+
+            color: #ffffff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            text-shadow: 0rem 0rem 2.1875rem rgba(255, 255, 255, 0.45);
+        }
+
+        .profile-picture-container {
+            display: flex;
+            position: absolute;
+
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            align-items: center;
+            column-gap: 0.625rem;
+            div {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                row-gap: 0.3125rem;
+            }
+            div p:first-child {
+                font-style: normal;
+                font-weight: 700;
+                font-size: 1rem;
+                line-height: 99.5%;
+                /* identical to box height, or 1rem */
+                text-align: right;
+                letter-spacing: 0.11em;
+                color: #eeeeee;
+            }
+            div p:last-child {
+                font-style: normal;
+                font-weight: 700;
+                font-size: 0.75rem;
+                line-height: 99.5%;
+                /* identical to box height, or 0.75rem */
+
+                text-align: right;
+                letter-spacing: 0.11em;
+
+                color: rgba(238, 238, 238, 0.5);
+            }
+
+            .profile-picture-image {
+                border: 0.125rem solid white;
+                border-radius: 50%;
+                width: 3.125rem;
+                height: 3.125rem;
+                object-fit: cover;
+            }
+        }
+    }
+    .line {
+        width: 97%;
+        margin: 0 auto;
+        height: 0.0625rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(255, 255, 255, 0.27);
+        .line-inner {
+            width: 20%;
+            height: 100%;
+            background-color: white;
+        }
+    }
+
+    .sections {
+        display: flex;
+        padding: 2rem 3rem;
+        padding-bottom: 3.2rem;
+        column-gap: 0.3125rem;
+        position: relative;
+        z-index: 3;
+        flex: 1;
+        & > div:nth-of-type(1) {
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+            row-gap: 0.7rem;
+
+            .dealer-name {
+                column-gap: 0.3125rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                p {
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 1.75rem;
+                    line-height: 99.5%;
+                    leading-trim: both;
+                    text-edge: cap;
+                    letter-spacing: 0.11em;
+                    color: #ffd6a7;
+                    text-shadow: 0rem 0rem 3.3125rem rgba(255, 214, 167, 0.45);
+                }
+                img {
+                    width: 4.0625rem;
+                    height: 1.0625rem;
+                    object-fit: cover;
+                }
+            }
+
+            .weeds-container {
+                background-image: url(../assets/images/weed-container.png);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                flex: 1;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                position: relative;
+                .weeds-wrapper {
+                    width: 90%;
+                    height: 100%;
+
+                    padding-top: 3rem;
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 2.5rem;
+                    position: relative;
+                    align-items: center;
+
+                    .weed-item-container {
+                        width: 17.5rem;
+                        height: 17.5rem;
+                        background-image: url(../assets/images/weed-item-container.png);
+                        background-repeat: no-repeat;
+                        background-size: 100% 100%;
+                        display: flex;
+                        filter: drop-shadow(0rem 0rem 2.9375rem rgba(255, 214, 167, 0.24));
+                        align-items: center;
+                        position: relative;
+                        justify-content: center;
+                        .weed-item-select-left {
+                            width: 1.5625rem;
+                            height: 2.9375rem;
+                            object-fit: cover;
+                            position: absolute;
+                            left: -1.6rem;
+                            top: 50%;
+                            cursor: pointer;
+                            transform: translateY(-50%);
+                        }
+                        .weed-item-select-right {
+                            width: 1.5625rem;
+                            height: 2.9375rem;
+                            object-fit: cover;
+                            position: absolute;
+                            right: -1.6rem;
+                            top: 50%;
+                            cursor: pointer;
+                            transform: translateY(-50%);
+                        }
+
+                        .weed-item-wrapper {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            .item-blur {
+                                position: absolute;
+                                .item-blur-image {
+                                    position: absolute;
+                                    filter: blur(1.5rem);
+                                }
+                                img {
+                                    width: 6.0625rem;
+                                    height: 6.0625rem;
+                                    object-fit: cover;
+                                }
+                            }
+                            p {
+                                font-family: "Proxima Nova";
+                                font-style: normal;
+                                font-weight: 700;
+                                font-size: 0.9375rem;
+                                line-height: 99.5%;
+                                margin-top: 5.75rem;
+                                letter-spacing: 0.03em;
+
+                                color: #ffd6a7;
+                            }
+                        }
+                    }
+
+                    .step-container {
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 0.5rem;
+                        .step {
+                            font-family: "Proxima Nova";
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 0.9375rem;
+                            line-height: 99.5%;
+
+                            letter-spacing: 0.03em;
+                            color: #ffd6a7;
+                        }
+                        .step-desc {
+                            font-family: "Proxima Nova";
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 0.9375rem;
+                            line-height: 99.5%;
+
+                            letter-spacing: 0.03em;
+
+                            color: #ffffff;
+                        }
+                    }
+                    .action-button {
+                        width: 100%;
+                        height: 4.3125rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        background: rgba(255, 214, 167, 0.13);
+                        border-radius: 0.3125rem;
+                        font-family: "Proxima Nova";
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 1.25rem;
+                        line-height: 99.5%;
+                        cursor: pointer;
+                        leading-trim: both;
+                        text-edge: cap;
+                        letter-spacing: 0.03em;
+                        transition: all 0.25s ease;
+                        color: #ffd6a7;
+                        position: relative;
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            left: 50%;
+                            border-radius: 0.6875rem;
+                            height: 0.125rem;
+                            width: 15.25rem;
+                            background: #ffd6a7;
+                            box-shadow: 0rem 0rem 0.6875rem #ffd6a7;
+                            bottom: 0;
+                            transform: translateX(-50%);
+                        }
+                        &:hover {
+                            opacity: 0.9;
+                        }
+                    }
+                    .weed-growth-container {
+                        display: flex;
+                        width: 100%;
+                        flex: 1;
+                        .weed-growth-left {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-start;
+                            flex: 1;
+                            position: relative;
+                            padding-right: 1rem;
+                            .water-box {
+                                background: rgba(167, 255, 255, 0.13);
+                                border-radius: 0.3125rem;
+                                width: 4.3125rem;
+                                height: 4.3125rem;
+                                display: flex;
+                                align-items: center;
+                                position: absolute;
+                                left: 0rem;
+                                top: 8rem;
+                                z-index: 3;
+                                cursor: pointer;
+                                justify-content: center;
+                            }
+
+                            .trash-box {
+                                background: rgba(255, 167, 167, 0.13);
+                                border-radius: 0.3125rem;
+                                width: 4.3125rem;
+                                height: 4.3125rem;
+                                display: flex;
+                                align-items: center;
+                                position: absolute;
+                                left: 0rem;
+                                top: 24rem;
+                                z-index: 3;
+                                cursor: pointer;
+                                justify-content: center;
+                            }
+                        }
+                        .weed-growth-right {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-end;
+                            flex: 1;
+                            padding-left: 1rem;
+                            position: relative;
+                            .floundering-box {
+                                background: rgba(206, 255, 167, 0.13);
+                                border-radius: 0.3125rem;
+                                width: 4.3125rem;
+                                height: 4.3125rem;
+                                display: flex;
+                                align-items: center;
+                                position: absolute;
+                                right: 0rem;
+                                top: 8rem;
+                                z-index: 3;
+                                cursor: pointer;
+                                justify-content: center;
+                            }
+
+                            .scissors-box {
+                                background: rgba(255, 255, 255, 0.13);
+                                border-radius: 0.3125rem;
+                                width: 4.3125rem;
+                                height: 4.3125rem;
+                                display: flex;
+                                align-items: center;
+                                position: absolute;
+                                right: 0rem;
+                                top: 24rem;
+                                z-index: 3;
+                                cursor: pointer;
+                                justify-content: center;
+                                img {
+                                    object-fit: cover;
+                                    width: 2.1875rem;
+                                    height: 2.1875rem;
+                                }
+                            }
+                        }
+                    }
+                }
+                .process-img {
+                    width: 100%;
+                    height: auto;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    object-fit: cover;
+                    z-index: -1;
+                }
+            }
+        }
+        & > div:nth-of-type(2) {
+            flex: 7;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 0 7.5rem;
+        }
+
+        & > div:nth-of-type(3) {
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+            row-gap: 0.7rem;
+            .dealer-name {
+                column-gap: 0.3125rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                p {
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 1.75rem;
+                    line-height: 99.5%;
+                    leading-trim: both;
+                    text-edge: cap;
+                    letter-spacing: 0.11em;
+                    color: #ffd6a7;
+                    text-shadow: 0rem 0rem 3.3125rem rgba(255, 214, 167, 0.45);
+                }
+                img {
+                    width: 4.0625rem;
+                    height: 1.0625rem;
+                    object-fit: cover;
+                }
+            }
+            .weeds-container {
+                background-image: url(../assets/images/weed-container.png);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                flex: 1;
+                width: 100%;
+                display: flex;
+                row-gap: 0.8rem;
+                justify-content: space-around;
+                & > div {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 1.25rem;
+                    background: rgba(217, 217, 217, 0.11);
+                    padding: 0 0.65rem;
+                    justify-content: center;
+                }
+                .weed-select {
+                    width: 3.25rem;
+                    height: 3.5625rem;
+                    background: rgba(217, 217, 217, 0.13);
+                    border-radius: 0.3125rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    transition: all 0.2s ease;
+                    img {
+                        width: 2.25rem;
+                        height: 2.125rem;
+                        object-fit: cover;
+                    }
+                    &:hover {
+                        opacity: 0.8;
+                    }
+                }
+
+                .weed-select.temp {
+                    background: rgba(255, 214, 167, 0.38);
+                    border: 0.0625rem solid #ffd6a7;
+                    opacity: 0.7;
+                }
+
+                .weed-select.green {
+                    background: rgba(206, 255, 167, 0.38);
+                    border: 0.0625rem solid #ceffa7;
+                }
+
+                .weed-select.blue {
+                    background: rgba(167, 255, 255, 0.38);
+                    border: 0.0625rem solid #a7ffff;
+                }
+                .weed-select.completed {
+                    background: rgba(179, 255, 167, 0.38);
+                    border: 0.0625rem solid #b3ffa7;
+                }
+                .weed-select.active {
+                    background: rgba(255, 214, 167, 0.38);
+                    border: 0.0625rem solid #ffd6a7;
+                }
+            }
+        }
+    }
+}
+
+.dealer {
+    width: 100%;
+    height: 100%;
+    background-image: url(../assets/images/dealer-overlay.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    .overlay {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 18.4375rem;
+        height: auto;
+        object-fit: cover;
+    }
+    & > header {
+        height: 5.75rem;
+        position: relative;
+
+        .logo {
+            max-width: 10.8125rem;
+            max-height: 3.375rem;
+            object-fit: cover;
+            position: absolute;
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        h1 {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 1.75rem;
+            line-height: 99.5%;
+            /* identical to box height, or 1.75rem */
+            letter-spacing: 0.11em;
+
+            color: #ffffff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            text-shadow: 0rem 0rem 2.1875rem rgba(255, 255, 255, 0.45);
+        }
+
+        .profile-picture-container {
+            display: flex;
+            position: absolute;
+
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            align-items: center;
+            column-gap: 0.625rem;
+            div {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                row-gap: 0.3125rem;
+            }
+            div p:first-child {
+                font-style: normal;
+                font-weight: 700;
+                font-size: 1rem;
+                line-height: 99.5%;
+                /* identical to box height, or 1rem */
+                text-align: right;
+                letter-spacing: 0.11em;
+                color: #eeeeee;
+            }
+            div p:last-child {
+                font-style: normal;
+                font-weight: 700;
+                font-size: 0.75rem;
+                line-height: 99.5%;
+                /* identical to box height, or 0.75rem */
+
+                text-align: right;
+                letter-spacing: 0.11em;
+
+                color: rgba(238, 238, 238, 0.5);
+            }
+
+            .profile-picture-image {
+                border: 0.125rem solid white;
+                border-radius: 50%;
+                width: 3.125rem;
+                height: 3.125rem;
+                object-fit: cover;
+            }
+        }
+    }
+    .line {
+        width: 97%;
+        margin: 0 auto;
+        height: 0.0625rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(255, 255, 255, 0.27);
+        .line-inner {
+            width: 20%;
+            height: 100%;
+            background-color: white;
+        }
+    }
+
+    .sections {
+        display: flex;
+        padding: 2rem 3rem;
+        padding-bottom: 3.2rem;
+        column-gap: 0.3125rem;
+        flex: 1;
+        & > div:nth-of-type(1) {
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            .dealer-name {
+                column-gap: 0.3125rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                p {
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 1.75rem;
+                    line-height: 99.5%;
+                    leading-trim: both;
+                    text-edge: cap;
+                    letter-spacing: 0.11em;
+                    color: #ffd6a7;
+                    text-shadow: 0rem 0rem 3.3125rem rgba(255, 214, 167, 0.45);
+                }
+                img {
+                    width: 4.0625rem;
+                    height: 1.0625rem;
+                    object-fit: cover;
+                }
+            }
+
+            .dealer-action-button {
+                width: 21.25rem;
+                height: 4.3125rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                background: rgba(255, 214, 167, 0.13);
+                border-radius: 0.3125rem;
+                font-family: "Proxima Nova";
+                font-style: normal;
+                font-weight: 700;
+                font-size: 1.25rem;
+                line-height: 99.5%;
+                cursor: pointer;
+                leading-trim: both;
+                text-edge: cap;
+                letter-spacing: 0.03em;
+                transition: transform 0.25s ease;
+                color: #ffd6a7;
+                position: relative;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 50%;
+                    border-radius: 0.6875rem;
+                    height: 0.125rem;
+                    width: 15.25rem;
+                    background: #ffd6a7;
+                    box-shadow: 0rem 0rem 0.6875rem #ffd6a7;
+                    bottom: 0;
+                    transform: translateX(-50%);
+                }
+                &:hover {
+                    transform: translateY(-0.1875rem);
+                }
+            }
+        }
+        & > div:nth-of-type(2) {
+            flex: 7;
+            display: flex;
+            row-gap: 1.25rem;
+            flex-direction: column;
+            & > header {
+                display: flex;
+                flex-direction: column;
+                row-gap: 0.7rem;
+                h1 {
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 1.75rem;
+                    line-height: 99.5%;
+                    /* or 1.75rem */
+
+                    /* leading-trim and text-edge are draft CSS properties.
+                    
+                    Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+                    */
+                    leading-trim: both;
+                    text-edge: cap;
+                    letter-spacing: 0.11em;
+
+                    color: #ffd6a7;
+
+                    text-shadow: 0rem 0rem 3.3125rem rgba(255, 214, 167, 0.45);
+                }
+                p {
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 0.9375rem;
+                    line-height: 99.5%;
+                    /* or 0.9375rem */
+                    width: 37rem;
+                    height: 2.125rem;
+                    letter-spacing: 0.03em;
+
+                    color: #ffffff;
+                }
+            }
+            section {
+                display: flex;
+                flex: 1;
+                column-gap: 1.25rem;
+                & > div:nth-of-type(1) {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 0.9375rem;
+                    div {
+                        flex: 1;
+                        width: 2.5rem;
+                        background: rgba(255, 214, 167, 0.13);
+                        border: 0.0625rem solid rgba(255, 214, 167, 0.45);
+                        border-radius: 0.375rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        p {
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 1.25rem;
+                            line-height: 99.5%;
+
+                            leading-trim: both;
+                            text-edge: cap;
+                            letter-spacing: 0.11em;
+                            color: #ffd6a7;
+                            writing-mode: vertical-lr;
+                            rotate: -180deg;
+                            text-shadow: 0rem 0rem 3.3125rem rgba(255, 214, 167, 0.45);
+                        }
+                    }
+                    div:nth-of-type(1) {
+                        flex: 3;
+                    }
+                }
+                & > div:nth-of-type(2) {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 0.9375rem;
+                    .dealer-items::-webkit-scrollbar {
+                        display: none;
+                    }
+                    .dealer-items {
+                        flex: 3 3 0;
+                        overflow: auto;
+                        display: flex;
+                        flex-wrap: wrap;
+                        align-content: flex-start;
+                        column-gap: 0.625rem;
+                        row-gap: 0.625rem;
+                        .dealer-item {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            position: relative;
+                            row-gap: 1.5rem;
+                            cursor: pointer;
+                            width: 32.6%;
+                            height: 11.4375rem;
+                            background-image: url(../assets/images/item-box.png);
+                            background-repeat: no-repeat;
+                            background-size: 100% 100%;
+                            transition: all 0.25s ease;
+
+                            .item-blur {
+                                .item-blur-image {
+                                    position: absolute;
+                                    filter: blur(1.5rem);
+                                }
+                                img {
+                                    width: 6.0625rem;
+                                    height: 6.0625rem;
+                                    object-fit: cover;
+                                }
+                            }
+
+                            .item-name {
+                                font-style: normal;
+                                font-weight: 700;
+                                font-size: 0.9375rem;
+                                line-height: 99.5%;
+
+                                leading-trim: both;
+                                text-edge: cap;
+                                letter-spacing: 0.03em;
+
+                                color: #ffffff;
+                            }
+
+                            .item-line {
+                                width: 4.25rem;
+                                height: 0.1875rem;
+
+                                background: #ffffff;
+                                box-shadow: 0rem 0rem 0.6875rem #ffffff;
+                                border-radius: 0.6875rem;
+                            }
+
+                            .item-basket {
+                                position: absolute;
+                                right: 1.25rem;
+                                top: 0.75rem;
+                                cursor: pointer;
+                                width: 3.125rem;
+                                height: 2.4375rem;
+                            }
+                            .item-price {
+                                position: absolute;
+                                left: 1.25rem;
+                                top: 1.25rem;
+                                font-style: normal;
+                                font-weight: 700;
+                                font-size: 0.9375rem;
+                                line-height: 99.5%;
+
+                                leading-trim: both;
+                                text-edge: cap;
+                                letter-spacing: 0.03em;
+                                transition: all 0.25s ease;
+
+                                color: #ffffff;
+                            }
+                            &:hover {
+                                transform: translateY(-0.1875rem);
+
+                                background-image: url(../assets/images/hover-item-box.png);
+                                .item-price {
+                                    color: #ffd6a7;
+                                }
+                            }
+                        }
+                        .dealer-item.selected {
+                            transform: translateY(-0.1875rem);
+
+                            background-image: url(../assets/images/hover-item-box.png);
+                            .item-price {
+                                color: #ffd6a7;
+                            }
+                        }
+                    }
+
+                    .dealer-box {
+                        width: 100%;
+                        flex: 1;
+                        background-image: url(../assets/images/dealer-box.png);
+                        background-repeat: no-repeat;
+                        background-size: 100% 100%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        transition: all 0.25s ease;
+                        position: relative;
+                        row-gap: 1.25rem;
+                        h1 {
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 1.25rem;
+                            line-height: 99.5%;
+
+                            leading-trim: both;
+                            text-edge: cap;
+                            letter-spacing: 0.03em;
+
+                            color: #ffffff;
+                            span {
+                                color: #ffd6a7;
+                            }
+                        }
+
+                        img {
+                            position: absolute;
+                            left: 1rem;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            width: 6.0625rem;
+                            height: 6.0625rem;
+                            object-fit: cover;
+                        }
+
+                        p {
+                            font-family: "Proxima Nova";
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 0.9375rem;
+                            line-height: 99.5%;
+                            margin: 0 auto;
+                            margin-top: 1rem;
+                            leading-trim: both;
+                            text-edge: cap;
+                            letter-spacing: 0.03em;
+                            width: 77%;
+                            text-align: center;
+                            color: #ffffff;
+                        }
+
+                        .item-line {
+                            width: 11.625rem;
+
+                            height: 0.1875rem;
+
+                            background: #ffffff;
+                            box-shadow: 0rem 0rem 0.6875rem #ffffff;
+                            border-radius: 0.6875rem;
+                        }
+                        .dealer-box-button {
+                            width: 9.875rem;
+                            height: 2.3125rem;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            background: #ffd6a7;
+                            box-shadow: 0rem 0rem 4.6875rem rgba(255, 214, 167, 0.25);
+                            border-radius: 0.3125rem;
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 1.25rem;
+                            line-height: 99.5%;
+
+                            leading-trim: both;
+                            text-edge: cap;
+                            letter-spacing: 0.03em;
+                            cursor: pointer;
+                            color: #a68c6f;
+                            transition: transform 0.25s ease;
+
+                            &:hover {
+                                transform: translateY(-0.1875rem);
+                            }
+                        }
+                    }
+                }
+                // .dealer-box.removeBG{
+                //     background-image:none!important;
+
+                // }
+            }
+        }
+        & > div:nth-of-type(3) {
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+            row-gap: 0.625rem;
+
+            header {
+                display: flex;
+                flex-direction: column;
+                align-items: end;
+                row-gap: 0.7rem;
+                h1 {
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 1.75rem;
+                    line-height: 99.5%;
+                    /* or 1.75rem */
+
+                    /* leading-trim and text-edge are draft CSS properties.
+                    
+                    Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+                    */
+                    leading-trim: both;
+                    text-edge: cap;
+                    letter-spacing: 0.11em;
+
+                    color: #ffd6a7;
+
+                    text-shadow: 0rem 0rem 3.3125rem rgba(255, 214, 167, 0.45);
+                }
+                p {
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 0.85rem;
+                    leading-trim: both;
+                    text-edge: cap;
+                    line-height: 99.5%;
+                    /* or 0.9375rem */
+                    letter-spacing: 0.03em;
+
+                    color: #ffffff;
+                    span {
+                        color: #ffd6a7;
+                    }
+                }
+            }
+            section {
+                flex: 1 1 0;
+                background: rgba(217, 217, 217, 0.01);
+                border-radius: 0.3125rem;
+                border: 0.0625rem solid rgba(255, 255, 255, 0.05);
+                padding: 1rem 0.75rem;
+                display: flex;
+                row-gap: 1.25rem;
+                flex-direction: column;
+                .cart-items {
+                    overflow: auto;
+                    flex: 1 1 0;
+                    .cart-item {
+                        background-image: url(../assets/images/cart-item.png);
+                        background-repeat: no-repeat;
+                        background-size: 100% 100%;
+                        width: 100%;
+                        height: 4.125rem;
+                        position: relative;
+                        margin-bottom: 1.25rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding: 0 1rem;
+                        .cart-actions {
+                            display: flex;
+                            align-items: center;
+                            .item-price {
+                                font-style: normal;
+                                font-weight: 700;
+                                font-size: 0.9375rem;
+                                line-height: 99.5%;
+                                leading-trim: both;
+                                text-edge: cap;
+                                letter-spacing: 0.03em;
+
+                                color: #c8ffa7;
+
+                                text-shadow: 0rem 0.25rem 0.75rem rgba(200, 255, 167, 0.51);
+                            }
+                            .item-name {
+                                font-family: "Proxima Nova";
+                                font-style: normal;
+                                font-weight: 700;
+                                font-size: 0.9375rem;
+                                line-height: 99.5%;
+
+                                leading-trim: both;
+                                text-edge: cap;
+                                letter-spacing: 0.03em;
+
+                                color: #ffffff;
+                            }
+                            .item-amount {
+                                font-style: normal;
+                                font-weight: 700;
+                                font-size: 0.9375rem;
+                                line-height: 99.5%;
+
+                                leading-trim: both;
+                                text-edge: cap;
+                                letter-spacing: 0.03em;
+
+                                color: rgba(255, 255, 255, 0.52);
+                            }
+                            img {
+                                width: 3.6875rem;
+                                height: 3.6875rem;
+                                object-fit: cover;
+                                cursor: pointer;
+                                transition: all 0.25s ease;
+
+                                &:hover {
+                                    transform: translateY(-0.1875rem);
+                                }
+                            }
+                        }
+                    }
+                    .cart-item:last-child {
+                        margin-bottom: 0;
+                    }
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
+                }
+                .cart-button {
+                    width: 100%;
+                    height: 4.3125rem;
+                    margin: 0 auto;
+                    background: #ffd6a7;
+                    box-shadow: 0rem 0rem 4.6875rem rgba(255, 214, 167, 0.25);
+                    border-radius: 0.3125rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 1.25rem;
+                    line-height: 99.5%;
+                    position: relative;
+                    z-index: 1;
+                    leading-trim: both;
+                    text-edge: cap;
+                    letter-spacing: 0.03em;
+                    transition: all 0.25s ease;
+                    cursor: pointer;
+                    color: #8f7b5e;
+                    &:hover {
+                        transform: translateY(-0.1875rem);
+                    }
+                }
+            }
+        }
+    }
+}

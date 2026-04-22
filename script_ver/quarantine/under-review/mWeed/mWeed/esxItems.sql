@@ -1,0 +1,16 @@
+INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES ('grinded_indica', 'Grinded Indica', 1, 0, 1);
+INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES ('grinded_sativa', 'Grinded Sativa', 1, 0, 1);
+INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES ('grinder', 'Grinder', 1, 0, 1);
+INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES ('grubber', 'Grubber', 1, 0, 1);
+INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES ('indica_joint', 'Indica Joint', 1, 0, 1);
+INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES ('indica_seed', 'Indica Seed', 1, 0, 1);
+INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES ('indica_weed', 'Indica Weed', 1, 0, 1);
+INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES ('lemon_haze_joint', 'Lemon Haze Joint', 1, 0, 1);
+INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES ('purple_haze_joint', 'Purple Haze Joint', 1, 0, 1);
+INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES ('quality_fertilizer', 'Quality Fertilizer', 1, 0, 1);
+INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES ('raw_paper', 'Raw Paper', 1, 0, 1);
+INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES ('sativa_joint', 'Sativa Joint', 1, 0, 1);
+INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES ('sativa_seed', 'Sativa Seed', 1, 0, 1);
+INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES ('sativa_weed', 'Sativa Weed', 1, 0, 1);
+INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES ('spray', 'Spray', 1, 0, 1);
+INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES ('fertilizer', 'Fertilizer', 1, 0, 1);

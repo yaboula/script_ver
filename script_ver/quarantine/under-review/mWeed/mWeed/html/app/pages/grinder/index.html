@@ -1,0 +1,125 @@
+<div class="grinder" :style="getBGOVerlay">
+    <img class="overlay" src="./assets/images/overlay.png">
+    <menuheader :title="grinderTranslation.TITLE"></menuheader>
+    <div class="line">
+        <div class="line-inner"></div>
+    </div>
+ 
+    <div class="sections">
+        <div>
+            <div class="dealer-name">
+                <img src="./assets/images/npc-name-line.png">
+                <p>{{GetCurrentGrindWeedItem.label}}</p>
+                <img src="./assets/images/npc-name-line.png">
+            </div>
+            <div class="weeds-container">
+                <div class="weeds-wrapper">
+                    <h1 class="grinder-header">{{grinderTranslation.GRIND_WEEDS}} </h1>
+                    <div class="weed-item-container weed-item-container-big">
+                        <img @click="PrevGrindWeedItem" class="weed-item-select-left" src="./assets/images/left-arrow.png">
+                        <img  @click="NextGrindWeedItem" class="weed-item-select-right" src="./assets/images/right-arrow.png">
+                        <div class="weed-item-wrapper">
+                            <div class="item-blur">
+                                <img class="item-blur-image" :src="'./assets/item_images/'+itemNames[GetCurrentGrindWeedItem.name].name+'.png'">
+                                <img :src="'./assets/item_images/'+itemNames[GetCurrentGrindWeedItem.name].name+'.png'">
+                            </div>
+                            <p>{{GetCurrentGrindWeedItem.label}}</p>
+                        </div>
+                    </div>
+                    <!-- <img class="item-container-line" src="./assets/images/item-container-line.png"> -->
+                    <div class="weed-item-container ">
+                        <div class="weed-item-wrapper">
+                            <div class="item-blur">
+                                <img class="item-blur-image" :src="'./assets/item_images/'+itemNames['grinder'].name+'.png'">
+                                <img :src="'./assets/item_images/'+itemNames['grinder'].name+'.png'">
+                            </div>
+                            <p>{{itemNames['grinder'].label}}</p>
+                        </div>
+                    </div>
+                    <div class="weed-item-bottom">
+                        <div class="step-container">
+                            <p class="step">{{grinderTranslation.GRIND_WEEDS_TITLE}}</p>
+                            <p class="step-desc">
+                                {{grinderTranslation.GRIND_WEEDS_DESC}}              
+                            
+                            </p>
+                        </div>
+                        <div @click="Action('grind')" class="action-button">
+                            {{grinderTranslation.GRIND_WEEDS_TITLE}}
+                        </div>
+                    </div>
+                </div>
+                <img class="process-img" src="./assets/images/grinder-overlay.png">
+            </div>
+        </div>
+
+        <div>
+            <div class="roll-reward" v-if="GetRollRewardItem">
+                <div class="roll-header">
+                    <div></div>
+                    <h1>{{grinderTranslation.CONGRATS}}</h1>
+                    <div></div>
+                </div>
+                <p class="roll-item-text">{{grinderTranslation.SUCCESS_MSG}}</p>
+            
+                <div class="roll-item-container " :class="{[GetRollRewardItem.name]:true}">
+                    <img @click="PrevRollRewardWeedItem" class="roll-item-select-left" src="./assets/images/left-arrow.png">
+                    <img @click="NextRollRewardWeedItem" class="roll-item-select-right" src="./assets/images/right-arrow.png">
+                    <div class="roll-item-wrapper">
+                        <div class="item-blur">
+                            <img class="item-blur-image"  :src="'./assets/item_images/'+GetRollRewardItem.name+'.png'">
+                            <img :src="'./assets/item_images/'+GetRollRewardItem.name+'.png'">
+                        </div>
+                        <p>{{GetRollRewardItem.amount}}x {{GetRollRewardItem.label}}</p>
+                    </div>
+                </div>
+            </div>
+            <progressbar v-if="progressbar.interval" :text="progressbar.text" :progress="progressbar.percentage">
+            </progressbar>
+        </div>
+        <div>
+            <div class="dealer-name">
+                <img src="./assets/images/npc-name-line.png">
+                <p>{{grinderTranslation.ROLL}}</p>
+                <img src="./assets/images/npc-name-line.png">
+            </div>
+            <div class="weeds-container">
+                <div class="weeds-wrapper">
+                    <h1 class="grinder-header">{{grinderTranslation.GRINDED_WEEDS}} </h1>
+                    <div class="weed-item-container weed-item-container-big">
+                        <img @click="PrevGrindedWeedItem"  class="weed-item-select-left" src="./assets/images/left-arrow.png">
+                        <img  @click="NextGrindedWeedItem" class="weed-item-select-right" src="./assets/images/right-arrow.png">
+                        <div class="weed-item-wrapper">
+                            <div class="item-blur">
+                                <img class="item-blur-image" :src="'./assets/item_images/'+itemNames[GetCurrentGrindedWeedItem.name].name+'.png'" >
+                                <img :src="'./assets/item_images/'+itemNames[GetCurrentGrindedWeedItem.name].name+'.png'" >
+                            </div>
+                            <p>{{GetCurrentGrindedWeedItem.label}}</p>
+                        </div>
+                    </div>
+                    <div class="weed-item-container ">
+                        <div class="weed-item-wrapper">
+                            <div class="item-blur">
+                                <img class="item-blur-image" :src="'./assets/item_images/'+itemNames['raw_paper'].name+'.png'">
+                                <img  :src="'./assets/item_images/'+itemNames['raw_paper'].name+'.png'">
+                            </div>
+                            <p>{{grinderTranslation.RAW_PAPER}}</p>
+                        </div>
+                    </div>
+                    <div class="weed-item-bottom">
+                        <div class="step-container">
+                            <p class="step">{{grinderTranslation.ROLL}}</p>
+                            <p class="step-desc">
+                                {{grinderTranslation.ROLL_DESC}}                                
+                            </p>
+                        </div>
+                        <div  @click="Action('roll')" class="action-button">                            
+                            {{grinderTranslation.ROLL_JOINTS}}
+                        </div>
+                    </div>
+                </div>
+                <img class="process-img" src="./assets/images/grinder-overlay.png">
+            </div>
+        </div>
+    </div>
+</div>
