@@ -1,0 +1,116 @@
+=== AUD-029 Nivel 1 Scan (post-limpieza) ===
+Path: c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat
+Date: 2026-04-17
+
+[C-01/C-02] PerformHttpRequest|PerformHttpRequestInternal
+(sin hallazgos)
+
+[C-03/C-04/C-05] load(|loadstring(|assert(load
+(sin hallazgos)
+
+[C-06] RunString
+(sin hallazgos)
+
+[C-07] hex obfuscation \\xHH
+(sin hallazgos)
+
+[C-08] string.char(
+(sin hallazgos)
+
+[C-09/C-10/C-11] os.execute|io.popen|io.open
+(sin hallazgos)
+
+[C-12] debug.
+(sin hallazgos)
+
+[A-01..A-04] hardcoded identifiers or IP
+(sin hallazgos)
+
+[A-05/A-06] RegisterCommand|RegisterNetEvent
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\client\events.lua:1:RegisterNetEvent("chat:addTemplate")
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\client\events.lua:2:RegisterNetEvent("chat:addMessage")
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\client\events.lua:3:RegisterNetEvent("chat:addSuggestion")
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\client\events.lua:4:RegisterNetEvent("chat:addSuggestions")
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\client\events.lua:5:RegisterNetEvent("chat:removeSuggestion")
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\client\events.lua:6:RegisterNetEvent("chat:client:ClearChat")
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\client\events.lua:7:RegisterNetEvent("__cfx_internal:serverPrint")
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\client\events.lua:8:RegisterNetEvent("_chat:messageEntered")
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\client\events.lua:10:RegisterNetEvent("chat:show")
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\client\events.lua:16:RegisterNetEvent("chat:hide")
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\client\events.lua:23:RegisterNetEvent("chat:addMessage")
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\client\events.lua:30:RegisterNetEvent("chat:addSuggestion")
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\client\events.lua:39:RegisterNetEvent("chat:addSuggestions")
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\client\events.lua:50:RegisterNetEvent("chat:clear")
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\client\events.lua:63:RegisterNetEvent("0r-chat:registerRPText")
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\client\events.lua:81:RegisterNetEvent("0r-chat:SynchronizeMusics", function(data, src)
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\client\events.lua:92:RegisterNetEvent("0r-chat:DestroyMusic", function(src)
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\client\events.lua:106:RegisterNetEvent("0r-chat:BalanceInfoMessage", function(data)
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\client\events.lua:119:RegisterNetEvent("0r-chat:Client:HandleCallback", function(key, data)
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\client\events.lua:133:RegisterNetEvent("QBCore:Client:OnPlayerLoaded", function()
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\client\events.lua:138:RegisterNetEvent("esx:playerLoaded", function()
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\client\events.lua:143:RegisterNetEvent("0r-chat:Client:SyncIsWriting", function(writer, state)
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\client\commands.lua:2:RegisterCommand("+chat", function()
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\client\commands.lua:7:RegisterCommand("me", function(source, args, rawCommand)
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\client\commands.lua:35:RegisterCommand("do", function(source, args, rawCommand)
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\server\commands.lua:1:RegisterCommand("police", function(source, args, rawCommand)
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\server\commands.lua:50:RegisterCommand("ems", function(source, args, rawCommand)
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\server\commands.lua:99:RegisterCommand("grove", function(source, args, rawCommand)
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\server\commands.lua:148:RegisterCommand("adminwhisper", function(source, args, rawCommand)
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\server\commands.lua:182:RegisterCommand("announce", function(source, args, rawCommand)
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\server\commands.lua:214:RegisterCommand("ooc", function(source, args, rawCommand)
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\server\commands.lua:236:RegisterCommand("tweet", function(source, args, rawCommand)
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\server\commands.lua:256:RegisterCommand("showidentity", function(source, args, rawCommand)
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\server\commands.lua:282:RegisterCommand("yellowpages", function(source, args, rawCommand)
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\server\commands.lua:301:RegisterCommand("charinfo", function(source)
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\server\commands.lua:337:RegisterCommand("whisper", function(source, args, rawCommand)
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\server\commands.lua:373:RegisterCommand("playmusic", function(source, args, rawCommand)
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\server\commands.lua:400:RegisterCommand("stopmusic", function(source, args, rawCommand)
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\server\commands.lua:404:RegisterCommand("musicvolume", function(source, args, rawCommand)
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\server\commands.lua:413:RegisterCommand("clearall", function(source, args, rawCommand)
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\server\commands.lua:420:RegisterCommand("clear", function(source, args, rawCommand)
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\server\commands.lua:425:    RegisterCommand(Config.DarkChat.command, function(source, args, rawCommand)
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\server\commands.lua:455:    RegisterCommand(Config.SendImage.command, function(source, args, rawCommand)
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\server\events.lua:1:RegisterNetEvent("chat:init")
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\server\events.lua:2:RegisterNetEvent("chat:addTemplate")
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\server\events.lua:3:RegisterNetEvent("chat:addMessage")
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\server\events.lua:4:RegisterNetEvent("chat:addSuggestion")
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\server\events.lua:5:RegisterNetEvent("chat:removeSuggestion")
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\server\events.lua:6:RegisterNetEvent("_chat:messageEntered")
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\server\events.lua:7:RegisterNetEvent("chat:clear")
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\server\events.lua:8:RegisterNetEvent("__cfx_internal:commandFallback")
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\server\events.lua:77:RegisterNetEvent("0r-chat:Server:SyncIsWriting", function(state)
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\server\events.lua:676:RegisterNetEvent("0r-chat:Server:HandleCallback", function(key, payload)
+
+[A-08] GetConvar
+(sin hallazgos)
+
+[A-09] ExecuteCommand
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\client\nui.lua:14:        ExecuteCommand(command)
+
+[M-01] SQL concat and sql apis
+(sin hallazgos)
+
+[M-02/M-03/M-04] innerHTML|eval(|dangerouslySetInnerHTML|new Function(
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\ui\build\assets\index-kauAbiuW.js:33: */var zs=P,Le=ac;function w(e){for(var t="https://reactjs.org/docs/error-decoder.html?invariant="+e,n=1;n<arguments.length;n++)t+="&args[]="+encodeURIComponent(arguments[n]);retur [... omitted end of long line]
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\ui\build\assets\index-kauAbiuW.js:37:`+l[i].replace(" at new "," at ");return e.displayName&&s.includes("<anonymous>")&&(s=s.replace("<anonymous>",e.displayName)),s}while(1<=i&&0<=u);break}}}finally{Bl=!1,Error.prepar [... omitted end of long line]
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\ui\build\assets\index-kauAbiuW.js:38:`).replace(E0,"")}function Fr(e,t,n){if(t=Ru(t),Ru(e)!==t&&n)throw Error(w(425))}function il(){}var Ro=null,Do=null;function Oo(e,t){return e==="textarea"||e==="noscript"||typeof t [... omitted end of long line]
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\ui\build\assets\index-kauAbiuW.js:40:`+o.stack}return{value:e,source:t,stack:l,digest:null}}function uo(e,t,n){return{value:e,source:null,stack:n??null,digest:t??null}}function Qo(e,t){try{console.error(t.value)}catch [... omitted end of long line]
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\ui\build\assets\index-kauAbiuW.js:45:*/(function(e){(function(){var t={}.hasOwnProperty;function n(){for(var o="",i=0;i<arguments.length;i++){var u=arguments[i];u&&(o=l(o,r(u)))}return o}function r(o){if(typeof o=="st [... omitted end of long line]
+
+[M-05] CreateThread without Wait (manual review needed)
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\client\threads.lua:1:Citizen.CreateThread(function()
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\client\threads.lua:18:Citizen.CreateThread(function()
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\client\threads.lua:59:Citizen.CreateThread(function()
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\client\functions.lua:85:        CreateThread(function()
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\client\functions.lua:247:    CreateThread(function()
+
+[NUI URLs] script/link/http references
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\ui\build\index.html:6:    <link rel="icon" type="image/png" href="./favicon.ico" />
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\ui\build\index.html:8:    <script type="module" crossorigin src="./assets/index-kauAbiuW.js"></script>
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\ui\build\index.html:9:    <link rel="stylesheet" crossorigin href="./assets/index-2DBoaqkO.css">
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\ui\build\assets\index-kauAbiuW.js:33: */var zs=P,Le=ac;function w(e){for(var t="https://reactjs.org/docs/error-decoder.html?invariant="+e,n=1;n<arguments.length;n++)t+="&args[]="+encodeURIComponent(arguments[n]);retur [... omitted end of long line]
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\ui\build\assets\index-kauAbiuW.js:37:`+l[i].replace(" at new "," at ");return e.displayName&&s.includes("<anonymous>")&&(s=s.replace("<anonymous>",e.displayName)),s}while(1<=i&&0<=u);break}}}finally{Bl=!1,Error.prepar [... omitted end of long line]
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\ui\build\assets\index-kauAbiuW.js:40:`+o.stack}return{value:e,source:t,stack:l,digest:null}}function uo(e,t,n){return{value:e,source:null,stack:n??null,digest:t??null}}function Qo(e,t){try{console.error(t.value)}catch [... omitted end of long line]
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\ui\build\assets\index-kauAbiuW.js:44:	http://jedwatson.github.io/classnames
+c:\admirales\script_ver\script_ver\quarantine\under-review\0r-chat\ui\build\assets\index-kauAbiuW.js:45:*/(function(e){(function(){var t={}.hasOwnProperty;function n(){for(var o="",i=0;i<arguments.length;i++){var u=arguments[i];u&&(o=l(o,r(u)))}return o}function r(o){if(typeof o=="st [... omitted end of long line]
+

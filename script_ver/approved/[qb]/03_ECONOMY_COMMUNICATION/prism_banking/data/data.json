@@ -1,0 +1,70 @@
+{
+    "KBD21338": {
+        "transactions": [
+            {
+                "timestamp": 1776260032,
+                "description": "Initial deposit when creating bank account",
+                "Spendtype": "cash",
+                "amount": 8462352483.97,
+                "name": "Account Created",
+                "transactionType": "deposit"
+            },
+            {
+                "timestamp": 1776260258,
+                "description": "Interest earned on account balance",
+                "Spendtype": "interest",
+                "amount": 48000,
+                "name": "Interest Earned",
+                "transactionType": "deposit"
+            },
+            {
+                "timestamp": 1776260297,
+                "description": "Cash withdrawn from bank account",
+                "Spendtype": "cash",
+                "amount": 84245,
+                "name": "Bank Withdrawal",
+                "transactionType": "withdraw"
+            },
+            {
+                "timestamp": 1776274738,
+                "description": "Interest earned on account balance",
+                "Spendtype": "interest",
+                "amount": 48000,
+                "name": "Interest Earned",
+                "transactionType": "deposit"
+            },
+            {
+                "timestamp": 1776420862,
+                "description": "Interest earned on account balance",
+                "Spendtype": "interest",
+                "amount": 48000,
+                "name": "Interest Earned",
+                "transactionType": "deposit"
+            },
+            {
+                "timestamp": 1776425615,
+                "description": "Interest earned on account balance",
+                "Spendtype": "interest",
+                "amount": 48000,
+                "name": "Interest Earned",
+                "transactionType": "deposit"
+            },
+            {
+                "timestamp": 1776430694,
+                "description": "Interest earned on account balance",
+                "Spendtype": "interest",
+                "amount": 48000,
+                "name": "Interest Earned",
+                "transactionType": "deposit"
+            },
+            {
+                "timestamp": 1776434401,
+                "description": "Interest earned on account balance",
+                "Spendtype": "interest",
+                "amount": 48000,
+                "name": "Interest Earned",
+                "transactionType": "deposit"
+            }
+        ]
+    }
+}

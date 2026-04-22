@@ -1,0 +1,3 @@
+﻿Escaneo Critico
+Escaneo Alto
+Escaneo Medio

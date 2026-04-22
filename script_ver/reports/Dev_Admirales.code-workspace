@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../../Dev_Admirales"
+		},
+		{
+			"path": "../../../script_inst"
+		},
+		{
+			"path": "../.."
+		}
+	],
+	"settings": {
+		"powershell.cwd": "script_ver"
+	}
+}

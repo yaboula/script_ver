@@ -1,0 +1,12 @@
+---@class LobbyMember
+---@field source number
+---@field illegal_nickname string
+---@field level number
+---@field share number
+---@field photo number
+
+---@class Lobby
+---@field id number
+---@field members LobbyMember[]
+---@field owner number
+---@field currentJob Job|nil

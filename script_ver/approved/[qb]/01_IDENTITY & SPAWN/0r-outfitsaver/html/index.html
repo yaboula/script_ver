@@ -1,0 +1,86 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css"/>
+        <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    </head>
+    <body id="body">
+        <!-- <div id="mainDivDialog"></div> -->
+        <div id="mainDivEffect"></div>
+        <div id="mainDiv">
+            <div id="mainDivTop">
+                <div id="mainDivTopTop">
+                    <div id="mainDivTopTextDiv">
+                        <h4 id="mainText2" style="color: #FFF; font-family: ttfirs; font-size: 1.45vw;"></h4>
+                        <span class="description" style="color: rgba(255, 255, 255, 0.41); font-family: 'Open Sans', serif; font-size: 0.665vw; font-weight: 700;"></span>
+                    </div>
+                </div>
+            </div>
+            <div id="mainDivTop2">
+                <div id="mainDivTop2InputDiv">
+                    <input id="mainDivTop2Input" type="text" placeholder="">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <div id="mainDivTop2Btn" onclick="createNewOutfit()"><i class="fa-solid fa-plus"></i></div>
+            </div>
+            <!-- <div id="mainDivInfoDiv">
+                <div id="mainDivInfoTextDiv">
+                    <h4>Information</h4>
+                </div>
+                <div id="mainDivInfoDivInside">
+                    <i class="fa-solid fa-circle-info" style="color: #FFF; font-size: 1.8vw;"></i>
+                    <span style="width: 70%;">Save, organize, and apply your outfits instantly. Never waste time redoing your look – manage your wardrobe effortlessly!</span>
+                </div>
+            </div> -->
+            <div id="mainDivOutfitsDiv">
+                <div id="mainDivDialog"></div>
+                <div id="mainDivOutfitsDivTop">
+                    <h4 style="font-size: 0.7vw; font-weight: 600; color: #FFF; font-family: 'Gilroy-SemiBold';">List of Outfits</h4>
+                    <span style="color: rgba(255, 255, 255, 0.48); font-size: 0.58vw; font-family: 'Gilroy-Regular';">Manage your outfits</span>
+                </div>
+                <div id="mainDivOutfitsDivInside"></div>
+            </div>
+        </div>
+        <div id="mainDivOutsideButtons">
+            <div id="mainDivOutsideButton-showMouseInfos" class="mainDivOutsideButton" onclick="showMouseInfos()"><i class="fa-solid fa-computer-mouse-scrollwheel"></i></div>
+            <!-- <div id="mainDivOutsideButtonDiv">
+                <div id="mainDivOutsideButton-ClothRemoverMenu" class="mainDivOutsideButton" onclick="showClothRemoveButtons()"><i class="fa-solid fa-clothes-hanger"></i></div>
+                <div id="mainDivOutsideButton-Hat" class="mainDivOutsideButton mainDivOutsideButton-Hat" style="display: none;" onclick="removeCloth('Hat', '0')"><i class="fa-solid fa-hat-cowboy"></i></div>
+                <div id="mainDivOutsideButton-Masks" class="mainDivOutsideButton mainDivOutsideButton-Masks" style="display: none;" onclick="removeCloth('Masks', '1')"><i class="fa-solid fa-masks-theater"></i></div>
+                <div id="mainDivOutsideButton-Glasses" class="mainDivOutsideButton mainDivOutsideButton-Glasses" style="display: none;" onclick="removeCloth('Glasses', '1')"><i class="fa-solid fa-glasses"></i></div>
+                <div id="mainDivOutsideButton-Jacket" class="mainDivOutsideButton mainDivOutsideButton-Jacket" style="display: none;" onclick="removeCloth('Jacket', '11')"><i class="fa-solid fa-shirt"></i></div>
+                <div id="mainDivOutsideButton-Bag" class="mainDivOutsideButton mainDivOutsideButton-Bag" style="display: none;" onclick="removeCloth('Bag', '5')"><i class="fa-solid fa-bag-shopping"></i></div>
+                <div id="mainDivOutsideButton-Hairs" class="mainDivOutsideButton mainDivOutsideButton-Hairs" style="display: none;" onclick="removeCloth('Hairs', '2')"><i class="fa-solid fa-mustache"></i></div>
+                <div id="mainDivOutsideButton-Shoes" class="mainDivOutsideButton mainDivOutsideButton-Shoes" style="display: none;" onclick="removeCloth('Shoes', '6')"><i class="fa-solid fa-boot-heeled"></i></div>
+                <div id="mainDivOutsideButton-Pants" class="mainDivOutsideButton mainDivOutsideButton-Pants" style="display: none;" onclick="removeCloth('Pants', '4')"><i class="fa-sharp fa-solid fa-stocking"></i></div>
+            </div> -->
+        </div>
+        <div id="mouseInfosDiv">
+            <div class="mouseInfo">
+                <i class="fa-solid fa-arrows-up-down"></i>
+                <span class="adjust_camera"></span>
+            </div>
+            <div class="mouseInfo">
+                <i class="fa-solid fa-arrows-rotate"></i>
+                <span class="click_to_rotate"></span>
+            </div>
+            <div class="mouseInfo">
+                <i class="fa-solid fa-camera-rotate"></i>
+                <span class="use_arrow_to_rotate"></span>
+            </div>
+            <div class="mouseInfo">
+                <i class="fa-solid fa-hand-pointer"></i>
+                <span class="click_to_adjust_height"></span>
+            </div>
+            <div class="mouseInfo">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+                <span class="scroll_to_adjust_zoom"></span>
+            </div>
+        </div>  
+        <div id="pedDiv"></div>
+        <script src="index.js"></script>
+    </body>
+</html>

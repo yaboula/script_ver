@@ -1,0 +1,50 @@
+[
+    {
+        "transactionType": "interest",
+        "taxAmount": 2000,
+        "identifier": "KBD21338",
+        "amount": 50000,
+        "date": "2026-04-15 14:37:38",
+        "timestamp": 1776260258
+    },
+    {
+        "transactionType": "interest",
+        "timestamp": 1776274738,
+        "identifier": "KBD21338",
+        "amount": 50000,
+        "date": "2026-04-15 18:38:58",
+        "taxAmount": 2000
+    },
+    {
+        "transactionType": "interest",
+        "taxAmount": 2000,
+        "identifier": "KBD21338",
+        "amount": 50000,
+        "date": "2026-04-17 11:14:18",
+        "timestamp": 1776420858
+    },
+    {
+        "transactionType": "interest",
+        "timestamp": 1776425615,
+        "identifier": "KBD21338",
+        "amount": 50000,
+        "date": "2026-04-17 12:33:35",
+        "taxAmount": 2000
+    },
+    {
+        "timestamp": 1776430694,
+        "transactionType": "interest",
+        "identifier": "KBD21338",
+        "amount": 50000,
+        "date": "2026-04-17 13:58:14",
+        "taxAmount": 2000
+    },
+    {
+        "transactionType": "interest",
+        "timestamp": 1776434400,
+        "identifier": "KBD21338",
+        "amount": 50000,
+        "date": "2026-04-17 15:00:00",
+        "taxAmount": 2000
+    }
+]

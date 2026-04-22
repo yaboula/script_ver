@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="ui.css">
+		<script src="vendor/jquery/jquery-3.5.1.min.js"></script>
+        <script src="ui.js"></script>
+    </head>
+    <body>
+        <left>
+            <img src="logo.png">
+            <p id="stock"><b>Fuel in stock</b>:<BR> 150</p>
+            <div class="act">
+                <button id="retirar">To complete</button>
+                <button id="guardar">To fuel</button>
+            </div>
+        </left>
+        <div class="container">
+            <small>To fuel</small><br>
+            <span>Vehicle</span>
+            <div class="box">
+                <span id="title">Price to Pay</span>
+                <div class="item" style="border: none;">
+                    <button id="minus">-</button>
+                    <input id="amount" type="number" placeholder="$">
+                    <button id="plus" style="right: 5px;">+</button>
+                </div>
+            </div>
+            <div class="box">
+                <span id="title">Vehicle fuel</span>
+                <div class="item">
+                    <div class="litro">
+                        <span><span>$</span> 0.00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <span id="title">Price per liter</span>
+                <div class="item">
+                    <span id="fuel-price"><span style="font-size: 18px;">$</span> 1.00</span>
+                </div>
+            </div>
+        </div>
+        <div class="modal">
+            <button class="accept btninfo">Confirm</button>
+            <span>Are you sure you want to fill the tank worth<br><b>$ 85,00</b></span>
+            <button class="recuse btninfo">Cancel</button>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,561 @@
+{
+  "dont_have_enough_money": "You do not have enough money. (%s)",
+  "only_leader_can_do": "Only the leader can do that",
+  "job_start_blocked": "You cannot start this job right now !",
+  "job_start_blocked_by_player": "You cannot start this job because another player with ID: %s is preventing it.",
+  "you_do_not_have_required_items": "You do not have the required items: %s",
+  "leader_leave_game": "Leader leaves the game",
+  "progress": "Progress...",
+  "deliver": "Deliver",
+  "get_inside": "Get Inside",
+  "get_outside": "Get Outside",
+  "no_available_location": "There is no available location for this job at the moment",
+  "put_box": "Put Box",
+  "you_do_not_have_permission": "You do not have permission to access this menu.",
+
+  "lobby": {
+    "invited_player": "Invited the player",
+    "player_not_available": "Player not available",
+    "lobby_not_found": "Lobby not found",
+    "lobby_is_full": "Lobby is full",
+    "already_in_lobby": "You are already in lobby",
+    "joined_lobby": "You joined the lobby",
+    "on_mission": "This lobby is on a mission",
+    "player_already_in_lobby": "The player is already in a lobby"
+  },
+
+  "market": {
+    "order_delivered": "Order placed, your products will be delivered as soon as possible",
+    "already_have_order": "You already have an active order",
+    "collect": "Collect",
+    "invalid_item": "Invalid item: %s",
+    "invalid_payment_method": "This payment method is disabled",
+    "disabled": "Illegal Market is disabled"
+  },
+
+  "jobs": {
+    "have_already_job": "You have already started a job",
+    "job_started": "Job started, follow the instructions",
+    "already_on_task": "You are already on a task",
+    "member_required_level": "This member is not the required level, %s",
+    "job_aborted": "Job aborted !",
+    "step_timeout": "You failed to complete the step in time. The job has been cancelled.",
+    "step_done": "Step complete, follow the instructions",
+    "job_stopped": "Job Stopped",
+    "job_done": "Job completed, payment done !",
+    "member_is_cooldown": "This member is in cooldown, %s",
+    "member_doesnot_have_required_job": "Member does not have the necessary job, %s",
+    "member_doesnot_have_required_gang": "Member does not have the necessary gang, %s",
+    "teamsize_min": "Your team does not have enough members to start this job. [%d]",
+    "teamsize_max": "Your team has too many members to start this job. [%d]",
+    "not_enough_police": "Not enough police!"
+  },
+
+  "bag_snatch": {
+    "label": "Smash and Grab",
+    "description": "Steal bags from parked cars.",
+    "information": "Quick grab jobs in parking lots. Fast in, fast out.",
+    "steps": {
+      "1": "Head to the marked parking lot on your GPS. Look for the area with several parked cars — this is your target zone.",
+      "2": "Approach a vehicle and break the window by use target button next to the window. Repeat this process for all marked vehicles.",
+      "3": "Open your inventory, find the stolen bags and open them to reveal the contents. Then follow the GPS to the buyer and use target to hand over the items."
+    },
+    "blips": {
+      "parking_lot": "Parking Lot"
+    },
+    "smash_window": "Smash Window",
+    "window_already_smashed": "The window is already smashed",
+    "leader_can_deliver": "Team leader can deliver the collected items",
+    "items_delivered": "Items delivered"
+  },
+
+  "car_theft": {
+    "label": "Car Theft",
+    "description": "Steal luxury vehicles",
+    "information": "Steal a high-end car for a client who doesnot ask questions.",
+    "steps": {
+      "1": "Follow the GPS marker on your map and head to the designated area. Stay alert — the place may be guarded.",
+      "2": "Engage with any hostile enemies in the area. Use cover, eliminate all threats, and make sure the location is safe before proceeding.",
+      "3": "Once the area is clear, locate the target vehicle and use target to open door. Make sure no enemies are left nearby that can stop you.",
+      "4": "Drive the stolen vehicle to the drop-off point shown on your GPS. Avoid police attention and safely deliver it to complete the job."
+    },
+    "blips": {
+      "area": "Car Theft"
+    },
+    "deliver_vehicle": "Deliver Vehicle",
+    "lockpick_door": "Lockpick vehicle door",
+    "enemies_disarmed": "Enemies disarmed, their vehicles stolen"
+  },
+
+  "chop_shop": {
+    "label": "Chop Shop Operation",
+    "description": "Dismantle stolen vehicles for parts.",
+    "information": "Strip down stolen vehicles and sell the parts on the black market.",
+    "steps": {
+      "1": "Go to the marked area on your GPS to locate the target vehicle.",
+      "2": "Use your Digiscanner to scan the surrounding area and find the car key signal. Once found, copy the key and unlock the vehicle.",
+      "3": "Drive the stolen vehicle carefully to the Chop Shop location marked on your map. Avoid attracting unwanted attention.",
+      "4": "Park the vehicle in the designated spot at the Chop Shop. Press [E] to dismantle it, then deliver the parts to the assigned contact or drop-off point."
+    },
+    "blips": {
+      "vehicle_location": "Vehicle",
+      "drop_off_location": "Chop Shop"
+    },
+    "digiscanner_comleted": "Copy complete back to vehicle",
+    "digiscanner_failed": "You failed, Try again !",
+    "park_vehicle": "Park the vehicle",
+    "chop_part": "To Chop Part",
+    "destroy_part": "Destroy Part"
+  },
+
+  "cocaine_job": {
+    "label": "Cocaine Smuggling",
+    "description": "Produce cocaine packets in the laboratory",
+    "information": "Handle the cocaine operation from gather to package.",
+    "steps": {
+      "1": "Head to any laboratory marked on your map. These labs are scattered around the city and named Cocaine Lab.",
+      "2": "Once inside the lab, approach the workstation and press [E] to start producing cocaine. After production, use the packaging station to pack the product before leaving."
+    },
+    "blips": {
+      "lab_location": "Cocaine Lab"
+    },
+    "unpack_coke": "Unpack Coke",
+    "cut_coke": "Cut Coke",
+    "package_coke": "Package Coke"
+  },
+
+  "corner_deal": {
+    "label": "Corner Dealing",
+    "description": "Sell drugs on the street.",
+    "information": "Hold a corner and deal drugs to passing customers.",
+    "steps": {
+      "1": "Open the menu with /drugsell and select a target area from the list to begin corner dealing.",
+      "2": "Head to the selected area shown on your GPS. Make sure it's a populated location with foot traffic.",
+      "3": "Stay in the area and wait for NPC customers to approach you. Interact with them to offer drugs and complete sales."
+    },
+    "blips": {
+      "area": "Area",
+      "customer": "Customer"
+    },
+    "commands": {
+      "desc_set_corner_area": "illegalpack, corner deal, set corner area."
+    },
+    "inputs": {
+      "heading": "Change Some Options",
+      "select_corner_area_label": "Corner Area",
+      "select_corner_area_description": "Select the area to corner hold",
+      "select_on_working": "On Working?",
+      "select_on_working_description": "Change working status",
+      "options_on_working_on_label": "On",
+      "options_on_working_off_label": "Off",
+      "select_drug_type_label": "Drug Type",
+      "select_drug_type_description": "Type of drug to sell"
+    },
+    "cant_corner_while_dead": "You can not corner holding while dead!",
+    "cant_corner_here": "You can not corner holding here!",
+    "not_enough_police": "Not enough police!",
+    "on_started": "You hold a corner, wait for customers",
+    "customer_given_up": "Customer has given up, waiting for another customer",
+    "offer_refused": "Offer refused!",
+    "offer_accepted": "Offer accepted!"
+  },
+
+  "counterfeit_money": {
+    "label": "Counterfeit Money Operation",
+    "description": "Produce counterfeit money step by step.",
+    "information": "Go through the full process of printing and preparing counterfeit money.",
+    "steps": {
+      "1": "Travel to any counterfeit facility marked on your map to begin the operation. Blip names are Counterfeit Facility.",
+      "2": "Use the equipment inside the lab to print counterfeit bills, then process and package them into dirty money ready for sale."
+    },
+    "blips": {
+      "lab_location": "Counterfeit Facility"
+    },
+    "place_paper": "Place Paper",
+    "cut_paper": "Cut Paper",
+    "package_money": "Package Money"
+  },
+
+  "diving": {
+    "label": "Underwater Looting",
+    "description": "Search wrecks for loots.",
+    "information": "Dive deep and recover sunkens.",
+    "steps": {
+      "1": "Approach the designated NPC marked on your map and use target button to start the diving mission.",
+      "2": "Use the boat spawn point to get a boat and head out to the dive location shown on your GPS.",
+      "3": "Equip your diving suit, dive underwater, and search the wrecks for loot. Collect loot using the target.",
+      "4": "After collecting the loot, return to the NPC onshore and use target to complete the mission and hand over the items."
+    },
+    "blips": {
+      "diving_npc": "Diving NPC",
+      "item": "Loot",
+      "boat": "Boat"
+    },
+    "put_on_diving_suit": "Put on suit",
+    "finish_job": "Finish job",
+    "spawn_boat": "Spawn Boat",
+    "anchored": "Anchored",
+    "unanchored": "Unanchored",
+    "collect": "Collect"
+  },
+
+  "fraud": {
+    "label": "Fraud Scheme",
+    "description": "Fake IDs and stolen credit cards.",
+    "information": "Capture and duplicate customer informations.",
+    "steps": {
+      "1": "Go to the marked ATM on your map and use target to insert the hacking device.",
+      "2": "Leave the immediate area and connect remotely to the device to avoid detection.",
+      "3": "Use your hacking tool to intercept customer data as they use the ATM. Wait patiently for customers to approach.",
+      "4": "Travel to the secret office marked on your GPS, then use the equipment to duplicate the stolen data.",
+      "5": "Use the duplicated data to withdraw money from the bank discreetly."
+    },
+    "blips": {
+      "atm": "ATM",
+      "customer": "Customer",
+      "office": "Fraud Loc",
+      "banker": "Banker"
+    },
+    "insert_device": "Insert device",
+    "capture_failed": "Information not recovered, waiting for other customer",
+    "capture_success": "Successful, wait for the other customer",
+    "open_laptop": "Open Laptop",
+    "place_card": "Place Card",
+    "card_placed": "Card placed !",
+    "withdraw_money": "Withdraw money",
+    "money_successfully_withdrawn": "Money successfully withdrawn",
+    "too_far_from_atm": "You are too far from the ATM"
+  },
+
+  "gun_smuggling": {
+    "label": "Gun Smuggling",
+    "description": "Move illegal firearms to the buyer.",
+    "information": "Smuggle weapons through tight security.",
+    "steps": {
+      "1": "Go to the marked location and use target to talk to the contact NPC.",
+      "2": "Head to the container area where the truck is parked.",
+      "3": "Use force to open the container lids by pressing target button near them.",
+      "4": "Operate the forklift to pick up the weapon crates and load them onto the truck.",
+      "5": "Drive the loaded truck carefully to the delivery location marked on your GPS.",
+      "6": "After delivery, return the forklift to the vehicle or designated spot."
+    },
+    "blips": {
+      "contact_npc": "Contact Npc",
+      "truck": "Truck",
+      "container": "Container",
+      "delivery": "Delivery"
+    },
+    "spawn_truck": "Spawn Truck",
+    "force_open": "Force Open",
+    "attached_forklift": "Crate picked up with forklift, take to truck",
+    "being_delivered": "Being delivered..."
+  },
+
+  "illegal_delivery": {
+    "label": "Illegal Delivery",
+    "description": "Deliver illegal deliveries to locations",
+    "information": "A high-risk, high-reward delivery",
+    "steps": {
+      "1": "Go to the marked location.",
+      "2": "Collect the boxes and load them into the vehicle by pressing [E] near the boxes.",
+      "3": "Drive carefully to each drop-off point marked on your GPS and unload the boxes by pressing [E].",
+      "4": "After all deliveries are complete, return to the vehicle and park it at the designated spot."
+    },
+    "blips": {
+      "location": "Illegal Delivery",
+      "vehicle": "Vehicle",
+      "delivery": "Delivery Point"
+    },
+    "donot_have_box": "You do not have the box",
+    "already_delivered_location": "Already delivered to this location",
+    "wait": "Wait...",
+    "pick_box": "Pick up box",
+    "box_delivered": "Box delivered",
+    "park_vehicle": "Park the vehicle"
+  },
+
+  "meth_job": {
+    "label": "Meth Lab Run",
+    "description": "Produce meth packets",
+    "information": "Handle the meth operation from cooking to package.",
+    "steps": {
+      "1": "Travel to any Meth Lab marked on your map to start the operation.",
+      "2": "Use the cooking station inside the lab to produce meth, then move to the packaging station to pack the meth."
+    },
+    "blips": {
+      "lab_location": "Meth Lab"
+    },
+    "cook": "Cook",
+    "hammer": "Hammer",
+    "package_meth": "Package Meth"
+  },
+
+  "money_laundering": {
+    "label": "Money Laundering",
+    "description": "Clean dirty money through a fake business.",
+    "information": "Use your front business to turn illegal cash into clean profit.",
+    "steps": {
+      "1": "Go to the marked money laundering location on your map and press [E] to start cleaning your dirty money through the fake business."
+    },
+    "blips": {
+      "lab_location": "Money Laundering"
+    },
+    "wash": "Wash",
+    "daily_limit_reached": "You have reached your daily limit for money laundering."
+  },
+
+  "moonshine": {
+    "label": "Moonshine",
+    "description": "Produce illegal alcohol and sell it on the black market.",
+    "information": "Set up a distillation system in an abandoned cabin deep in the woods. Gather the necessary ingredients, produce the moonshine, bottle it, and distribute it discreetly. Avoid attracting attention from the police or rival gangs.",
+    "steps": {
+      "1": "Go to the marked location and use target to talk to the contact NPC.",
+      "2": "Purchase the 'Moonshine Still' from the illegal market using the menu.",
+      "3": "Drive your vehicle to the designated distillation area marked on your map.",
+      "4": "Place the moonshine stills in the marked spots.",
+      "5": "Mash the fruit, mix the ingredients, and cook the moonshine using the stoves. Once cooked, package the product on the table, place it in your vehicle, and deliver it to the buyer discreetly."
+    },
+    "blips": {
+      "contact_npc": "Contact Npc",
+      "vehicle": "Vehicle",
+      "delivery": "Delivery",
+      "distillation": "Distillation Area"
+    },
+    "spawn_vehicle": "Spawn Vehicle",
+    "can_not_place_here": "You cannot place it here, it is too far",
+    "moonshine_pack_opened": "Moonshine pack is opened",
+    "add_items_to_pot": "Add items to pot",
+    "prepare_recipe": "Prepare Recipe",
+    "start_cooking": "Start Cooking",
+    "collect_product": "Collect Product",
+    "still_updated": "Still Updated",
+    "package": "Package",
+    "cooking_started": "Cooking started",
+    "product_collected": "Product collected",
+    "production_not_started": "Production has not started!",
+    "not_cooked_yet": "It is not cooked yet, you have to wait %d second",
+    "moonshine_packed": "Moonshine packed, placed in the vehicle",
+    "you_donot_have_moonshine": "You donot have enough moonshine. You need %d!",
+    "fruit_crushing": "Fruit Crushing",
+    "fruit_blending": "Fruit Blending"
+  },
+
+  "weed_job": {
+    "label": "Weed Distribution",
+    "description": "Handle the weed operation from gather to package.",
+    "information": "Handle the weed operation from gather to package.",
+    "steps": {
+      "1": "Go to any Weed Lab marked on your map to start gathering weed.",
+      "2": "Collect wild herbs, then go to the packaging station to package the wild herbs for distribution, and then roll them."
+    },
+    "blips": {
+      "lab_location": "Weed Lab"
+    },
+    "gather_weed": "Gather Weed",
+    "package_weed": "Package Weed",
+    "roll_weed": "Roll Weed"
+  },
+
+  "container_heli": {
+    "label": "Container Transport",
+    "description": "Transport containers using Skylift helicopters.",
+    "information": "Use Skylift helicopters to pick up and transport containers to a designated drop-off zone.",
+    "steps": {
+      "1": "Go to the marked area and approach the helipad. The Skylift helicopters will spawn when you get close.",
+      "2": "Use the Skylift helicopters to pick up all 6 containers and transport them to the delivery zone marked on your GPS.",
+      "3": "After all containers are delivered, return the helicopters to the helipad to complete the mission."
+    },
+    "blips": {
+      "area": "Container Area",
+      "container": "Container",
+      "delivery": "Delivery Zone",
+      "heli": "Helipad"
+    },
+    "attach_container": "Press [E] to Attach Container",
+    "detach_container": "Press [E] to Detach Container",
+    "container_attached": "Container attached to helicopter!",
+    "container_detached": "Container detached from helicopter.",
+    "container_delivered": "Container delivered successfully!",
+    "all_containers_delivered": "All containers delivered! Return the helicopters to the helipad.",
+    "return_heli": "[E] Return Helicopter",
+    "not_in_skylift": "You must be in a Skylift helicopter!",
+    "heli_already_has_container": "This helicopter already has a container attached!",
+    "no_container_attached": "No container is attached to this helicopter!",
+    "in_delivery_zone": "You are in the delivery zone. Press G to drop the container."
+  },
+
+  "plane_drug_delivery": {
+    "label": "Plane Drug Delivery",
+    "description": "Deliver drug packages by plane to various drop points.",
+    "information": "Load drug packages onto the plane and deliver them to multiple air drop points across the map. Be careful not to attract unwanted attention!",
+    "steps": {
+      "1": "Get to the airfield and take a plane",
+      "2": "Load drug packages onto the plane",
+      "3": "Deliver packages to drop points",
+      "4": "Return the plane to the airfield"
+    },
+    "blips": {
+      "airfield": "Airfield",
+      "plane": "Plane",
+      "loading_zone": "Loading Zone",
+      "drop_point": "Drop Point"
+    },
+    "pick_up_package": "[E] Pick Up Drug Package",
+    "load_package": "[E] Load Package Into Plane",
+    "return_plane": "[E] Return Plane and Complete Job",
+    "package_dropped": "Package dropped successfully!",
+    "loading_cancelled": "Loading cancelled"
+  },
+
+  "chicken_kidnapping": {
+    "label": "Animal Smuggling",
+    "description": "Steal chicken cages from a guarded farm.",
+    "information": "Infiltrate a guarded chicken farm, eliminate the guards, and steal 10 cages. Load them into your van and deliver them to the drop-off point.",
+    "steps": {
+      "1": "Go to the vehicle spawn location and get the delivery van",
+      "2": "Drive to the farm and eliminate all the guards",
+      "3": "Collect 10 cages and load them into the van",
+      "4": "Return the van with the cages to the delivery point"
+    },
+    "blips": {
+      "vehicle_spawn": "Van Spawn",
+      "farm": "Chicken Farm",
+      "delivery": "Delivery Point"
+    },
+    "take_cage": "Take Cage",
+    "too_far": "You are too far from the cage",
+    "taking_cage": "Taking cage...",
+    "cage_taken": "Cage taken! Take it to the van.",
+    "put_cage": "Put Cage in Van",
+    "putting_cage": "Loading cage into van...",
+    "cage_stored": "Cage loaded into van!",
+    "enemies_cleared": "Guards eliminated! Now collect the cages.",
+    "deliver_vehicle": "Deliver Vehicle and Complete Job"
+  },
+
+  "npc_boxing": {
+    "steps": {
+      "1": "Go to the marked location and press [E] to talk to the Boxing Coach.",
+      "2": "Accept fights, compete in boxing matches, and earn money based on your performance."
+    },
+    "blips": {
+      "contact_npc": "Boxing Coach"
+    },
+    "start_match": "Start Match",
+    "match_is_about_start": "The match is about to start in %d seconds.",
+    "left_ring": "You lost the match because you left the ring.",
+    "lost_match": "You lost the match!"
+  },
+
+  "police_alerts": {
+    "smashed_window": "The window of the car was broken, there was a theft",
+    "car_theft": "A car theft is in progress",
+    "corner_deal": "Corner drug selling!",
+    "chop_shop": "A vehicle is being dismantled",
+    "chop_shop_vehicle": "A vehicle is hacked",
+    "cocaine_job": "Suspicious activity detected at a known drug lab",
+    "counterfeit_money": "Suspicious activity detected at a counterfeit money operation",
+    "diving": "Suspicious activity detected at a diving operation",
+    "fraud": "Suspicious activity detected at a fraud operation",
+    "gun_smuggling": "Suspicious activity detected at a gun smuggling operation",
+    "illegal_delivery": "Suspicious activity detected at an illegal delivery operation",
+    "meth_job": "Suspicious activity detected at a meth lab",
+    "money_laundering": "Suspicious activity detected at a money laundering operation",
+    "moonshine": "Suspicious activity detected at a moonshine operation",
+    "weed_job": "Suspicious activity detected at a weed lab",
+    "container_heli": "Suspicious helicopter activity detected",
+    "plane_drug_delivery": "Suspicious air activity detected",
+    "chicken_kidnapping": "Suspicious activity at guarded farm"
+  },
+
+  "ui": {
+    "switch_heist_pack": "Switch to Heist Pack",
+    "no_license": "You do not have a license to access this script !",
+    "no_license_desc": "If you have updated the 0r_lib script and still think there is a problem, please contact us.",
+    "illegal": "Illegal",
+    "job": "Job",
+    "desc_menu": "A menu where you can build yourself easily and quick, enjoy!",
+    "exit": "Exit",
+    "lvl": "LVL",
+    "marketplace": "Marketplace",
+    "scenarios": "Scenarios",
+    "illegal_nickname": "Illegal Nickname",
+    "desc_illegal_nickname": "Please read illegal nickname rules before you set your custom nickname",
+    "new_nickname": "New nickname",
+    "save": "Save",
+    "team_list": "Team List",
+    "invite_player": "Invite Player",
+    "desc_invite_player": "And start playing together",
+    "player_source_id": "Player source id...",
+    "global_chat": "Global Chat",
+    "type_something": "Type something",
+    "cart": "Cart",
+    "money_type": "$",
+    "total": "Total",
+    "pay_with_cash": "Pay with Cash",
+    "pay_with_card": "Pay with Card",
+    "pay_with_black_money": "Pay with Black Money",
+    "add_to_cart": "Add to Cart",
+    "desc_invite_receive": "The player invited you to the illegal lobby, you can do business together and make money.",
+    "reject_invite": "Reject",
+    "accept_invite": "Accept",
+    "list_of_jobs": "List of Jobs",
+    "search_job": "Search by name...",
+    "exp_progress": "Exp Progress",
+    "information": "Information",
+    "desc_information": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in",
+    "start": "Start",
+    "required_job": "Required Job",
+    "filter": "Filter",
+    "order_delivery": "Order Delivery",
+    "remaining_time": "Remaining Time",
+    "desc_delivery": "Estimated time it will take for the shipment to arrive at the destination.",
+    "required_lvl": "Required Lvl",
+    "progress": "Progress",
+    "press": "Press",
+    "to_expand_panel": "to expand panel.",
+    "expand_panel_key": "B",
+    "stop_job": "Stop Current Job",
+    "close": "Close",
+    "server_name": "0Resmon",
+    "fraud": {
+      "fraud_exe": "fraud.exe",
+      "tutorial_txt": "tutorial.txt",
+      "tutorial": "Fraud Tutorial",
+      "tutorial_description": "Welcome to the fraud tutorial. This guide will walk you through how to use the laptop application to clone fake ID cards and generate illegal income.",
+      "step1_title": "Step #1 - Launch the Application",
+      "step1_description": "Open the 'fraud.exe' application on the laptop. No additional setup is required; it will directly start the card cloning process.",
+      "materials_title": "Required Materials",
+      "materials": {
+        "card_cloning": "Card Cloning Device (MSR)",
+        "fake_id_card": "Blank Fake ID Card"
+      },
+      "card_cloner_title": "Using the Card Cloner",
+      "card_cloner_description": "Ensure the MSR device is connected. Insert a blank card, then click 'Clone'. Your fake ID card will be ready to use or sell.",
+      "lester_sevices": "Lester Services",
+      "starting_service": "Starting Service",
+      "us_server": "@US Server",
+      "requesting_access": "Requesting Access",
+      "access_granted": "Access Granted.",
+      "installing_dependencies": "installing_dependencies",
+      "enter_correct_order": "Enter in the correct order.",
+      "card_cloner": {
+        "title": "Card Cloner",
+        "empty": "Empty, no card detected. Place it !",
+        "selected_data": "Selected data: ",
+        "clone_card": "Clone Card",
+        "game": {
+          "target": "Target Number: "
+        }
+      },
+      "code_json": "JSON"
+    },
+    "corner_deal": {
+      "sell": "Sell",
+      "cancel": "Cancel"
+    },
+    "moonshine": {
+      "mark_formula_order": "Mark the formula in the correct order"
+    }
+  }
+}

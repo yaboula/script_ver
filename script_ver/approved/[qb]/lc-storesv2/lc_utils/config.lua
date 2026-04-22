@@ -1,0 +1,110 @@
+
+Config = Config or {}
+
+Config.framework = "QBCore"
+Config.ESX_settings = {
+	['is_updated'] = true,
+	['shared_object'] = "esx:getSharedObject",
+	['esx_version'] = 'weight'
+}
+
+Config.locale = "en"
+Config.format = {
+
+	['currency'] = 'USD',
+	['location'] = 'en-US'
+}
+
+Config.custom_scripts_compatibility = {
+
+	['fuel'] = "default",
+	['inventory'] = "default",
+	['keys'] = "default",
+	['mdt'] = "default",
+	['target'] = "disabled",
+	['notification'] = "default",
+	['progress_bar'] = "default",
+}
+
+Config.notification = {
+	['has_title'] = false,
+	['position'] = "top-right",
+	['duration'] = 8000,
+}
+
+Config.marker_style = 1
+Config.spawned_vehicles = {
+	['lc_truck_logistics'] = {
+		['is_static'] = false,
+		['plate_prefix'] = "TR"
+	},
+
+	['lc_stores'] = {
+
+		['is_static'] = false,
+
+		['plate_prefix'] = "ST"
+
+	},
+
+	['lc_gas_stations'] = {
+
+		['is_static'] = false,
+
+		['plate_prefix'] = "GS"
+
+	},
+
+	['lc_dealership'] = {
+
+		['is_static'] = false,
+
+		['plate_prefix'] = "DE"
+
+	},
+
+	['lc_factories'] = {
+
+		['is_static'] = false,
+
+		['plate_prefix'] = "FA"
+
+	},
+
+	['lc_fishing_simulator'] = {
+
+		['is_static'] = false,
+
+		['plate_prefix'] = "FS"
+
+	}
+
+}
+
+Config.owned_vehicles = {
+	['plate_format'] = 'xxxxxxxx',
+	['default'] = {
+		['garage'] = 'motelgarage',
+		['garage_display_name'] = 'Motel Parking'
+	},
+
+	['airplane'] = {
+
+		['garage'] = 'intairport',
+
+		['garage_display_name'] = 'Airport Hangar'
+
+	},
+
+	['boat'] = {
+
+		['garage'] = 'lsymc',
+
+		['garage_display_name'] = 'LSYMC Boathouse'
+
+	}
+
+}
+
+Config.debug_job = false
+

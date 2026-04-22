@@ -1,0 +1,10 @@
+CREATE TABLE
+    IF NOT EXISTS `0resmon_illegal_profiles` (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        identifier VARCHAR(255) NOT NULL UNIQUE,
+        illegal_nickname VARCHAR(255) DEFAULT NULL,
+        photo INT DEFAULT 1,
+        exp INT DEFAULT 0,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    );

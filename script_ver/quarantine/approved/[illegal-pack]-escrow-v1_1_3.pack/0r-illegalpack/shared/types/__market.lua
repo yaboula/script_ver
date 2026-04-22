@@ -1,0 +1,6 @@
+---@class MarketItem
+---@field label string -- The label of the market item
+---@field itemName string -- The name of the item
+---@field image string -- The image URL of the item
+---@field price number -- The price of the item
+---@field job string -- The job associated with the item

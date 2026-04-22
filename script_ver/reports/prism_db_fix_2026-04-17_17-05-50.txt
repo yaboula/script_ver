@@ -1,0 +1,16 @@
+Prism Banking DB fix report - 2026-04-17 17:05:50
+
+Applied changes:
+- Updated prism_banking_accounts identifier RFT64842 -> DCA73809 and set primary=0 for migrated rows
+- Deleted orphan settings row for RFT64842
+- Updated nominee owner/nominee identifiers RFT64842 -> DCA73809
+
+Post-fix snapshot:
+accno	identifier	type	balance	primary	is_society
+2444192481	DCA73809	express	0	0	0
+3728181468	DCA73809	debit	4864	0	0
+7739593764	DCA73809	debit	5000	1	0
+identifier	creditscore	allow_transfer	is_optimized	wit_level	mcard_level
+DCA73809	600	1	1	1	1
+personal_accounts_without_player
+0

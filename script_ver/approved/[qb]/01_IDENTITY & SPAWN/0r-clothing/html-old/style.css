@@ -1,0 +1,1250 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    margin: 0;
+}
+
+body {
+    display: block;
+    padding: 0;
+    margin: 0;
+    user-select: none;
+    background-color: transparent !important;
+    overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 0.2vw;
+    background: rgba(255, 255, 255, 0.17);
+}
+
+::-webkit-scrollbar-thumb {
+	background: #FFF;
+}
+
+@font-face {
+    font-family: ttfirs;
+    src: url(fonts/ttfirs.ttf);
+}
+
+@font-face {
+    font-family: 'Gilroy-Regular';
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;
+    src: url('fonts/gilroy-regular-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Gilroy-Medium';
+    font-weight: 500;
+    font-style: italic;
+    font-display: block;
+    src: url('fonts/gilroy-medium-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Gilroy-SemiBold';
+    src: url('fonts/gilroy-semibold-webfont.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: AGENCYB;
+    src: url(fonts/AGENCYB.ttf);
+}
+
+@font-face {
+    font-family: AGENCYR;
+    src: url(fonts/AGENCYR.ttf);
+}
+
+#pedDiv {
+    width: 35%;
+    height: 80%;
+    position: absolute;
+    left: 35%;
+    right: 0;
+    margin: auto;
+    bottom: 0;
+    /* background-color: red; */
+}
+
+#pedDiv2 {
+    width: 25%;
+    height: 80%;
+    position: absolute;
+    left: 17%;
+    bottom: 0;
+    display: flex;
+    /* background-color: red; */
+    z-index: -1;
+}
+
+#pedDiv3 {
+    width: 25%;
+    height: 80%;
+    position: absolute;
+    right: 15%;
+    bottom: 0;
+    display: flex;
+    /* background-color: red; */
+    z-index: -1;
+}
+
+.mainDiv {
+    width: 27%;
+    height: 100%;
+    position: absolute;
+    left: -1.5%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1;
+    /* background-color: red; */
+}
+
+#mainDivEffect {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    display: none;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.90) 0%, rgba(0, 0, 0, 0.00) 29.77%), linear-gradient(270deg, rgba(0, 0, 0, 0.90) 0%, rgba(0, 0, 0, 0.00) 28.05%), linear-gradient(90deg, rgba(0, 0, 0, 0.49) 0%, rgba(0, 0, 0, 0.00) 51.02%), linear-gradient(270deg, rgba(0, 0, 0, 0.49) 0%, rgba(0, 0, 0, 0.00) 48.98%), linear-gradient(0deg, rgba(0, 0, 0, 0.90) 0%, rgba(0, 0, 0, 0.00) 42.87%), linear-gradient(0deg, rgba(0, 0, 0, 0.49) 0%, rgba(0, 0, 0, 0.00) 50%);
+    /* background: linear-gradient(90deg, rgba(21, 23, 29, 0.9) 0%, rgba(20, 22, 27, 0) 29.77%), linear-gradient(270deg, rgba(18, 19, 22, 0.9) 0%, rgba(17, 19, 24, 0) 28.05%), linear-gradient(90deg, rgba(21, 24, 31, 0.49) 0%, rgba(24, 26, 31, 0) 51.02%), linear-gradient(270deg, rgba(9, 10, 14, 0.49) 0%, rgba(15, 16, 19, 0) 48.98%), linear-gradient(0deg, rgba(16, 18, 22, 0.9) 0%, rgba(17, 19, 24, 0) 42.87%), linear-gradient(0deg, rgba(21, 24, 31, 0.49) 0%, rgba(27, 29, 34, 0) 50%); */
+    /* background: linear-gradient(271deg, rgba(82, 203, 255, 0.20) 0.87%, rgba(36, 40, 50, 0.00) 37.29%), linear-gradient(270deg, rgba(82, 203, 255, 0.15) 0%, rgba(36, 40, 50, 0.00) 39.51%); */
+    /* background: linear-gradient(271deg, rgba(36, 40, 50, 0.00) 0.87%, rgba(36, 40, 50, 0.50) 37.29%), linear-gradient(270deg, #242832 0%, rgba(36, 40, 50, 0.00) 39.51%); */
+    /* background: linear-gradient(271deg, rgba(12, 14, 17, 0.4) 0.87%, rgba(15, 16, 20, 0) 57.29%), linear-gradient(270deg, #0e0f13f6 0%, rgba(20, 22, 26, 0) 61.51%); */
+    z-index: -1;
+    transform: rotate(180deg);
+}
+
+#mainDivTop {
+    width: 94%;
+    height: 6.5%;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex-direction: column;
+    /* background-color: blue; */
+}
+
+#mainDivTopTop {
+    width: 78%;
+    height: 97%;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: row;
+    /* gap: 1.6vw; */
+}
+
+#mainDivTopTextDiv {
+    width: 90%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.2vw;
+    text-transform: uppercase;
+    /* background-color: red; */
+}
+
+#mainDivBottomLines {
+    width: 80%;
+    height: 5%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: red; */
+}
+
+#mainDivBottomLinesRE {
+    width: 100%;
+    height: 55%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: radial-gradient(45% 700% at 45% 50%, rgba(255, 255, 255, 0.36) 0%, rgba(255, 255, 255, 0.00) 100%);
+    /* background: radial-gradient(50% 600% at 50% 50%, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.00) 100%); */
+}
+
+#mainDivBottomLinesAB {
+    width: 62%;
+    height: 90%;
+    position: absolute;
+    left: -9%;
+    right: 0;
+    bottom: -35%;
+    margin: auto;
+    display: flex;
+    background: #52CBFF;
+    /* box-shadow: 0px 4px 40px 10px rgba(93, 224, 177, 0.19); */
+}
+
+.mainDivBottom {
+    width: 100%;
+    height: 80%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 5%;
+}
+
+#mainDivBottomLeft {
+    width: 70%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-right: 3.5%;
+    gap: 0.8vw;
+    /* background-color: black; */
+}
+
+#mainDivBottomLeftTop {
+    width: 100%;
+    height: 5%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 0.5vw;
+    /* background-color: rgba(255, 0, 0, 0.445); */
+}
+
+.mainDivBottomLeftTopDivs {
+    width: 10.5%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 1px;
+    border: 1px solid transparent;
+    background: #ffffff1c;
+    /* background: radial-gradient(125.41% 177.5% at 50% 0%, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0.00) 82.4%); */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.mainDivBottomLeftTopDivsActive {
+    border: 1px solid #52CBFF;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(82, 203, 255, 0.14) 0%, rgba(82, 203, 255, 0.29) 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+}
+
+.mainDivBottomLeftTopDivs:hover {
+    cursor: pointer;
+    border: 1px solid #52CBFF;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(82, 203, 255, 0.14) 0%, rgba(82, 203, 255, 0.29) 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+}
+
+#mainDivBottomLeftBottom {
+    width: 93%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 0.8vw;
+}
+
+#mainDivBottomLeftBottomHome {
+    width: 93%;
+    height: 85%;
+    position: relative;
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-content: flex-start;
+    gap: 0.5vw 0.8vw;
+}
+
+.mainDivBottomLeftBottomHomeDiv {
+    width: 45.5%;
+    height: 18.25%;
+    position: relative;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: radial-gradient(124.16% 111.18% at 50% 50%, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.00) 100%);
+}
+
+.mainDivBottomLeftBottomHomeDiv:hover {
+    cursor: pointer;
+    border: 1px solid #52CBFF;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(82, 203, 255, 0.14) 0%, rgba(82, 203, 255, 0.29) 100%);
+}
+
+#mainDivBottomLeftBottomHomeDivBottomDiv {
+    width: 100%;
+    height: 26%;
+    position: absolute;
+    bottom: 0;
+    border-radius: 0px 0px 3px 3px;
+    background: rgba(0, 0, 0, 0.37);
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Gilroy-Medium';
+    font-weight: 500;
+    font-size: 0.7vw;
+}
+
+.mainDivBottomLeftBottomHomeDiv:hover #mainDivBottomLeftBottomHomeDivBottomDiv {
+    color: #52CBFF;
+}
+
+#mainDivBottomLeftBottomHomePayment {
+    width: 93%;
+    height: 11%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: radial-gradient(124.16% 111.18% at 50% 50%, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.00) 100%);
+    gap: 0.3vw;
+}
+
+#mainDivBottomLeftBottomHomePaymentDiv {
+    width: 95%;
+    height: 35%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 0.5vw;
+}
+
+#mainDivBottomLeftBottomHomePaymentDiv2 {
+    width: 95%;
+    height: 35%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 0.5vw;
+}
+
+#mainDivBottomLeftBottomHomePaymentDiv3 {
+    width: 95%;
+    height: 35%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 0.5vw;
+}
+
+#mainDivBottomLeftBottomHomePaymentDivButton {
+    width: 48%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    font-family: 'Gilroy-Medium';
+    font-weight: 500;
+    font-size: 0.6vw;
+    border-radius: 1px;
+    background: rgba(0, 0, 0, 0.31);
+}
+
+#mainDivBottomLeftBottomHomePaymentDivButton:hover {
+    cursor: pointer;
+}
+
+.mainDivBottomLeftBottomInside {
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 0.8vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+    direction: rtl;
+    /* background-color: rgba(255, 0, 0, 0.445); */
+}
+
+.mainDivBottomLeftBottomDiv {
+    width: 99.4%;
+    height: fit-content;
+    max-height: 13.6vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 0.45vw;
+    transition: max-height 0.8s ease;
+    direction: ltr;
+    /* background-color: rgba(255, 0, 0, 0.315); */
+}
+
+#mainDivBottomLeftBottomDivTop {
+    width: 99.4%;
+    height: fit-content;
+    position: relative;
+    border-radius: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    background: radial-gradient(124.16% 111.18% at 50% 50%, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.00) 100%);
+    color: #FFF;
+    font-family: 'Gilroy-SemiBold';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    font-size: 0.7vw;
+    text-align: center;
+    /* gap: 9vw; */
+    padding-top: 0.23vw;
+    padding-bottom: 0.23vw;
+}
+
+#mainDivBottomLeftBottomDivTop2 {
+    width: 99.4%;
+    height: fit-content;
+    position: relative;
+    border-radius: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    background: radial-gradient(124.16% 111.18% at 50% 50%, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.00) 100%);
+    color: #FFF;
+    font-family: 'Gilroy-SemiBold';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    font-size: 0.7vw;
+    text-align: center;
+    /* gap: 9vw; */
+    padding-top: 0.23vw;
+    padding-bottom: 0.23vw;
+}
+
+#mainDivBottomLeftBottomDivTopInside {
+    width: 94%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    position: relative;
+}
+
+#mainDivBottomLeftBottomDivTopExpandDiv {
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    color: #FFF;
+    /* text-shadow: 0px 0px 10.2px rgba(93, 224, 177, 0.99); */
+    font-family: 'Gilroy-Medium';
+    text-align: center;
+    font-size: 0.6vw;
+    gap: 0.3vw;
+}
+
+.mainDivBottomLeftBottomDivTopExpandDivButton {
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.12);
+    font-size: 0.4vw;
+    text-align: center;
+    padding-left: 0.23vw;
+    padding-right: 0.23vw;
+    padding-top: 0.15vw;
+    padding-bottom: 0.15vw;
+}
+
+.mainDivBottomLeftBottomDivTopExpandDivButton:hover {
+    cursor: pointer;
+}
+
+.mainDivBottomLeftBottomDivBottom {
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.35vw 0.5vw;
+    overflow-y: scroll;
+    /* background-color: red; */
+}
+
+.mainDivBottomLeftBottomDivBottomEmptyDiv {
+    width: 99.4%;
+    height: fit-content;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: radial-gradient(124.16% 111.18% at 50% 50%, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.00) 100%);
+    /* background-size: cover;
+    background-repeat: no-repeat; */
+    color: #FFF;
+    font-family: 'Gilroy-Medium';
+    font-weight: 500;
+    padding-top: 0.5vw;
+    padding-bottom: 0.5vw;
+    outline: 0;
+    font-size: 0.7vw;
+}
+
+.mainDivBottomLeftBottomDivBottomEmptyDiv2 {
+    width: 44%;
+    height: fit-content;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: radial-gradient(124.16% 111.18% at 50% 50%, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.00) 100%);
+    padding-left: 0.6vw;
+    gap: 0.3vw;
+    flex-direction: column; 
+    align-items: flex-start; 
+    font-size: 0.65vw; 
+    color: #52CBFF; 
+    /* text-shadow: 0px 0px 10.2px rgba(93, 224, 177, 0.99); */
+    font-family: 'Gilroy-Medium';
+    font-weight: 500;
+    padding-top: 0.3vw;
+    padding-bottom: 0.5vw;
+    outline: 0;
+}
+
+.MDBLBDBEDButton {
+    width: 5.5%;
+    height: fit-content;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 1.889px;
+    background: rgba(255, 255, 255, 0.26);
+    font-size: 0.35vw;
+    padding-top: 0.25vw; 
+    padding-bottom: 0.25vw;
+}
+
+.MDBLBDBEDButton i {
+    margin-top: 12%;
+}
+
+.MDBLBDBEDButton:hover {
+    cursor: pointer;
+}
+
+.mainDivBottomLeftBottomDivBottomInput {
+    width: 99.4%;
+    height: fit-content;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: radial-gradient(124.16% 111.18% at 50% 50%, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.00) 100%);
+    /* background-size: cover;
+    background-repeat: no-repeat; */
+    color: #FFF;
+    font-family: 'Gilroy-Medium';
+    font-weight: 500;
+    padding-top: 0.5vw;
+    padding-bottom: 0.5vw;
+    outline: 0;
+    font-size: 0.7vw;
+}
+
+.mainDivBottomLeftBottomDivBottomInputSlider, .mainDivBottomLeftBottomDivBottomInputSlider2 {
+    width: 95%;
+    height: 5px !important;
+    -webkit-appearance: none;
+    appearance: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    background: radial-gradient(124.16% 111.18% at 50% 50%, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.00)100%);
+}
+
+.mainDivBottomLeftBottomDivBottomInputSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 5px;
+    height: 9px;
+    background: #FFF;
+    cursor: e-resize;
+}
+
+.mainDivBottomLeftBottomDivBottomInputSlider2::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 4px;
+    height: 9px;
+    background: #FFF;
+    cursor: e-resize;
+}
+
+#mainDivBottomLeftBottomButtons {
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mainDivBottomLeftBottomButton {
+    width: 48%;
+    height: fit-content;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 0.5vw;
+    padding-bottom: 0.5vw;
+    border-radius: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: radial-gradient(82.37% 92.14% at 50% 50%, rgba(255, 255, 255, 0.30) 0%, rgba(255, 255, 255, 0.00) 100%);
+    color: #FFF;
+    font-weight: 500;
+    font-family: 'Gilroy-Medium';
+    font-size: 0.78vw;
+}
+
+.mainDivBottomLeftBottomButton:hover {
+    cursor: pointer;
+    border: 1px solid #52CBFF;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(82, 203, 255, 0.14) 0%, rgba(82, 203, 255, 0.29) 100%);
+}
+
+.mainDivBottomLeftBottomDivBottomDiv {
+    width: 30.2%;
+    height: fit-content;
+    position: relative;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(125.41% 177.5% at 50% 0%, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0.00) 82.4%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 1px solid transparent;
+    overflow: hidden;
+    padding-top: 2.84vw;
+    padding-bottom: 2.84vw;
+}
+
+.mainDivBottomLeftBottomDivBottomDiv:hover {
+    cursor: pointer;
+    border: 1px solid #52CBFF;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(82, 203, 255, 0.14) 0%, rgba(82, 203, 255, 0.29) 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.mainDivBottomLeftBottomDivBottomDiv img {
+    position: absolute;
+    width: 1.7vw;
+}
+
+.mainDivBottomLeftBottomDivBottomDiv:hover img {
+    position: absolute;
+    top: 10%;
+    transition: 200ms ease-in-out;
+    width: 3.5vw;
+}
+
+.mainDivBottomLeftBottomDivBottomDivSelected {
+    border-radius: 3px;
+    border: 1px solid #52CBFF;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(82, 203, 255, 0.14) 0%, rgba(82, 203, 255, 0.29) 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.mainDivBottomLeftBottomDivBottomDivSelected img {
+    position: absolute;
+    top: 10%;
+    width: 3.5vw;
+}
+
+.mainDivBottomLeftBottomDivBottomDivBigIMGSelected img {
+    position: absolute;
+    top: 3%;
+    width: 5.2vw;
+}
+
+.mainDivBottomLeftBottomDivBottomDivBigIMG img {
+    position: absolute;
+    width: 3.9vw;
+}
+
+.mainDivBottomLeftBottomDivBottomDivBigIMGSelected:hover img {
+    position: absolute;
+    top: 3%;
+    width: 5.2vw;
+}
+
+.mainDivBottomLeftBottomDivBottomDivBigIMG:hover img {
+    position: absolute;
+    top: 3%;
+    transition: 200ms ease-in-out;
+    width: 5.2vw;
+}
+
+.mainDivBottomLeftBottomDivBottomDivBigIMG2 img {
+    position: absolute;
+    width: 7.9vw;
+}
+
+.mainDivBottomLeftBottomDivBottomDivBigIMG2Selected img {
+    position: absolute;
+    top: -35%;;
+    width: 10vw;
+}
+
+.mainDivBottomLeftBottomDivBottomDivBigIMG2Selected:hover img {
+    position: absolute;
+    top: -35%;;
+    width: 10vw;
+}
+
+.mainDivBottomLeftBottomDivBottomDivBigIMG2:hover img {
+    position: absolute;
+    top: -35%;
+    transition: 200ms ease-in-out;
+    width: 10vw;
+}
+
+.mainDivBottomLeftBottomDivBottomDivBigIMG3 img {
+    position: absolute;
+    top: -20%;
+    width: 6vw;
+}
+
+.mainDivBottomLeftBottomDivBottomDivBigIMG3Selected img {
+    position: absolute;
+    top: -65%;
+    transition: 200ms ease-in-out;
+    width: 10vw;
+}
+
+.mainDivBottomLeftBottomDivBottomDivBigIMG3Selected:hover img {
+    position: absolute;
+    top: -65%;
+    transition: 200ms ease-in-out;
+    width: 10vw;
+}
+
+.mainDivBottomLeftBottomDivBottomDivBigIMG3:hover img {
+    position: absolute;
+    top: -65%;
+    transition: 200ms ease-in-out;
+    width: 10vw;
+}
+
+.mainDivBottomLeftBottomDivBottomDivBigIMGMask img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 6vw;
+}
+
+.mainDivBottomLeftBottomDivBottomDivBigIMGMaskSelected img {
+    position: absolute;
+    top: 17%;
+    width: 10vw;
+    bottom: 0;
+    margin: auto;
+}
+
+.mainDivBottomLeftBottomDivBottomDivBigIMGMaskSelected:hover img {
+    position: absolute;
+    top: 17%;
+    width: 10vw;
+    bottom: 0;
+    margin: auto;
+}
+
+.mainDivBottomLeftBottomDivBottomDivBigIMGMask:hover img {
+    position: absolute;
+    top: 17%;
+    transition: 200ms ease-in-out;
+    width: 10vw;
+}
+
+.mainDivBottomLeftBottomDivBottomDivBigIMGGlasses img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 6vw;
+    left: -3%;
+}
+
+.mainDivBottomLeftBottomDivBottomDivBigIMGGlasses:hover img {
+    position: absolute;
+    top: 12%;
+    transition: 200ms ease-in-out;
+    width: 9vw;
+    left: -31%;
+}
+
+.mainDivBottomLeftBottomDivBottomDivColor {
+    width: 6.75%;
+    height: fit-content;
+    position: relative;
+    display: flex;
+    padding-top: 0.55vw;
+    padding-bottom: 0.55vw;
+    transition: 200ms ease-in-out;
+    border-radius: 1px;
+    border: 1px solid transparent;
+}
+
+.mainDivBottomLeftBottomDivBottomDivColor:hover {
+    transition: 200ms ease-in-out;
+    cursor: pointer;
+    border: 1px solid #52CBFF;
+}
+
+#mainDivBottomRight {
+    width: 4%;
+    height: 74.5%;
+    position: absolute;
+    left: 21%;
+    top: 1%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.43vw;
+    z-index: 2;
+}
+
+.mainDivBottomRightDiv {
+    width: 100%;
+    height: 9.58%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    background: radial-gradient(85.9% 85.9% at 50% 50%, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0.00) 100%);
+    color: #FFF;
+    font-family: 'Gilroy-Regular';
+    font-weight: 500;
+    font-size: 0.65vw;
+    border: 1px solid transparent;
+}
+
+.mainDivBottomRightDivActive {
+    border: 1px solid #FFF;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.29) 100%);
+}
+
+.mainDivBottomRightDiv:hover {
+    cursor: pointer;
+    border: 1px solid #FFF;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.29) 100%);
+}
+
+#mainDivBottomRightDivInside {
+    width: 100%;
+    height: 80%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    gap: 0.5vw;
+}
+
+#mainDivBottomLeftBottomDivTitle {
+    width: 97.4%;
+    height: fit-content;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 0.5vw;
+    padding-bottom: 0.5vw;
+    border-radius: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: radial-gradient(82.37% 92.14% at 50% 50%, rgba(255, 255, 255, 0.30) 0%, rgba(255, 255, 255, 0.00) 100%);
+    color: #FFF;
+    font-weight: 500;
+    font-family: 'Gilroy-Medium';
+    font-size: 0.78vw;
+}
+
+.mainDivBottomLeftBottomInsideOutDiv {
+    width: 94%;
+    height: fit-content;
+    min-height: 29vh;
+    position: relative;
+    border-radius: 1px;
+    background: radial-gradient(125.41% 177.5% at 50% 0%, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.00) 82.4%);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 0.4vw;
+    padding-top: 0.6vw;
+    padding-bottom: 0.6vw;
+    overflow-y: auto;
+    gap: 0.6vw;
+    transition: min-height 0.8s ease;
+}
+
+.mainDivBottomLeftBottomInsideOutDiv::-webkit-scrollbar {
+    width: 0;
+}
+
+.mainDivBottomLeftBottomInsideOutDiv::-webkit-scrollbar-thumb {
+	background: transparent;
+}
+
+#mainDivDialog {
+    width: fit-content;
+    height: 14%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    /* top: 0; */
+    bottom: 2%;
+    margin: auto;
+    border-radius: 15px;
+    background: rgba(26, 26, 26, 0);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 1.5vw;
+    padding-right: 1.5vw;
+    gap: 0.6vw;
+    z-index: 3;
+}
+
+#mainDivDialog h4 {
+    color: #FFF;
+    font-family: 'Gilroy-SemiBold';
+    font-weight: 600;
+    font-size: 0.9vw;
+}
+
+#mainDivDialog span {
+    color: rgba(255, 255, 255, 0.48);
+    font-family: 'Gilroy-Regular';
+    font-weight: 500;
+    font-size: 0.6vw;
+}
+
+#mainDivDialogButtons {
+    width: fit-content;
+    height: 24%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    font-family: 'Gilroy-Medium';
+    font-weight: 500;
+    font-size: 0.6vw;
+    gap: 0.4vw;
+}
+
+.mainDivDialogButtonGreen {
+    width: 31%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    background: radial-gradient(132.55% 105.85% at 50% 50%, rgba(82, 203, 255, 0.61) 0%, rgba(82, 203, 255, 0.00) 100%);
+    color: #FFF;
+    padding-left: 1.4vw;
+    padding-right: 1.4vw;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.mainDivDialogButtonGreen:hover {
+    cursor: pointer;
+    background: radial-gradient(132.55% 105.85% at 50% 50%, rgba(82, 203, 255, 0.71) 0%, rgba(82, 203, 255, 0.00) 100%);
+}
+
+.mainDivDialogButtonRed {
+    width: 31%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    background: rgba(255, 97, 97, 0.42);
+    color: #FFF;
+    padding-left: 1.4vw;
+    padding-right: 1.4vw;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.mainDivDialogButtonRed:hover {
+    cursor: pointer;
+    background: rgba(255, 97, 97, 0.22);
+}
+
+#mainDivBottomLeftBottomDivSpanDiv {
+    width: 87%;
+    height: fit-content;
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: right;
+    color: #FFF;
+    /* text-shadow: 0px 0px 10.2px rgba(93, 224, 177, 0.99); */
+    font-weight: 500;
+    font-family: 'Gilroy-Medium';
+    font-size: 0.6vw;
+}
+
+#mainDivBottomLeftBottomDivSpanDiv2 {
+    width: 87%;
+    height: fit-content;
+    position: absolute;
+    text-align: right;
+    color: #FFF;
+    /* text-shadow: 0px 0px 10.2px rgba(93, 224, 177, 0.99); */
+    font-weight: 500;
+    font-family: 'Gilroy-Medium';
+    font-size: 0.6vw;
+}
+
+#mainDivOutsideButtons {
+    width: 27%;
+    height: 71.5%;
+    position: absolute;
+    left: 20.5%;
+    display: none;
+    top: 10.8%;
+    /* bottom: 0; */
+    /* margin: auto; */
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 0.4vw;
+    z-index: 2;
+    /* background-color: red; */
+}
+
+.mainDivOutsideButtonDiv {
+    width: 31px;
+    height: fit-content;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 0.4vw;
+    /* background-color: red; */
+}
+
+.mainDivOutsideButton {
+    width: 31px; /* Sabit genişlik */
+    height: 31px; /* Sabit yükseklik */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6vw;
+    border-radius: 4px;
+    border: 1px solid #ffffff1c;
+    background: #ffffff1c;
+    flex-shrink: 0;
+    color: #FFf;
+}
+
+.mainDivOutsideButton i {
+    font-size: 0.5vw; /* İkon boyutunu sabit tut */
+}
+
+.mainDivOutsideButton:hover {
+    cursor: pointer;
+    border: 1px solid #52CBFF;
+    background: #52cbff2d;
+}
+
+.mainDivOutsideButtonActive {
+    border: 1px solid #52CBFF;
+    background: #52cbff2d;
+}
+
+#mouseInfosDiv {
+    position: absolute;
+    right: 2%;
+    top: 7%;
+    width: 220px;
+    /* background: rgba(0, 0, 0, 0.6); */
+    background: radial-gradient(124.16% 111.18% at 50% 50%, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.00) 100%);
+    padding: 12px;
+    border-radius: 8px;
+    font-family: 'Gilroy-Medium', sans-serif;
+    font-size: 13px;
+    color: #fff;
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.mouseInfo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* background: rgba(255, 255, 255, 0.1); */
+    background: radial-gradient(124.16% 111.18% at 50% 50%, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.00) 100%);
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+.mouseInfo i {
+    font-size: 16px;
+    color: #fff;
+    min-width: 18px;
+}
+
+#animPosInfoDiv {
+    width: fit-content;
+    height: 5%;
+    position: absolute;
+    right: 2%;
+    bottom: -10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    border-radius: 6px;
+    background: rgba(6, 6, 6, 0.95);
+    padding-left: 0.7vw;
+    padding-right: 0.7vw;
+    gap: 0.6vw;
+    /* padding: 0.6vw; */
+}
+
+#APIDKeyDiv {
+    width: fit-content;
+    height: 55%;
+    border-radius: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    overflow: hidden;
+}
+  
+#APIDKeyDivLeft {
+    width: fit-content;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-family: 'Gilroy-Regular';
+    padding-left: 0.6vw;
+    padding-right: 0.6vw;
+    font-size: 0.65vw;
+    padding-top: 0.1vw;
+}
+  
+#APIDKeyDivLeft span {
+    color: rgba(255, 255, 255, 0.50);
+}
+  
+#APIDKeyDivRight {
+    width: fit-content;
+    height: 100%;
+    border-radius: 0px 1px 1px 0px;
+    background: rgba(255, 255, 255, 0.05);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* color: rgba(255, 255, 255, 0.40); */
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+    font-size: 0.7vw;
+    padding-left: 0.6vw;
+    padding-right: 0.6vw;
+}
+  
+#APIDKeyDivRight span {
+    color: #52CBFF;
+    /* text-shadow: 0px 0px 25.954px rgba(93, 224, 177, 0.74); */
+}

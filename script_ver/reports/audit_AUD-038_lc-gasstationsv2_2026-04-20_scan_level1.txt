@@ -1,0 +1,708 @@
+AUD-038 Level1 Scan
+root=c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2
+date=2026-04-20
+
+[C-01] pattern=PerformHttpRequest count=2
+-- hits-start --
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server.lua:160:        PerformHttpRequest(apiUrl, function(status, body)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\fuel_sv.lua:547:	PerformHttpRequest("https://raw.githubusercontent.com"..updatePath.."/master/version", checkVersion, "GET")
+-- hits-end --
+[C-02] pattern=PerformHttpRequestInternal count=0
+[C-03] pattern=load\( count=0
+[C-04] pattern=loadstring\( count=0
+[C-05] pattern=assert\s*\(\s*load\( count=0
+[C-06] pattern=RunString\( count=0
+[C-07] pattern=\\x[0-9a-fA-F]{2} count=0
+[C-08] pattern=string\.char\( count=0
+[C-09] pattern=os\.execute\( count=0
+[C-10] pattern=io\.popen\( count=0
+[C-11] pattern=io\.open\( count=0
+[C-12] pattern=debug\. count=0
+[A-01] pattern=steam:[A-Za-z0-9]+ count=0
+[A-02] pattern=discord:[A-Za-z0-9]+ count=0
+[A-03] pattern=license:[A-Za-z0-9]+ count=0
+[A-04] pattern=\b(?:\d{1,3}\.){3}\d{1,3}\b count=0
+[A-05] pattern=RegisterCommand\( count=4
+-- hits-start --
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:164:	RegisterCommand('setfuel', function(source, args)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:176:	RegisterCommand('getCachedFuelPrice', function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:182:	RegisterCommand('getVehNameForBlacklist', function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\server\main.lua:230:ESX.RegisterCommand("fuel", 'admin', function(xPlayer, args, showError)
+-- hits-end --
+[A-06] pattern=RegisterNetEvent\( count=87
+-- hits-start --
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_client.lua:138:RegisterNetEvent('LegacyFuel:LixeiroCB01')
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_client.lua:146:RegisterNetEvent('LegacyFuel:LixeiroCB02')
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_client.lua:366:RegisterNetEvent("fuel:setvehiclefuel")
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\client.lua:300:RegisterNetEvent('gas_station:setJobData')
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\client.lua:308:RegisterNetEvent('gas_station:open')
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\client.lua:338:RegisterNetEvent('gas_station:openRequest')
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\client.lua:412:RegisterNetEvent('gas_station:closeUI')
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\client.lua:434:RegisterNetEvent('gas_station:startContract')
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\client.lua:698:RegisterNetEvent('gas_station:setBlips')
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\client.lua:732:RegisterNetEvent('gas_station:updateBlip')
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\client.lua:788:RegisterNetEvent('gas_station:Notify')
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\server\main.lua:200:RegisterNetEvent('esx-fuel:server:UpdateVehicleDateTimeIn', function(plate)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\server\main.lua:248:RegisterNetEvent('esx-sna-fuel:server:getFuelPriceAndStockFromGasStationScript', function(gasStationId)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\client\main.lua:353:RegisterNetEvent("esx-fuel:BuyJerrican", function(data)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\client\main.lua:417:RegisterNetEvent("esx-fuel:UpdateWeaponAmmo", function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\client\main.lua:473:RegisterNetEvent("esx-fuel:PickupPump", function(data)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\client\main.lua:676:RegisterNetEvent("esx-fuel:RefuelVehicle", function(ped, vehicle)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\client\main.lua:1210:RegisterNetEvent("esx-fuel:SetFuel", function(fuel)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\client\main.lua:1228:RegisterNetEvent("esx-fuel:client:AttachRope", function(netIdProp, posPump, model, citizenid)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\client\main.lua:1282:RegisterNetEvent("esx-fuel:client:DetachRope", function(citizenid, src)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\client\main.lua:1336:RegisterNetEvent("esx-sna-fuel:client:getFuelPriceAndStockFromGasStationScript")
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\station_cl.lua:305:    RegisterNetEvent('cdn-fuel:stations:updatelocation', function(updatedlocation)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\station_cl.lua:319:    RegisterNetEvent('cdn-fuel:stations:client:buyreserves', function(data)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\station_cl.lua:333:    RegisterNetEvent('cdn-fuel:station:client:initiatefuelpickup', function(amountBought, finalReserveAmountAfterPurchase, location)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\station_cl.lua:624:    RegisterNetEvent('cdn-fuel:stations:client:purchaselocation', function(data)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\station_cl.lua:666:    RegisterNetEvent('cdn-fuel:stations:client:sellstation', function(data)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\station_cl.lua:716:    RegisterNetEvent('cdn-fuel:stations:client:purchasereserves:final', function(location, price, amount)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\station_cl.lua:881:    RegisterNetEvent('cdn-fuel:stations:client:purchasereserves', function(data)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\station_cl.lua:1061:    RegisterNetEvent('cdn-fuel:stations:client:changefuelprice', function(data)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\station_cl.lua:1197:    RegisterNetEvent('cdn-fuel:stations:client:sellstation:menu', function(data)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\station_cl.lua:1350:    RegisterNetEvent('cdn-fuel:stations:client:changestationname', function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\station_cl.lua:1483:    RegisterNetEvent('cdn-fuel:stations:client:managemenu', function(location)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\station_cl.lua:1808:    RegisterNetEvent('cdn-fuel:stations:client:managefunds', function(location)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\station_cl.lua:2017:    RegisterNetEvent('cdn-fuel:stations:client:WithdrawFunds', function(data)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\station_cl.lua:2161:    RegisterNetEvent('cdn-fuel:stations:client:DepositFunds', function(data)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\station_cl.lua:2303:    RegisterNetEvent('cdn-fuel:stations:client:Shutoff', function(location)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\station_cl.lua:2309:    RegisterNetEvent('cdn-fuel:stations:client:purchasemenu', function(location)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\station_cl.lua:2480:    RegisterNetEvent('cdn-fuel:stations:openmenu', function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\station_sv.lua:192:    RegisterNetEvent('cdn-fuel:server:updatelocationlabels', function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\station_sv.lua:208:    RegisterNetEvent('cdn-fuel:server:buyStation', function(location, CitizenID)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\station_sv.lua:226:    RegisterNetEvent('cdn-fuel:stations:server:sellstation', function(location)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\station_sv.lua:252:    RegisterNetEvent('cdn-fuel:station:server:Withdraw', function(amount, location, StationBalance)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\station_sv.lua:272:    RegisterNetEvent('cdn-fuel:station:server:Deposit', function(amount, location, StationBalance)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\station_sv.lua:296:    RegisterNetEvent('cdn-fuel:stations:server:Shutoff', function(location)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\station_sv.lua:314:    RegisterNetEvent('cdn-fuel:station:server:updatefuelprice', function(fuelprice, location)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\station_sv.lua:326:    RegisterNetEvent('cdn-fuel:station:server:updatereserves', function(reason, amount, currentlevel, location)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\station_sv.lua:350:    RegisterNetEvent('cdn-fuel:station:server:updatebalance', function(reason, amount, StationBalance, location, FuelPrice)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\station_sv.lua:380:    RegisterNetEvent('cdn-fuel:stations:server:buyreserves', function(location, price, amount)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\station_sv.lua:472:    RegisterNetEvent('cdn-fuel:station:server:fuelpickup:failed', function(location)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\station_sv.lua:504:    RegisterNetEvent('cdn-fuel:station:server:fuelpickup:finished', function(location)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\station_sv.lua:540:    RegisterNetEvent('cdn-fuel:station:server:updatelocationname', function(newName, location)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\station_sv.lua:761:RegisterNetEvent('cdn-fuel:station:server:updatereserves', function(reason, amount, currentlevel, location)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\station_sv.lua:785:RegisterNetEvent('cdn-fuel:station:server:updatebalance', function(reason, amount, StationBalance, location, FuelPrice)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\fuel_sv.lua:132:	RegisterNetEvent('cdn-fuel:server:phone:givebackmoney', function(amount)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\fuel_sv.lua:144:RegisterNetEvent("cdn-fuel:server:OpenMenu", function(amount, inGasStation, hasWeapon, purchasetype, FuelPrice)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\fuel_sv.lua:252:RegisterNetEvent("cdn-fuel:server:PayForFuel", function(amount, purchasetype, FuelPrice, electric)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\fuel_sv.lua:294:RegisterNetEvent("cdn-fuel:server:purchase:jerrycan", function(purchasetype)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\fuel_sv.lua:379:RegisterNetEvent('cdn-fuel:info', function(type, amount, srcPlayerData, itemdata)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\fuel_sv.lua:517:RegisterNetEvent('cdn-syphoning:callcops', function(coords)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\electric_sv.lua:130:RegisterNetEvent("cdn-fuel:server:electric:OpenMenu", function(amount, inGasStation, hasWeapon, purchasetype, FuelPrice)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:400:	RegisterNetEvent('cdn-fuel:client:updatestationlabels', function(location, newLabel)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:482:	RegisterNetEvent('cdn-fuel:client:updatestationlabels', function(location, newLabel)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:608:	RegisterNetEvent('cdn-fuel:client:phone:PayForFuel', function(amount)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:804:	RegisterNetEvent('cdn-fuel:client:OpenContextMenu', function(total, fuelamounttotal, purchasetype)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:864:RegisterNetEvent('cdn-fuel:client:RefuelMenu', function(type)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:912:RegisterNetEvent('cdn-fuel:client:grabnozzle', function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:1106:RegisterNetEvent('cdn-fuel:client:returnnozzle', function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:1192:RegisterNetEvent('cdn-fuel:client:FinalMenu', function(purchasetype)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:1618:RegisterNetEvent('cdn-fuel:client:SendMenuToServer', function(type)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:1821:RegisterNetEvent('cdn-fuel:client:RefuelVehicle', function(data)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:2373:RegisterNetEvent('cdn-fuel:jerrycan:refuelmenu', function(itemData)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:2631:RegisterNetEvent('cdn-fuel:client:jerrycanfinalmenu', function(purchasetype)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:2659:RegisterNetEvent('cdn-fuel:client:purchasejerrycan', function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:2795:RegisterNetEvent('cdn-fuel:jerrycan:refuelvehicle', function(data)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:3147:RegisterNetEvent('cdn-fuel:jerrycan:refueljerrycan', function(data)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:3466:RegisterNetEvent('cdn-syphoning:syphon:menu', function(itemData)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:3693:RegisterNetEvent('cdn-syphoning:syphon', function(data)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:4163:RegisterNetEvent('cdn-syphoning:client:callcops', function(coords)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:4213:RegisterNetEvent('cdn-fuel:client:grabnozzle:special', function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:4343:RegisterNetEvent('cdn-fuel:client:returnnozzle:special', function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\electric_cl.lua:198:        RegisterNetEvent('cdn-electric:client:OpenContextMenu', function(total, fuelamounttotal, purchasetype)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\electric_cl.lua:256:    RegisterNetEvent('cdn-fuel:client:electric:FinalMenu', function(purchasetype)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\electric_cl.lua:490:    RegisterNetEvent('cdn-fuel:client:electric:SendMenuToServer', function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\electric_cl.lua:694:    RegisterNetEvent('cdn-fuel:client:electric:ChargeVehicle', function(data)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\electric_cl.lua:1076:    RegisterNetEvent('cdn-fuel:client:grabelectricnozzle', function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\electric_cl.lua:1185:    RegisterNetEvent('cdn-fuel:client:electric:RefuelMenu', function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\electric_cl.lua:1231:        RegisterNetEvent('cdn-fuel:client:electric:phone:PayForFuel', function(amount)
+-- hits-end --
+[A-08] pattern=GetConvar\( count=0
+[A-09] pattern=ExecuteCommand\( count=0
+[M-01] pattern=(SELECT|INSERT|UPDATE|DELETE).*(\.\.|\+) count=13
+-- hits-start --
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_server.lua:148:			local sql = "UPDATE `gas_station_business` SET total_visits = total_visits + 1 WHERE gas_station_id = @gas_station_id";
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_server.lua:208:						local sql = "UPDATE `gas_station_business` SET stock = @stock, customers = customers + 1, money = money + @price, total_money_earned = total_money_earned + @price, gas_sold = gas_sold + @amount WHERE gas_station_id = @gas_station_id";
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_server.lua:264:			local sql = "UPDATE `gas_station_business` SET total_visits = total_visits + 1 WHERE gas_station_id = @gas_station_id";
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server.lua:284:        "UPDATE `gas_station_business` SET money = money + @amount WHERE gas_station_id = @gas_station_id",
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server.lua:308:            "UPDATE `gas_station_business` SET money = @money, total_money_spent = total_money_spent + @amount WHERE gas_station_id = @gas_station_id",
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server.lua:1080:            ("UPDATE `gas_station_business` SET %s = @stock, gas_bought = gas_bought + @amount, distance_traveled = distance_traveled + @distance WHERE gas_station_id = @gas_station_id"):format(fuelCol),
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server.lua:1100:            "UPDATE `gas_station_business` SET distance_traveled = distance_traveled + @distance, total_money_earned = total_money_earned + @price WHERE gas_station_id = @gas_station_id",
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server.lua:1116:        "UPDATE `gas_station_employees` SET jobs_done = jobs_done + 1 WHERE gas_station_id = @gas_station_id and user_id = @user_id",
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server.lua:1608:                ("UPDATE `gas_station_business` SET %s_upgrade = %s_upgrade + 1 WHERE gas_station_id = @gas_station_id"):format(upId, upId),
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\server\main.lua:276:	local sql = "UPDATE `gas_station_business` SET total_visits = total_visits + 1 WHERE gas_station_id = @gas_station_id";
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\server\main.lua:308:	local sql = "UPDATE `gas_station_business` SET stock = @stock, customers = customers + 1, money = money + @price, total_money_earned = total_money_earned + @price, gas_sold = gas_sold + @amount WHERE gas_station_id = @gas_station_id";
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\station_sv.lua:809:	local sql = "UPDATE `gas_station_business` SET customers = customers + 1, money = money + @price, total_money_earned = total_money_earned + @price, gas_sold = gas_sold + @amount WHERE gas_station_id = @gas_station_id";
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\station_sv.lua:833:			MySQL.Async.execute('UPDATE gas_station_business SET total_visits = total_visits + 1 WHERE `gas_station_id` = ?', {location})
+-- hits-end --
+[M-02] pattern=innerHTML count=1
+-- hits-start --
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\nui\panel.js:1365:                targetContainer.innerHTML = ""; // Clears the canvas
+-- hits-end --
+[M-03] pattern=eval\( count=0
+[M-05] pattern=CreateThread\( count=37
+-- hits-start --
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_client.lua:260:Citizen.CreateThread(function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_client.lua:330:Citizen.CreateThread(function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_client.lua:546:Citizen.CreateThread(function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_client.lua:674:	Citizen.CreateThread(function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_client.lua:716:	Citizen.CreateThread(function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_client.lua:770:	Citizen.CreateThread(function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_client.lua:804:	Citizen.CreateThread(function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server.lua:140:Citizen.CreateThread(function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server.lua:2198:Citizen.CreateThread(function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\client.lua:690:Citizen.CreateThread(function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\client.lua:796:Citizen.CreateThread(function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\client\main.lua:288:CreateThread(function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\client\main.lua:856:CreateThread(function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\client\main.lua:972:CreateThread(function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\client\main.lua:1113:CreateThread(function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\fuel_sv.lua:541:CreateThread(function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\station_cl.lua:387:                        CreateThread(function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\station_cl.lua:443:                                                    CreateThread(function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\station_cl.lua:2739:    CreateThread(function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:364:	CreateThread(function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:412:	CreateThread(function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:500:	CreateThread(function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:522:CreateThread(function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:570:CreateThread(function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:1048:		CreateThread(function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:2055:			CreateThread(function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:4291:	CreateThread(function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:4480:						CreateThread(function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:4492:						CreateThread(function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:4756:					CreateThread(function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:4768:					CreateThread(function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:4963:CreateThread(function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:5403:CreateThread(function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:5495:CreateThread(function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\electric_cl.lua:870:                CreateThread(function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\electric_cl.lua:1141:        CreateThread(function()
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\electric_cl.lua:1361:        CreateThread(function()
+-- hits-end --
+[NUI-EXT-URL] pattern=https?:// count=511
+-- hits-start --
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\server\main.lua:13:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\server\main.lua:30:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\server\main.lua:47:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\server\main.lua:64:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\server\main.lua:81:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\server\main.lua:98:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\server\main.lua:115:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\server\main.lua:342:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\server\main.lua:359:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\server\main.lua:376:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\server\main.lua:393:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\server\main.lua:410:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\server\main.lua:427:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\server\main.lua:444:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_server.lua:13:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_server.lua:30:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_server.lua:47:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_server.lua:64:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_server.lua:81:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_server.lua:98:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_server.lua:115:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_server.lua:334:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_server.lua:351:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_server.lua:368:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_server.lua:385:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_server.lua:402:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_server.lua:419:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_server.lua:436:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_client.lua:13:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_client.lua:30:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_client.lua:47:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_client.lua:64:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_client.lua:81:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_client.lua:98:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_client.lua:115:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_client.lua:845:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_client.lua:862:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_client.lua:879:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_client.lua:896:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_client.lua:913:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_client.lua:930:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\source\fuel_client.lua:947:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\locales\fr.lua:13:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\locales\fr.lua:30:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\locales\fr.lua:47:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\locales\fr.lua:64:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\locales\fr.lua:81:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\locales\fr.lua:98:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\locales\fr.lua:115:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\locales\fr.lua:171:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\locales\fr.lua:188:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\locales\fr.lua:205:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\locales\fr.lua:222:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\locales\fr.lua:239:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\locales\fr.lua:256:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\locales\fr.lua:273:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\locales\en.lua:13:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\locales\en.lua:30:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\locales\en.lua:47:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\locales\en.lua:64:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\locales\en.lua:81:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\locales\en.lua:98:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\locales\en.lua:115:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\locales\en.lua:171:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\locales\en.lua:188:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\locales\en.lua:205:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\locales\en.lua:222:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\locales\en.lua:239:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\locales\en.lua:256:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\locales\en.lua:273:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\html\ui.js:43:					$.post('http://LegacyFuel/escape', JSON.stringify({}));
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\html\ui.js:77:				$.post('http://LegacyFuel/removeanim', JSON.stringify({}));
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\html\ui.js:79:					$.post('http://LegacyFuel/pay', JSON.stringify({ new_perc: perc_new*dataGas.price }));
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\html\ui.js:83:					$.post('http://LegacyFuel/pay', JSON.stringify({ new_perc: price }));
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\html\ui.js:92:				$.post('http://LegacyFuel/escape', JSON.stringify({})); 
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\html\ui.js:126:					$.post('http://LegacyFuel/notifytext', JSON.stringify({ text: texto }));
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\html\ui.js:130:				$.post('http://LegacyFuel/notifytext', JSON.stringify({ text: texto }));
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\html\ui.js:159:			$.post('http://LegacyFuel/startanim', JSON.stringify({}));
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\fxmanifest.lua:13:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\fxmanifest.lua:30:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\fxmanifest.lua:47:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\fxmanifest.lua:64:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\fxmanifest.lua:81:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\fxmanifest.lua:98:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\fxmanifest.lua:115:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\fxmanifest.lua:184:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\fxmanifest.lua:201:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\fxmanifest.lua:218:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\fxmanifest.lua:235:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\fxmanifest.lua:252:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\fxmanifest.lua:269:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\fxmanifest.lua:286:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\html\ui.html:5:        <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\html\ui.html:6:        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\html\ui.html:7:        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;1,200&display=swap" rel="stylesheet">
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\config.lua:13:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\config.lua:30:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\config.lua:47:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\config.lua:64:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\config.lua:81:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\config.lua:98:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\config.lua:115:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\config.lua:458:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\config.lua:475:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\config.lua:492:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\config.lua:509:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\config.lua:526:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\config.lua:543:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\config.lua:560:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\html\ui.css:1:@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;1,200&display=swap');
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\fxmanifest.lua:13:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\fxmanifest.lua:30:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\fxmanifest.lua:47:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\fxmanifest.lua:64:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\fxmanifest.lua:81:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\fxmanifest.lua:98:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\fxmanifest.lua:115:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\fxmanifest.lua:194:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\fxmanifest.lua:211:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\fxmanifest.lua:228:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\fxmanifest.lua:245:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\fxmanifest.lua:262:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\fxmanifest.lua:279:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\fxmanifest.lua:296:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\client\main.lua:13:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\client\main.lua:30:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\client\main.lua:47:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\client\main.lua:64:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\client\main.lua:81:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\client\main.lua:98:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\client\main.lua:115:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\client\main.lua:1360:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\client\main.lua:1377:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\client\main.lua:1394:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\client\main.lua:1411:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\client\main.lua:1428:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\client\main.lua:1445:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\esx-sna-fuel\client\main.lua:1462:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\functions\functions_client.lua:13:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\functions\functions_client.lua:30:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\functions\functions_client.lua:47:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\functions\functions_client.lua:64:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\functions\functions_client.lua:81:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\functions\functions_client.lua:98:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\functions\functions_client.lua:115:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\functions\functions_client.lua:275:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\functions\functions_client.lua:292:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\functions\functions_client.lua:309:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\functions\functions_client.lua:326:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\functions\functions_client.lua:343:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\functions\functions_client.lua:360:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\functions\functions_client.lua:377:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\config.lua:13:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\config.lua:30:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\config.lua:47:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\config.lua:64:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\config.lua:81:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\config.lua:98:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\config.lua:115:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\config.lua:373:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\config.lua:390:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\config.lua:407:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\config.lua:424:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\config.lua:441:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\config.lua:458:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\config.lua:475:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server_utils.lua:13:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server_utils.lua:30:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server_utils.lua:47:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server_utils.lua:64:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server_utils.lua:81:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server_utils.lua:98:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server_utils.lua:115:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server_utils.lua:173:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server_utils.lua:190:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server_utils.lua:207:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server_utils.lua:224:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server_utils.lua:241:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server_utils.lua:258:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server_utils.lua:275:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server.lua:13:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server.lua:30:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server.lua:47:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server.lua:64:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server.lua:81:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server.lua:98:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server.lua:115:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server.lua:144:    print(("^2[%s] Authenticated! Support discord: https://discord.gg/U5YDgbh^7 ^3[v%s%s] ^7")
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server.lua:152:    local apiUrl      = ("http://projetocharmoso.com:3000/api/check-version-v2?script=%d&version=%s")
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server.lua:180:                        print(("^4[%s] For the complete changelog, visit our Discord: https://discord.gg/U5YDgbh^7")
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server.lua:412:                 .. "Please update your 'lc_utils' script: https://github.com/LeonardoSoares98/lc_utils/releases/latest/download/lc_utils.zip")
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server.lua:2210:        "^3The 'lc_utils' file is missing. Please refer to the documentation: ^7https://docs.lixeirocharmoso.com/gas_stations/installation^7")
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server.lua:2218:               .. "Please update: https://github.com/LeonardoSoares98/lc_utils/releases/latest/download/lc_utils.zip^7")
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server.lua:2342:        "^3The framework wasn't loaded in 'lc_utils'. Check 'Config.framework' and the docs: ^7https://docs.lixeirocharmoso.com/^3'.^7")
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server.lua:2571:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server.lua:2588:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server.lua:2605:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server.lua:2622:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server.lua:2639:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server.lua:2656:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\server.lua:2673:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\nui\ui.html:6:		<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\nui\ui.html:7:		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\nui\ui.html:10:		<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\nui\ui.html:13:		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\nui\ui.html:14:		<link id="css-bs-light" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" disabled>
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\nui\ui.html:23:		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\nui\ui.html:26:		<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\nui\ui.html:27:		<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\nui\ui.html:30:		<script src="https://cfx-nui-lc_utils/nui/index.js" type="text/javascript"></script>
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\nui\ui.html:31:		<link rel="stylesheet" href="https://cfx-nui-lc_utils/nui/css/navigation-tabs.css">
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\nui\ui.html:104:									<!-- Blips and colors ID from there: https://docs.fivem.net/docs/game-references/blips/ -->
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\nui\panel.js:996: * https://github.com/aarcoraci
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\shared\config.lua:13:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\shared\config.lua:30:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\shared\config.lua:47:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\shared\config.lua:64:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\shared\config.lua:81:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\shared\config.lua:98:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\shared\config.lua:115:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\shared\config.lua:2828:             https://skyrossm.github.io/PolyZoneCreator/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\shared\config.lua:3778:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\shared\config.lua:3795:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\shared\config.lua:3812:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\shared\config.lua:3829:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\shared\config.lua:3846:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\shared\config.lua:3863:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\shared\config.lua:3880:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\station_sv.lua:13:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\station_sv.lua:30:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\station_sv.lua:47:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\station_sv.lua:64:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\station_sv.lua:81:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\station_sv.lua:98:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\station_sv.lua:115:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\station_sv.lua:866:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\station_sv.lua:883:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\station_sv.lua:900:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\station_sv.lua:917:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\station_sv.lua:934:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\station_sv.lua:951:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\station_sv.lua:968:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\fuel_sv.lua:13:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\fuel_sv.lua:30:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\fuel_sv.lua:47:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\fuel_sv.lua:64:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\fuel_sv.lua:81:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\fuel_sv.lua:98:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\fuel_sv.lua:115:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\fuel_sv.lua:547:	PerformHttpRequest("https://raw.githubusercontent.com"..updatePath.."/master/version", checkVersion, "GET")
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\fuel_sv.lua:563:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\fuel_sv.lua:580:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\fuel_sv.lua:597:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\fuel_sv.lua:614:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\fuel_sv.lua:631:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\fuel_sv.lua:648:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\fuel_sv.lua:665:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\electric_sv.lua:13:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\electric_sv.lua:30:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\electric_sv.lua:47:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\electric_sv.lua:64:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\electric_sv.lua:81:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\electric_sv.lua:98:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\electric_sv.lua:115:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\electric_sv.lua:250:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\electric_sv.lua:267:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\electric_sv.lua:284:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\electric_sv.lua:301:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\electric_sv.lua:318:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\electric_sv.lua:335:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\server\electric_sv.lua:352:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\nui\css\bootstrap-night.css:3: * Bootstrap v4.6.0 (https://getbootstrap.com/)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\nui\css\bootstrap-night.css:6: * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\nui\css\bootstrap-night.css:8: * Bootstrap-Night (https://vinorodrigues.github.io/bootstrap-dark/)
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\nui\css\bootstrap-night.css:2383:  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%2300bc8c' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\nui\css\bootstrap-night.css:2406:  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23cfcfcf' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") right 0.75rem center/8px 10px no-repeat, #3b3b3b url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%2300bc8c' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e") center right 1.75rem/calc(0.75em + 0.375rem) calc(0.75em + 0.375rem) no-repeat;
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\nui\css\bootstrap-night.css:2484:  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23e74c3c' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\nui\css\bootstrap-night.css:2507:  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23cfcfcf' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") right 0.75rem center/8px 10px no-repeat, #3b3b3b url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23e74c3c' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e") center right 1.75rem/calc(0.75em + 0.375rem) calc(0.75em + 0.375rem) no-repeat;
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\nui\css\bootstrap-night.css:3793:  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%23fafafa' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26l2.974 2.99L8 2.193z'/%3e%3c/svg%3e");
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\nui\css\bootstrap-night.css:3800:  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3e%3cpath stroke='%23fafafa' d='M0 2h4'/%3e%3c/svg%3e");
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\nui\css\bootstrap-night.css:3813:  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fafafa'/%3e%3c/svg%3e");
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\nui\css\bootstrap-night.css:3863:  background: #3b3b3b url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23cfcfcf' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") right 0.75rem center/8px 10px no-repeat;
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\nui\css\bootstrap-night.css:4589:  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\nui\css\bootstrap-night.css:4627:  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\nui\css\bootstrap-night.css:6314:  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23fafafa' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5L4.25 4l2.5-2.5L5.25 0z'/%3e%3c/svg%3e");
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\nui\css\bootstrap-night.css:6318:  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23fafafa' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5L3.75 4l-2.5 2.5L2.75 8l4-4-4-4z'/%3e%3c/svg%3e");
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\zh-cn.lua:13:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\zh-cn.lua:30:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\zh-cn.lua:47:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\zh-cn.lua:64:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\zh-cn.lua:81:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\zh-cn.lua:98:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\zh-cn.lua:115:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\zh-cn.lua:265:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\zh-cn.lua:282:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\zh-cn.lua:299:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\zh-cn.lua:316:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\zh-cn.lua:333:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\zh-cn.lua:350:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\zh-cn.lua:367:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\fr.lua:13:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\fr.lua:30:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\fr.lua:47:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\fr.lua:64:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\fr.lua:81:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\fr.lua:98:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\fr.lua:115:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\fr.lua:264:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\fr.lua:281:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\fr.lua:298:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\fr.lua:315:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\fr.lua:332:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\fr.lua:349:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\fr.lua:366:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\en.lua:13:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\en.lua:30:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\en.lua:47:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\en.lua:64:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\en.lua:81:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\en.lua:98:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\en.lua:115:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\en.lua:264:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\en.lua:281:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\en.lua:298:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\en.lua:315:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\en.lua:332:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\en.lua:349:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\en.lua:366:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\de.lua:13:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\de.lua:30:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\de.lua:47:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\de.lua:64:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\de.lua:81:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\de.lua:98:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\de.lua:115:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\de.lua:264:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\de.lua:281:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\de.lua:298:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\de.lua:315:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\de.lua:332:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\de.lua:349:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\lang\de.lua:366:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\config.lua:13:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\config.lua:30:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\config.lua:47:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\config.lua:64:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\config.lua:81:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\config.lua:98:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\config.lua:115:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\config.lua:1558:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\config.lua:1575:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\config.lua:1592:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\config.lua:1609:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\config.lua:1626:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\config.lua:1643:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\config.lua:1660:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\client.lua:13:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\client.lua:30:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\client.lua:47:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\client.lua:64:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\client.lua:81:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\client.lua:98:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\client.lua:115:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\client.lua:858:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\client.lua:875:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\client.lua:892:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\client.lua:909:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\client.lua:926:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\client.lua:943:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\client.lua:960:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\de.lua:13:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\de.lua:30:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\de.lua:47:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\de.lua:64:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\de.lua:81:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\de.lua:98:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\de.lua:115:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\de.lua:518:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\de.lua:535:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\de.lua:552:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\de.lua:569:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\de.lua:586:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\de.lua:603:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\de.lua:620:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\fxmanifest.lua:13:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\fxmanifest.lua:30:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\fxmanifest.lua:47:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\fxmanifest.lua:64:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\fxmanifest.lua:81:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\fxmanifest.lua:98:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\fxmanifest.lua:115:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\fxmanifest.lua:124:author 'https://www.github.com/CodineDev'
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\fxmanifest.lua:213:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\fxmanifest.lua:230:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\fxmanifest.lua:247:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\fxmanifest.lua:264:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\fxmanifest.lua:281:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\fxmanifest.lua:298:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\fxmanifest.lua:315:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\utils.lua:13:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\utils.lua:30:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\utils.lua:47:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\utils.lua:64:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\utils.lua:81:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\utils.lua:98:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\utils.lua:115:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\utils.lua:384:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\utils.lua:401:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\utils.lua:418:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\utils.lua:435:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\utils.lua:452:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\utils.lua:469:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\utils.lua:486:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\station_cl.lua:13:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\station_cl.lua:30:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\station_cl.lua:47:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\station_cl.lua:64:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\station_cl.lua:81:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\station_cl.lua:98:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\station_cl.lua:115:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\station_cl.lua:2758:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\station_cl.lua:2775:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\station_cl.lua:2792:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\station_cl.lua:2809:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\station_cl.lua:2826:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\station_cl.lua:2843:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\station_cl.lua:2860:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:13:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:30:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:47:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:64:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:81:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:98:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:115:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:5555:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:5572:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:5589:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:5606:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:5623:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:5640:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\fuel_cl.lua:5657:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\electric_cl.lua:13:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\electric_cl.lua:30:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\electric_cl.lua:47:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\electric_cl.lua:64:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\electric_cl.lua:81:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\electric_cl.lua:98:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\electric_cl.lua:115:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\electric_cl.lua:1509:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\electric_cl.lua:1526:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\electric_cl.lua:1543:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\electric_cl.lua:1560:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\electric_cl.lua:1577:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\electric_cl.lua:1594:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\client\electric_cl.lua:1611:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\fr.lua:13:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\fr.lua:30:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\fr.lua:47:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\fr.lua:64:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\fr.lua:81:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\fr.lua:98:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\fr.lua:115:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\fr.lua:528:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\fr.lua:545:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\fr.lua:562:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\fr.lua:579:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\fr.lua:596:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\fr.lua:613:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\fr.lua:630:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\es.lua:13:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\es.lua:30:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\es.lua:47:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\es.lua:64:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\es.lua:81:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\es.lua:98:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\es.lua:115:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\es.lua:518:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\es.lua:535:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\es.lua:552:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\es.lua:569:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\es.lua:586:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\es.lua:603:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\es.lua:620:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\en.lua:13:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\en.lua:30:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\en.lua:47:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\en.lua:64:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\en.lua:81:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\en.lua:98:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\en.lua:115:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\en.lua:520:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\en.lua:537:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\en.lua:554:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\en.lua:571:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\en.lua:588:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\en.lua:605:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\en.lua:622:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\ee.lua:13:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\ee.lua:30:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\ee.lua:47:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\ee.lua:64:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\ee.lua:81:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\ee.lua:98:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\ee.lua:115:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\ee.lua:520:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\ee.lua:537:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\ee.lua:554:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\ee.lua:571:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\ee.lua:588:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\ee.lua:605:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\cdn-fuel\locales\ee.lua:622:--  DISCORD: - https://discord.gg/k3S8RjkPWc - https://tchub.shop/
+-- hits-end --
+[NUI-SCRIPT-REMOTE] pattern=<script[^>]+src=.*https?:// count=5
+-- hits-start --
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\LegacyFuel\html\ui.html:6:        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\nui\ui.html:10:		<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\nui\ui.html:13:		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\nui\ui.html:27:		<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2\lc-gasstationsv2\nui\ui.html:30:		<script src="https://cfx-nui-lc_utils/nui/index.js" type="text/javascript"></script>
+-- hits-end --
+[NUI-NEW-FUNCTION] pattern=new\s+Function\( count=0
+[NUI-DOC-WRITE] pattern=document\.write\( count=0

@@ -1,0 +1,9 @@
+# Critical Lua Scan
+BASE: c:\admirales\script_ver\script_ver\quarantine\under-review\0r-hud-v3\0r-hud-v3
+DATE: 2026-04-17T00:47:42
+
+[Pattern Set A]
+NO_MATCH_SET_A
+
+[Pattern Set B: raw load()]
+NO_MATCH_SET_B

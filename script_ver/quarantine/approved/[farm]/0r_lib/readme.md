@@ -1,0 +1,6 @@
+-- The script was shared by Phoenix:  
+-- Join our Discord Server for top notch FiveM sever files and resources:
+-- https://discord.gg/EuFBaKtgDN
+-- https://discord.gg/6MFAtGrNtB
+-- https://discord.gg/WuAUpFK4yQ
+-- Thank you for downloading this beautiful script! <3

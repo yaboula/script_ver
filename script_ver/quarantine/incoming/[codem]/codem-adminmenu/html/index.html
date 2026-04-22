@@ -1,0 +1,1962 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+        <script src="https://cdn.tailwindcss.com/3.3.5"></script>
+        <script src="./js/vue.global.js"></script>
+        <script src="./js/vuex.global.js"></script>
+        <link rel="stylesheet" href="./css/style.css" />
+        <link rel="stylesheet" href="./css/responsive.css" />
+
+        <title>Codem Adminmenu</title>
+    </head>
+
+    <body>
+        <div id="app">
+            <div class="w-full h-[100vh]">
+                <transition-group name="changeCategoryPage">
+                    <div class="givevehiclemodal" v-if="modalData.addvehicletoplayer">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-x-3">
+                                <img src="./images/givevehicleicon.png" />
+                                <p class="givevehicletome">{{this.Locales['givevehicletodatabase']}}</p>
+                            </div>
+                            <div class="flex items-center gap-x-2">
+                                <p class="backspace">{{this.Locales['del']}}</p>
+                                <img src="./images/righticon.png" />
+                            </div>
+                        </div>
+                        <input
+                            v-model="inputData.playerId"
+                            @focusin="onInputFocus"
+                            @focusout="onInputFocusRemove"
+                            ref="playeridinput"
+                            type="text"
+                            placeholder="Player ID"
+                            class="vehicle-code-input active"
+                        />
+                        <input
+                            v-model="inputData.giveVehicleName"
+                            @focusin="onInputFocus"
+                            @focusout="onInputFocusRemove"
+                            ref="vehiclecodeinput2"
+                            type="text"
+                            placeholder="Vehicle Code"
+                            class="vehicle-code-input"
+                        />
+                        <div class="flex items-center justify-center spawn-button">{{this.Locales['entertogive']}}</div>
+                    </div>
+                </transition-group>
+                <transition-group name="changeCategoryPage">
+                    <div class="givevehiclemodal fixed" v-if="modalData.changeJobModal">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-x-3">
+                                <img src="./images/changejobpageicon.png" />
+                                <p class="givevehicletome text-[#8B5EC5]">{{this.Locales['changejob']}}</p>
+                            </div>
+                            <div class="flex items-center gap-x-2">
+                                <p class="backspace">{{this.Locales['del']}}</p>
+                                <img src="./images/righticon.png" />
+                            </div>
+                        </div>
+                        <input
+                            v-model="inputData.changejobName"
+                            @focusin="onInputFocus"
+                            @focusout="onInputFocusRemove"
+                            ref="changeJobNameInput"
+                            type="text"
+                            placeholder="Job Name"
+                            class="changejob-input activechangejob"
+                        />
+                        <input
+                            v-model="inputData.changejobGrade"
+                            @focusin="onInputFocus"
+                            @focusout="onInputFocusRemove"
+                            ref="changeJobGradeInput"
+                            type="text"
+                            placeholder="Job Grade"
+                            class="changejob-input"
+                        />
+                        <div class="flex items-center justify-center spawn-button text-white" style="background-color: #8b5ec5">
+                            {{this.Locales['entertochangejob']}}
+                        </div>
+                    </div>
+                </transition-group>
+                <transition-group name="changeCategoryPage">
+                    <div class="givevehiclemodal fixed" v-if="modalData.addItemModal">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-x-3">
+                                <img src="./images/giveitemicon.png" />
+                                <p class="givevehicletome text-[#CE548F]">{{this.Locales['additemtoplayer']}}</p>
+                            </div>
+                            <div class="flex items-center gap-x-2">
+                                <p class="backspace">{{this.Locales['del']}}</p>
+                                <img src="./images/righticon.png" />
+                            </div>
+                        </div>
+                        <input
+                            v-model="inputData.addItemName"
+                            @focusin="onInputFocus"
+                            @focusout="onInputFocusRemove"
+                            ref="addItemNameInput"
+                            type="text"
+                            placeholder="Item Name"
+                            class="changejob-input activeadditem"
+                        />
+                        <input
+                            v-model="inputData.addItemCount"
+                            @focusin="onInputFocus"
+                            @focusout="onInputFocusRemove"
+                            @input="checkInput"
+                            ref="addItemCountInput"
+                            type="text"
+                            placeholder="Item Count"
+                            class="changejob-input"
+                        />
+                        <div class="flex items-center justify-center spawn-button text-white" style="background-color: #ce548f">
+                            {{this.Locales['entertoadditem']}}
+                        </div>
+                    </div>
+                </transition-group>
+                <transition-group name="changeCategoryPage">
+                    <div class="givevehiclemodal fixed h-[30%]" v-if="modalData.searchBanModal">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-x-3">
+                                <img src="./images/banicon.png" />
+                                <p class="givevehicletome text-[#FF0D0D]">{{this.Locales['banplayer']}}</p>
+                            </div>
+                            <div class="flex items-center gap-x-2">
+                                <p class="backspace">{{this.Locales['del']}}</p>
+                                <img src="./images/righticon.png" />
+                            </div>
+                        </div>
+                        <input
+                            v-model="inputData.searchBanText"
+                            @focusin="onInputFocus"
+                            @focusout="onInputFocusRemove"
+                            ref="searchbanTextModelInput"
+                            type="text"
+                            placeholder="Name or License or Steam or Discord or ID search player..."
+                            class="changejob-input activeban"
+                        />
+                        <div class="w-full h-[60%] flex items-start justify-center flex-wrap content-start no-scrollbar" style="overflow: auto">
+                            <div
+                                v-for="(data,index) in offlineBanData"
+                                ref="searchBanPlayer"
+                                :class="{'activeSearchBan': index === selectedBanIndex}"
+                                class="w-full h-[25%] rounded-[0.3vw] cursor-pointer mt-[0.5vh] flex items-center justify-start"
+                                style="background: rgba(217, 217, 217, 0.14)"
+                            >
+                                <h2
+                                    style="
+                                        color: white;
+                                        font-family: SF Compact Rounded;
+                                        font-size: 0.7vw;
+                                        font-style: normal;
+                                        font-weight: 500;
+                                        margin-left: 0.5vw;
+                                        line-height: normal;
+                                    "
+                                >
+                                    {{data.profiledata.name}} - ID : {{data.profiledata.id ? data.profiledata.id : 'Player Offline'}}
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                </transition-group>
+                <transition-group name="changeCategoryPage">
+                    <div
+                        class="givevehiclemodal fixed h-[30%] flex content-start"
+                        style="background-image: url(./images/unbanbg.png); background-size: 100% 100%"
+                        v-if="modalData.unbanModal && selectBannedPlayersData"
+                    >
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-x-3">
+                                <img src="./images/bannedplayersicon.png" />
+                                <p class="givevehicletome text-[#F50044]">Unban {{selectBannedPlayersData.profiledata.name}}</p>
+                            </div>
+                            <div class="flex items-center gap-x-2">
+                                <p class="backspace">{{this.Locales['del']}}</p>
+                                <img src="./images/righticon.png" />
+                            </div>
+                        </div>
+                        <div class="w-full h-[10%] flex items-center justify-start">
+                            <h2
+                                style="
+                                    color: rgba(255, 255, 255, 0.31);
+                                    font-family: SF Compact Rounded;
+                                    font-size: 0.7vw;
+                                    font-style: normal;
+                                    font-weight: 500;
+                                    line-height: normal;
+                                "
+                            >
+                                {{this.Locales['banid']}}
+                            </h2>
+                        </div>
+                        <div class="w-full mt-[-1vh] h-[15%] flex items-center justify-start" style="border-radius: 10px; background: #e02849">
+                            <h2
+                                style="
+                                    color: white;
+                                    font-family: SF Compact Rounded;
+                                    font-size: 0.9vw;
+                                    font-style: normal;
+                                    margin-left: 1vw;
+                                    font-weight: 500;
+                                    line-height: normal;
+                                "
+                            >
+                                {{selectBannedPlayersData.bandata[0].BanId}}
+                            </h2>
+                        </div>
+                        <div class="w-full h-[10%] mt-[-1.5vh] flex items-center justify-start">
+                            <h2
+                                style="
+                                    color: rgba(255, 255, 255, 0.31);
+                                    font-family: SF Compact Rounded;
+                                    font-size: 0.7vw;
+                                    font-style: normal;
+                                    font-weight: 500;
+                                    line-height: normal;
+                                "
+                            >
+                                {{this.Locales['reason']}}
+                            </h2>
+                        </div>
+                        <div
+                            class="w-full mt-[-2vh] h-[25%] flex items-start justify-start"
+                            style="border-radius: 10px; background: rgba(255, 255, 255, 0.5)"
+                        >
+                            <h2
+                                style="
+                                    color: white;
+                                    font-family: SF Compact Rounded;
+                                    font-size: 0.9vw;
+                                    margin-top: 1vh;
+                                    font-style: normal;
+                                    margin-left: 1vw;
+                                    font-weight: 500;
+                                    line-height: normal;
+                                "
+                            >
+                                {{selectBannedPlayersData.bandata[0].Reason}}
+                            </h2>
+                        </div>
+                        <div class="w-full mt-[-1vh] h-[15%] flex items-center justify-center" style="border-radius: 10px; background: #e02849">
+                            <h2
+                                style="
+                                    color: white;
+                                    font-family: SF Compact Rounded;
+                                    font-size: 0.9vw;
+                                    font-style: normal;
+                                    font-weight: 500;
+                                    line-height: normal;
+                                "
+                            >
+                                {{this.Locales['entertounban']}}
+                            </h2>
+                        </div>
+                    </div>
+                </transition-group>
+                <transition-group name="changeCategoryPage">
+                    <div class="givevehiclemodal fixed" v-if="modalData.banModal">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-x-3">
+                                <img src="./images/banicon.png" />
+                                <p class="givevehicletome text-[#FF0D0D]">{{this.Locales['banplayer']}}</p>
+                            </div>
+                            <div class="flex items-center gap-x-2">
+                                <p class="backspace">{{this.Locales['del']}}</p>
+                                <img src="./images/righticon.png" />
+                            </div>
+                        </div>
+                        <input
+                            v-model="inputData.banTextModel"
+                            @focusin="onInputFocus"
+                            @focusout="onInputFocusRemove"
+                            ref="banTextModelInput"
+                            type="text"
+                            placeholder="State of the ban reason..."
+                            class="changejob-input activeban"
+                        />
+                        <input
+                            @focusin="onInputFocus"
+                            @focusout="onInputFocusRemove"
+                            @input="checkInput"
+                            ref="banTimeInput"
+                            :placeholder=" banSettings[selectedIndexBanSettings].value + ' ' + banSettings[selectedIndexBanSettings].label"
+                            type="text"
+                            :disabled="true"
+                            class="changejob-input"
+                        />
+
+                        <div class="flex items-center justify-center spawn-button text-white" style="background-color: #ff0d0d">
+                            {{this.Locales['entertoban']}}
+                        </div>
+                    </div>
+                </transition-group>
+                <transition-group name="changeCategoryPage">
+                    <div class="givevehiclemodal fixed" v-if="modalData.addMoneyModal">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-x-3">
+                                <img src="./images/addmoneyicon.png" />
+                                <p class="givevehicletome text-[#519450]">{{this.Locales['addmoneytoplayer']}}</p>
+                            </div>
+                            <div class="flex items-center gap-x-2">
+                                <p class="backspace">{{this.Locales['del']}}</p>
+                                <img src="./images/righticon.png" />
+                            </div>
+                        </div>
+                        <input
+                            v-model="inputData.addMoneyCash"
+                            @focusin="onInputFocus"
+                            @focusout="onInputFocusRemove"
+                            @input="checkInput"
+                            ref="addMoneyCashInput"
+                            type="text"
+                            placeholder="Cash"
+                            class="changejob-input activeaddmoney"
+                        />
+                        <input
+                            v-model="inputData.addMoneyBank"
+                            @focusin="onInputFocus"
+                            @focusout="onInputFocusRemove"
+                            @input="checkInput"
+                            ref="addMoneyBankInput"
+                            type="text"
+                            placeholder="Bank"
+                            class="changejob-input"
+                        />
+                        <div class="flex items-center justify-center spawn-button text-white" style="background-color: #519450">
+                            {{this.Locales['entertoaddmoney']}}
+                        </div>
+                    </div>
+                </transition-group>
+                <transition-group name="changeCategoryPage">
+                    <div class="givevehiclemodal" v-if="modalData.givevehicle">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-x-3">
+                                <img src="./images/givevehicleicon.png" />
+                                <p class="givevehicletome">{{this.Locales['givevehicletome']}}</p>
+                            </div>
+                            <div class="flex items-center gap-x-2">
+                                <p class="backspace">{{this.Locales['del']}}</p>
+                                <img src="./images/righticon.png" />
+                            </div>
+                        </div>
+                        <input
+                            v-model="inputData.giveVehicleName"
+                            @focusin="onInputFocus"
+                            @focusout="onInputFocusRemove"
+                            ref="vehiclecodeinput"
+                            type="text"
+                            placeholder="Vehicle Code"
+                            class="vehicle-code-input"
+                        />
+                        <div class="flex items-center justify-center spawn-button">{{this.Locales['entertogive']}}</div>
+                    </div>
+                </transition-group>
+                <transition-group name="fade">
+                    <div
+                        v-if="showLaser && !playerCheckedData.noclip"
+                        class="inline-flex h-[4%] bottom-[2vh] right-[1vh] absolute flex items-center justify-start pl-[1vw] pr-[1vw]"
+                        style="border-radius: 20px; background: rgba(0, 0, 0, 0.76)"
+                    >
+                        <div
+                            v-for="data in laserKeyBind"
+                            class="inline-flex h-[80%] flex items-center justify-center rounded-full pl-[0.5vw] pr-[0.5vw]"
+                        >
+                            <div
+                                class="h-[80%] flex items-center justify-center rounded-full pl-[0.5vw] pr-[0.5vw]"
+                                style="background-color: #f50044"
+                            >
+                                <h2
+                                    style="
+                                        color: white;
+                                        font-family: SF Compact Rounded;
+                                        font-size: 1vw;
+                                        font-style: normal;
+                                        font-weight: 500;
+                                        line-height: normal;
+                                    "
+                                >
+                                    {{data.keybind}}
+                                </h2>
+                            </div>
+                            <h2 style="color: white; margin-left: 0.5vw">{{data.label}}</h2>
+                        </div>
+                    </div>
+                </transition-group>
+                <transition name="laser">
+                    <div v-if="showLaser" class="devlaser">
+                        <div
+                            v-if="laserInfo[entityViewModeType]"
+                            class="laser-element"
+                            :class="{laserborder : data.addborder}"
+                            v-for="data in laserInfo[entityViewModeType].elements"
+                        >
+                            <p class="laser-element-label">
+                                <img :src="'./images/'+data.icon+'.png'" />
+                                {{data.label}}
+                            </p>
+                            <p class="laser-element-value">{{data.value}}</p>
+                        </div>
+                    </div>
+                </transition>
+                <transition name="coords">
+                    <div class="coords-display px-6" v-if="showCoords">
+                        <div class="flex items-center gap-x-6">
+                            <img src="./images/copyvectoricon.png" />
+                            <div class="flex gap-y-1 flex-col">
+                                <p class="coordinates-header">Coordinates</p>
+                                <p class="coordinates-value flex gap-x-3 items-center">
+                                    <span>X : {{Number(coords?.value?.x).toFixed(1)}}</span>
+                                    <span>Y : {{Number(coords?.value?.y).toFixed(1)}}</span>
+                                    <span>Z : {{Number(coords?.value?.z).toFixed(1)}}</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="compass">{{Number(coords?.heading).toFixed(1)}}</div>
+                    </div>
+                </transition>
+                <transition-group name="fade">
+                    <div
+                        class="w-[20%] inline-flex p-[1vw] absolute flex items-center justify-start"
+                        :style="{'border-radius': '2vw', 'background': 'black', 'top': `${3 + (index * 6)}vh`, 'left': '40%'}"
+                        v-for="(notification, index) in notifications"
+                        :key="notification.id"
+                    >
+                        <div class="w-[10%] h-full absolute flex items-center justify-center">
+                            <img style="max-height: 50%" :src="'./images/'+notification.icon+'.png'" alt="" />
+                        </div>
+                        <div class="w-[85%] h-full ml-[2.4vw]">
+                            <div class="w-[85%] h-[10%]">
+                                <h2
+                                    style="
+                                        color: #fff;
+                                        font-family: SF Compact Rounded;
+                                        font-size: 1vw;
+                                        font-style: normal;
+                                        font-weight: 500;
+                                        line-height: normal;
+                                    "
+                                >
+                                    {{notification.header}}
+                                </h2>
+                            </div>
+                            <h2
+                                style="
+                                    margin-top: 0.5vh;
+                                    color: gray;
+                                    font-family: SF Compact Rounded;
+                                    font-size: 0.7vw;
+                                    font-style: normal;
+                                    font-weight: 500;
+                                    line-height: normal;
+                                "
+                            >
+                                {{notification.text}}
+                            </h2>
+                        </div>
+                    </div>
+                </transition-group>
+
+                <transition-group name="fade">
+                    <div
+                        v-if="playerCheckedData.noclip"
+                        class="inline-flex h-[4%] bottom-[2vh] right-[1vh] absolute flex items-center justify-start pl-[1vw] pr-[1vw]"
+                        style="border-radius: 20px; background: rgba(0, 0, 0, 0.76)"
+                    >
+                        <div
+                            v-for="data in noclipKeyBind"
+                            class="inline-flex h-[80%] flex items-center justify-center rounded-full pl-[0.5vw] pr-[0.5vw]"
+                        >
+                            <div
+                                class="h-[80%] flex items-center justify-center rounded-full pl-[0.5vw] pr-[0.5vw]"
+                                style="background-color: #f50044; min-width: 30%"
+                            >
+                                <h2
+                                    style="
+                                        color: white;
+                                        font-family: SF Compact Rounded;
+                                        font-size: 1vw;
+                                        font-style: normal;
+                                        font-weight: 500;
+                                        line-height: normal;
+                                    "
+                                >
+                                    {{data.keybind}}
+                                </h2>
+                            </div>
+                            <h2 style="color: white; margin-left: 0.5vw">{{data.label}}</h2>
+                        </div>
+                    </div>
+                </transition-group>
+                <transition-group name="changeCategoryPage">
+                    <div
+                        v-if="modalData.sendPMModal"
+                        class="w-[26%] h-[24%] absolute content-start left-[37vw] top-[38.5vh] z-[2] flex items-start justify-center flex-wrap no-scrollbar"
+                        style="background-image: url(./images/announcebg.png); background-size: 100% 100%"
+                    >
+                        <div class="w-full h-[19%] flex">
+                            <div class="w-[10%] h-full flex items-center justify-center">
+                                <img class="h-[40%]" src="./images/announcementicon.png" alt="" />
+                            </div>
+                            <div class="w-[50%] h-full flex items-center justify-start">
+                                <h2
+                                    style="
+                                        color: #ebbb3f;
+                                        font-family: SF Compact Rounded;
+                                        font-size: 1vw;
+                                        font-style: normal;
+                                        font-weight: 700;
+                                        line-height: normal;
+                                    "
+                                >
+                                    {{this.Locales['sendpmto']}}
+                                </h2>
+                            </div>
+                            <div class="w-[27%] h-full flex items-center justify-end">
+                                <h2
+                                    style="
+                                        color: #e02849;
+                                        font-family: SF Compact Rounded;
+                                        font-size: 0.8vw;
+                                        font-style: normal;
+                                        font-weight: 700;
+                                        line-height: normal;
+                                    "
+                                >
+                                    {{this.Locales['del']}}
+                                </h2>
+                            </div>
+                            <div class="w-[10%] h-full flex items-center justify-center">
+                                <img class="h-[40%]" src="./images/righticon.png" alt="" />
+                            </div>
+                        </div>
+                        <div class="w-[91%] mt-[1vh] h-[51%]">
+                            <textarea
+                                ref="sendpmtextarea"
+                                class="h-full w-full"
+                                @focusin="onInputFocus"
+                                @focusout="onInputFocusRemove"
+                                v-model="inputData.sendPmText"
+                                placeholder="PM message.."
+                                style="
+                                    border: none;
+                                    text-indent: 1vw;
+                                    outline: none;
+                                    font-family: SF Compact Rounded;
+                                    color: white;
+                                    resize: none;
+                                    background-color: transparent;
+                                "
+                            ></textarea>
+                        </div>
+                        <div class="w-[92%] mt-[0.8vh] h-[16%] flex items-center justify-center" style="border-radius: 6px; background: #ebbb3f">
+                            <h2
+                                style="
+                                    color: #fff;
+                                    font-family: SF Compact Rounded;
+                                    font-size: 1vw;
+                                    font-style: normal;
+                                    font-weight: 700;
+                                    line-height: normal;
+                                "
+                            >
+                                {{this.Locales['entertosendpm']}}
+                            </h2>
+                        </div>
+                    </div>
+                </transition-group>
+                <transition-group name="changeCategoryPage">
+                    <div
+                        v-if="announcementModal"
+                        class="w-[26%] h-[24%] absolute content-start left-[37vw] top-[38.5vh] z-[2] flex items-start justify-center flex-wrap no-scrollbar"
+                        style="background-image: url(./images/announcebg.png); background-size: 100% 100%"
+                    >
+                        <div class="w-full h-[19%] flex">
+                            <div class="w-[10%] h-full flex items-center justify-center">
+                                <img class="h-[40%]" src="./images/announcementicon.png" alt="" />
+                            </div>
+                            <div class="w-[50%] h-full flex items-center justify-start">
+                                <h2
+                                    style="
+                                        color: #ebbb3f;
+                                        font-family: SF Compact Rounded;
+                                        font-size: 1vw;
+                                        font-style: normal;
+                                        font-weight: 700;
+                                        line-height: normal;
+                                    "
+                                >
+                                    {{this.Locales['announcement']}}
+                                </h2>
+                            </div>
+                            <div class="w-[27%] h-full flex items-center justify-end">
+                                <h2
+                                    style="
+                                        color: #e02849;
+                                        font-family: SF Compact Rounded;
+                                        font-size: 0.8vw;
+                                        font-style: normal;
+                                        font-weight: 700;
+                                        line-height: normal;
+                                    "
+                                >
+                                    {{this.Locales['del']}}
+                                </h2>
+                            </div>
+                            <div class="w-[10%] h-full flex items-center justify-center">
+                                <img class="h-[40%]" src="./images/righticon.png" alt="" />
+                            </div>
+                        </div>
+                        <div class="w-[91%] mt-[1vh] h-[51%]">
+                            <textarea
+                                ref="announcementtextarea"
+                                class="h-full w-full"
+                                @focusin="onInputFocus"
+                                @focusout="onInputFocusRemove"
+                                v-model="announementTextModel"
+                                placeholder="Announcement message.."
+                                style="
+                                    border: none;
+                                    text-indent: 1vw;
+                                    outline: none;
+                                    font-family: SF Compact Rounded;
+                                    color: white;
+                                    resize: none;
+                                    background-color: transparent;
+                                "
+                            ></textarea>
+                        </div>
+                        <div class="w-[92%] mt-[0.8vh] h-[16%] flex items-center justify-center" style="border-radius: 6px; background: #ebbb3f">
+                            <h2
+                                style="
+                                    color: #fff;
+                                    font-family: SF Compact Rounded;
+                                    font-size: 1vw;
+                                    font-style: normal;
+                                    font-weight: 700;
+                                    line-height: normal;
+                                "
+                            >
+                                {{this.Locales['entertoannounce']}}
+                            </h2>
+                        </div>
+                    </div>
+                </transition-group>
+                <transition-group name="changeCategoryPage">
+                    <div
+                        v-if="modalData.kickModal"
+                        class="w-[26%] h-[24%] absolute content-start left-[37vw] top-[38.5vh] z-[2] flex items-start justify-center flex-wrap no-scrollbar"
+                        style="background-image: url(./images/kickbg.png); background-size: 100% 100%"
+                    >
+                        <div class="w-full h-[19%] flex">
+                            <div class="w-[10%] h-full flex items-center justify-center">
+                                <img class="h-[40%]" src="./images/kickicon.png" alt="" />
+                            </div>
+                            <div class="w-[50%] h-full flex items-center justify-start">
+                                <h2
+                                    style="
+                                        color: #3bb89a;
+                                        font-family: SF Compact Rounded;
+                                        font-size: 1vw;
+                                        font-style: normal;
+                                        font-weight: 700;
+                                        line-height: normal;
+                                    "
+                                >
+                                    {{this.Locales['kickplayer']}}
+                                </h2>
+                            </div>
+                            <div class="w-[27%] h-full flex items-center justify-end">
+                                <h2
+                                    style="
+                                        color: #e02849;
+                                        font-family: SF Compact Rounded;
+                                        font-size: 0.8vw;
+                                        font-style: normal;
+                                        font-weight: 700;
+                                        line-height: normal;
+                                    "
+                                >
+                                    {{this.Locales['del']}}
+                                </h2>
+                            </div>
+                            <div class="w-[10%] h-full flex items-center justify-center">
+                                <img class="h-[40%]" src="./images/righticon.png" alt="" />
+                            </div>
+                        </div>
+                        <div class="w-[91%] mt-[1vh] h-[51%]">
+                            <textarea
+                                ref="kicktextarea"
+                                class="h-full w-full"
+                                @focusin="onInputFocus"
+                                @focusout="onInputFocusRemove"
+                                v-model="inputData.kickTextModel"
+                                placeholder="State to reason of kick..."
+                                style="
+                                    border: none;
+                                    text-indent: 1vw;
+                                    outline: none;
+                                    font-family: SF Compact Rounded;
+                                    color: white;
+                                    resize: none;
+                                    background-color: transparent;
+                                "
+                            ></textarea>
+                        </div>
+                        <div class="w-[92%] mt-[0.8vh] h-[16%] flex items-center justify-center" style="border-radius: 6px; background: #3bb89a">
+                            <h2
+                                style="
+                                    color: #fff;
+                                    font-family: SF Compact Rounded;
+                                    font-size: 1vw;
+                                    font-style: normal;
+                                    font-weight: 700;
+                                    line-height: normal;
+                                "
+                            >
+                                {{this.Locales['entertokick']}}
+                            </h2>
+                        </div>
+                    </div>
+                </transition-group>
+                <transition-group name="changeCategoryPage">
+                    <div
+                        v-if="playerInfoModal && playerInfoPlayerData "
+                        class="w-[26%] h-[53%] absolute content-start left-[52.9vw] top-[8.3vh] z-[2] flex items-center justify-center flex-wrap no-scrollbar"
+                        style="border-radius: 30px 0px 0px 30px; background: rgba(20, 20, 23, 0.7)"
+                    >
+                        <div class="w-[93%] h-full">
+                            <div class="w-full h-[6.5%] flex items-center justify-start">
+                                <h2
+                                    style="
+                                        color: #fff;
+                                        font-family: SF Compact Rounded;
+                                        font-size: 0.8vw;
+                                        font-style: normal;
+                                        font-weight: 500;
+                                        line-height: normal;
+                                    "
+                                >
+                                    {{this.Locales['playerinfo']}}
+                                </h2>
+                            </div>
+                            <div class="w-full h-[15%] flex" style="border-bottom: 1px solid rgba(255, 255, 255, 0.07)">
+                                <div class="w-[13.5%] h-[90%] flex items-center justify-center">
+                                    <div class="w-full h-[80%] rounded-full flex items-center justify-center">
+                                        <img class="h-full rounded-full" :src="playerInfoPlayerData.avatar" alt="" />
+                                    </div>
+                                </div>
+                                <div class="w-[86.5%] h-[90%]">
+                                    <div class="w-full h-[50%] flex items-end justify-between">
+                                        <h2
+                                            style="
+                                                color: #fff;
+                                                font-family: SF Compact Rounded;
+                                                font-size: 0.8vw;
+                                                font-style: normal;
+                                                font-weight: 500;
+                                                text-indent: 0.5vw;
+                                                line-height: normal;
+                                            "
+                                        >
+                                            {{playerInfoPlayerData.playername}}
+                                        </h2>
+                                        <h2
+                                            style="
+                                                color: #fff;
+                                                font-family: SF Compact Rounded;
+                                                font-size: 0.8vw;
+                                                font-style: normal;
+                                                font-weight: 500;
+                                                text-indent: 0.5vw;
+                                                line-height: normal;
+                                            "
+                                        >
+                                            {{playerInfoPlayerData.source}}
+                                        </h2>
+                                    </div>
+                                    <div class="w-full h-[50%] flex items-start justify-between">
+                                        <h2
+                                            style="
+                                                color: #5855ff;
+                                                font-family: SF Compact Rounded;
+                                                font-size: 0.8vw;
+                                                font-style: normal;
+                                                font-weight: 500;
+                                                text-indent: 0.5vw;
+                                                line-height: normal;
+                                            "
+                                        >
+                                            {{playerInfoPlayerData.job}}
+                                        </h2>
+                                        <h2
+                                            style="
+                                                color: gray;
+                                                font-family: SF Compact Rounded;
+                                                font-size: 0.8vw;
+                                                font-style: normal;
+                                                font-weight: 500;
+                                                text-indent: 0.5vw;
+                                                line-height: normal;
+                                            "
+                                        >
+                                            {{this.Locales['player']}}
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full h-[9.5%] flex items-end justify-start">
+                                <div
+                                    v-for="(data,index) in playerInfoCategory"
+                                    :style="playerInfoPage !== data.name 
+                                    ? {
+                                        'border-radius': '10px', 
+                                        'margin-left': '0.5vw',
+                                        'background': 'rgba(51, 51, 54, 0.47)', 
+                                        'box-shadow': '0px 1px 3px 0px rgba(0, 0, 0, 0.20) inset'
+                                      } 
+                                    : {
+                                        'border-radius': '10px', 
+                                        'background': '#E02849', 
+                                        'margin-left': '0.5vw',
+                                        'box-shadow': '0px 1px 3px 0px rgba(0, 0, 0, 0.20) inset'
+                                      }"
+                                    @click="changeInfoPage(data.name)"
+                                    class="inline-flex h-[60%] pl-[1vw] pr-[1vw] cursor-pointer flex items-center justify-center"
+                                >
+                                    <h2 class="text-white">{{data.label}}</h2>
+                                </div>
+                            </div>
+                            <div v-if="playerInfoPage == 'general'" class="w-full h-[69%]">
+                                <h2
+                                    class="mt-[0.65vw]"
+                                    style="
+                                        color: gray;
+                                        font-family: SF Compact Rounded;
+                                        font-size: 0.8vw;
+                                        font-style: normal;
+                                        font-weight: 500;
+                                        line-height: normal;
+                                    "
+                                >
+                                    {{this.Locales['ids']}}
+                                </h2>
+                                <div
+                                    class="w-full h-[8%] flex relative"
+                                    style="
+                                        border-radius: 10px;
+                                        background: rgba(51, 51, 54, 0.47);
+                                        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2) inset;
+                                    "
+                                >
+                                    <div class="w-[9%] h-full absolute flex items-center justify-center right-0 cursor-pointer">
+                                        <img
+                                            class="h-[50%] cursor-pointer"
+                                            @click="copyPlayerInfo(playerInfoPlayerData.discord)"
+                                            src="./images/copyicon.png"
+                                            alt=""
+                                        />
+                                    </div>
+                                    <div class="w-[9%] h-full flex items-center justify-center">
+                                        <img class="h-[40%]" src="./images/discordicon.png" alt="" />
+                                    </div>
+                                    <div class="w-[60%] h-full flex items-center justify-start">
+                                        <h2
+                                            style="
+                                                color: #fff;
+                                                font-family: SF Compact Rounded;
+                                                font-size: 0.8vw;
+                                                font-style: normal;
+                                                font-weight: 500;
+
+                                                line-height: normal;
+                                            "
+                                        >
+                                            {{playerInfoPlayerData.discord}}
+                                        </h2>
+                                    </div>
+                                </div>
+                                <div
+                                    class="w-full h-[8%] mt-[0.5vh] flex relative"
+                                    style="
+                                        border-radius: 10px;
+                                        background: rgba(51, 51, 54, 0.47);
+                                        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2) inset;
+                                    "
+                                >
+                                    <div class="w-[9%] h-full absolute flex items-center justify-center right-0 cursor-pointer">
+                                        <img
+                                            class="h-[50%] cursor-pointer"
+                                            @click="copyPlayerInfo(playerInfoPlayerData.steam)"
+                                            src="./images/copyicon.png"
+                                            alt=""
+                                        />
+                                    </div>
+                                    <div class="w-[9%] h-full flex items-center justify-center">
+                                        <img class="h-[50%]" src="./images/steamicon.png" alt="" />
+                                    </div>
+                                    <div class="w-[60%] h-full flex items-center justify-start">
+                                        <h2
+                                            style="
+                                                color: #fff;
+                                                font-family: SF Compact Rounded;
+                                                font-size: 0.8vw;
+                                                font-style: normal;
+                                                font-weight: 500;
+
+                                                line-height: normal;
+                                            "
+                                        >
+                                            {{playerInfoPlayerData.steam.length > 0 ? playerInfoPlayerData.steam : 'Not Found'}}
+                                        </h2>
+                                    </div>
+                                </div>
+                                <div
+                                    class="w-full h-[8%] mt-[0.5vh] flex relative"
+                                    style="
+                                        border-radius: 10px;
+                                        background: rgba(51, 51, 54, 0.47);
+                                        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2) inset;
+                                    "
+                                >
+                                    <div class="w-[9%] h-full absolute flex items-center justify-center right-0 cursor-pointer">
+                                        <img
+                                            class="h-[50%] cursor-pointer"
+                                            @click="copyPlayerInfo(playerInfoPlayerData.license)"
+                                            src="./images/copyicon.png"
+                                            alt=""
+                                        />
+                                    </div>
+                                    <div class="w-[9%] h-full flex items-center justify-center">
+                                        <img class="h-[50%]" src="./images/rockstarticon.png" alt="" />
+                                    </div>
+                                    <div class="w-[60%] h-full flex items-center justify-start">
+                                        <h2
+                                            style="
+                                                color: #fff;
+                                                font-family: SF Compact Rounded;
+                                                font-size: 0.8vw;
+                                                font-style: normal;
+                                                font-weight: 500;
+
+                                                line-height: normal;
+                                            "
+                                        >
+                                            {{playerInfoPlayerData.license}}
+                                        </h2>
+                                    </div>
+                                </div>
+                                <h2
+                                    class="mt-[0.65vw]"
+                                    style="
+                                        color: gray;
+                                        font-family: SF Compact Rounded;
+                                        font-size: 0.8vw;
+                                        font-style: normal;
+                                        font-weight: 500;
+                                        line-height: normal;
+                                    "
+                                >
+                                    {{this.Locales['moneydata']}}
+                                </h2>
+                                <div
+                                    class="w-full h-[8%] mt-[0.8vh] flex"
+                                    style="
+                                        border-radius: 10px;
+                                        background: rgba(180, 255, 144, 0.47);
+                                        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2) inset;
+                                    "
+                                >
+                                    <div class="w-[9%] h-full flex items-center justify-center">
+                                        <img class="h-[60%]" src="./images/cashicon.png" alt="" />
+                                    </div>
+                                    <div class="w-[60%] h-full flex items-center justify-start">
+                                        <h2
+                                            style="
+                                                color: #fff;
+                                                font-family: SF Compact Rounded;
+                                                font-size: 0.8vw;
+                                                font-style: normal;
+                                                font-weight: 500;
+                                                text-indent: 0.5vw;
+                                                line-height: normal;
+                                            "
+                                        >
+                                            ${{playerInfoPlayerData.cash.toLocaleString()}} - {{this.Locales['cash']}}
+                                        </h2>
+                                    </div>
+                                </div>
+                                <div
+                                    class="w-full h-[8%] mt-[0.8vh] flex"
+                                    style="
+                                        border-radius: 10px;
+                                        background: rgba(255, 255, 255, 0.47);
+                                        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2) inset;
+                                    "
+                                >
+                                    <div class="w-[9%] h-full flex items-center justify-center">
+                                        <img class="h-[60%]" src="./images/bankicon.png" alt="" />
+                                    </div>
+                                    <div class="w-[60%] h-full flex items-center justify-start">
+                                        <h2
+                                            style="
+                                                color: #fff;
+                                                font-family: SF Compact Rounded;
+                                                font-size: 0.8vw;
+                                                font-style: normal;
+                                                font-weight: 500;
+                                                text-indent: 0.5vw;
+                                                line-height: normal;
+                                            "
+                                        >
+                                            ${{playerInfoPlayerData.bank.toLocaleString()}} - {{this.Locales['bank']}}
+                                        </h2>
+                                    </div>
+                                </div>
+                                <div
+                                    class="w-full h-[8%] mt-[0.8vh] flex"
+                                    style="
+                                        border-radius: 10px;
+                                        background: rgba(255, 144, 144, 0.47);
+                                        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2) inset;
+                                    "
+                                >
+                                    <div class="w-[9%] h-full flex items-center justify-center">
+                                        <img class="h-[60%]" src="./images/blackmoneyicon.png" alt="" />
+                                    </div>
+                                    <div class="w-[60%] h-full flex items-center justify-start">
+                                        <h2
+                                            style="
+                                                color: #fff;
+                                                font-family: SF Compact Rounded;
+                                                font-size: 0.8vw;
+                                                font-style: normal;
+                                                font-weight: 500;
+                                                text-indent: 0.5vw;
+                                                line-height: normal;
+                                            "
+                                        >
+                                            ${{playerInfoPlayerData.blackmoney.toLocaleString()}} - {{this.Locales['blackmoney']}}
+                                        </h2>
+                                    </div>
+                                </div>
+                                <div
+                                    class="w-full h-[8%] mt-[0.8vh] flex"
+                                    style="
+                                        border-radius: 10px;
+                                        background: rgba(255, 191, 144, 0.47);
+                                        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2) inset;
+                                    "
+                                >
+                                    <div class="w-[9%] h-full flex items-center justify-center">
+                                        <img class="h-[60%]" src="./images/coinicon.png" alt="" />
+                                    </div>
+                                    <div class="w-[60%] h-full flex items-center justify-start">
+                                        <h2
+                                            style="
+                                                color: #fff;
+                                                font-family: SF Compact Rounded;
+                                                font-size: 0.8vw;
+                                                font-style: normal;
+                                                font-weight: 500;
+                                                text-indent: 0.5vw;
+                                                line-height: normal;
+                                            "
+                                        >
+                                            {{playerInfoPlayerData.coin}} - {{this.Locales['coin']}}
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                v-if="playerInfoPage == 'inventory'"
+                                class="w-full h-[69%] flex flex-wrap content-start no-scrollbar"
+                                style="overflow: auto"
+                            >
+                                <div
+                                    v-for="data in playerInfoPlayerData.inventory"
+                                    class="w-[21.5%] mt-[1.5vh] ml-[0.5vw] h-[26%]"
+                                    style="border-radius: 8px; background: rgba(217, 217, 217, 0.15)"
+                                >
+                                    <div class="w-full h-[80%] relative flex items-center justify-center">
+                                        <div class="w-full h-[28%] absolute top-0 flex items-center justify-end">
+                                            <h2
+                                                class="mr-[0.5vw]"
+                                                style="
+                                                    color: gray;
+                                                    font-family: SF Compact Rounded;
+                                                    font-size: 0.5vw;
+                                                    font-style: normal;
+                                                    font-weight: 500;
+                                                    line-height: normal;
+                                                "
+                                            >
+                                                x{{data.amount}}
+                                            </h2>
+                                        </div>
+                                        <img class="h-[50%]" :src="'' + ItemImagesFolder + '/' + data.image + ''" />
+                                    </div>
+                                    <div
+                                        class="w-full h-[20%] flex items-center justify-center"
+                                        style="
+                                            background-color: rgba(0, 0, 0, 0.57);
+                                            overflow: hidden;
+                                            text-overflow: ellipsis;
+                                            white-space: nowrap;
+                                            border-radius: 0 0 7px 7px;
+                                        "
+                                    >
+                                        <h2
+                                            style="
+                                                color: #fff;
+                                                font-family: SF Compact Rounded;
+                                                font-size: 0.7vw;
+                                                font-style: normal;
+                                                font-weight: 500;
+                                                line-height: normal;
+                                            "
+                                        >
+                                            {{data.label}}
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                v-if="playerInfoPage == 'vehicles'"
+                                class="w-full h-[69%] flex flex-wrap content-start no-scrollbar"
+                                style="overflow: auto"
+                            >
+                                <div v-for="data in playerInfoPlayerData.playerVehicles" class="w-full flex h-[18%] boder mt-[1.2vh]">
+                                    <div
+                                        class="w-[22%] h-full flex items-center justify-center"
+                                        style="border-radius: 8px; background: rgba(0, 0, 0, 0.3)"
+                                    >
+                                        <img class="h-[90%] w-[90%]" :src="'./images/vehicles/'+data.vehicle+'.png'" alt="" />
+                                    </div>
+                                    <div class="w-[50%] h-full flex justify-center flex-col content-center">
+                                        <h2
+                                            style="
+                                                margin-left: 1vw;
+                                                color: #fff;
+                                                font-family: SF Compact Rounded;
+                                                font-size: 0.7vw;
+                                                font-style: normal;
+                                                font-weight: 500;
+                                                line-height: normal;
+                                            "
+                                        >
+                                            {{data.label}}
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                v-if="playerInfoPage == 'warns'"
+                                class="w-full h-[69%] flex flex-wrap content-start no-scrollbar"
+                                style="overflow: auto"
+                            >
+                                <div v-for="data in playerInfoPlayerData.playerHistory.slice().reverse()" class="w-full flex h-[26%] mt-[1.2vh]">
+                                    <div
+                                        class="w-[22%] h-full flex items-center justify-center"
+                                        style="border-radius: 8px; background: rgba(0, 0, 0, 0.3)"
+                                    >
+                                        <img v-if="data.type == 'kick'" class="h-[40%]" src="./images/kickiconplayerinfo.png" alt="" />
+                                        <img v-if="data.type == 'ban'" class="h-[40%]" src="./images/baniconplayerinfo.png" alt="" />
+                                    </div>
+                                    <div class="w-[60%] h-full flex justify-center flex-col content-center">
+                                        <h2
+                                            style="
+                                                margin-left: 1vw;
+                                                color: #fff;
+                                                font-family: SF Compact Rounded;
+                                                font-size: 0.7vw;
+                                                font-style: normal;
+                                                font-weight: 500;
+                                            "
+                                        >
+                                            {{data.type == 'kick' ? this.Locales['kick'] : this.Locales['ban']}}
+                                        </h2>
+                                        <h2
+                                            style="
+                                                margin-left: 1vw;
+                                                color: #fff;
+                                                font-family: SF Compact Rounded;
+                                                font-size: 0.7vw;
+                                                font-style: normal;
+                                                font-weight: 500;
+                                            "
+                                        >
+                                            {{data.reason}} - {{data.time}} {{data.type == 'ban' ? 'BAN ID #' +data.banID : ''}}
+                                        </h2>
+                                    </div>
+                                    <div class="w-[18%] h-full flex justify-center flex-col content-center">
+                                        <h2
+                                            style="
+                                                margin-left: 1vw;
+                                                color: #fff;
+                                                font-family: SF Compact Rounded;
+                                                font-size: 0.7vw;
+                                                font-style: normal;
+                                                font-weight: 500;
+                                            "
+                                        >
+                                            {{this.Locales['by']}}
+                                        </h2>
+                                        <h2
+                                            style="
+                                                margin-left: 1vw;
+                                                color: #e02849;
+                                                font-family: SF Compact Rounded;
+                                                font-size: 0.7vw;
+                                                font-style: normal;
+                                                font-weight: 500;
+                                            "
+                                        >
+                                            {{data.admin}}
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </transition-group>
+                <div v-if="show" class="w-full h-full flex items-start justify-end" style="background-size: 100% 100%">
+                    <div class="w-[25%] h-[42%] mt-[8vh] flex items-start justify-end">
+                        <div class="w-[85%] h-full flex">
+                            <div
+                                class="w-[80%] relative no-scrollbar overflow-container"
+                                :style="categoryPage == 'main' ? { height: '100%',borderRadius: '30px 0 0px 30px' } : { height: '160%', borderRadius: '30px 0 30px 30px' }"
+                                style="overflow: auto; transition: 0.5s all; background-image: url(./images/bgmain.png); background-size: 100% 100%"
+                            >
+                                <div class="w-full h-[9%] flex items-center justify-start">
+                                    <h2
+                                        style="
+                                            color: #fff;
+                                            font-family: Zen Dots;
+                                            font-size: 0.7vw;
+                                            text-indent: 1vw;
+                                            font-style: normal;
+                                            font-weight: 400;
+                                            line-height: normal;
+                                        "
+                                    >
+                                        {{getMenuHeaderText}}
+                                    </h2>
+                                </div>
+                                <div class="w-full h-[83%] relative no-scrollbar relative" style="overflow: auto">
+                                    <div v-if="categoryPage == 'main'" class="w-[17%] h-[35%] fixed">
+                                        <div class="w-full h-[15%] flex flex-col justify-center">
+                                            <h2
+                                                style="
+                                                    color: rgba(255, 255, 255, 0.42);
+                                                    font-family: Inter;
+                                                    font-size: 0.7vw;
+                                                    font-style: normal;
+                                                    font-weight: 400;
+                                                    line-height: normal;
+                                                    text-indent: 0.8vw;
+                                                "
+                                            >
+                                                {{this.Locales['hello']}} {{playerData.name}}
+                                            </h2>
+                                            <h2
+                                                style="
+                                                    color: rgba(255, 255, 255, 0.42);
+                                                    font-family: Inter;
+                                                    font-size: 0.7vw;
+                                                    font-style: normal;
+                                                    font-weight: 400;
+                                                    line-height: normal;
+                                                    text-indent: 0.8vw;
+                                                "
+                                            >
+                                                {{this.Locales['welcometoadmin']}}
+                                            </h2>
+                                        </div>
+                                        <div class="w-full h-[15%] flex flex-col justify-center">
+                                            <h2
+                                                style="
+                                                    color: white;
+                                                    font-family: Inter;
+                                                    font-size: 1.1vw;
+                                                    font-style: normal;
+                                                    font-weight: 400;
+                                                    line-height: normal;
+                                                    text-indent: 0.8vw;
+                                                "
+                                            >
+                                                {{this.Locales['onlineoverviews']}}
+                                            </h2>
+                                        </div>
+                                        <div class="w-full h-[70%] flex flex-wrap items-center justify-center no-scrollbar" style="overflow: auto">
+                                            <div
+                                                v-for="data in onlineOverviews"
+                                                class="w-[30%] h-[45%] flex items-center justify-center flex-wrap flex-col"
+                                            >
+                                                <div class="w-full h-[60%] flex items-center justify-center">
+                                                    <img :src="'./images/'+data.icon+'.png'" />
+                                                </div>
+                                                <h2
+                                                    style="
+                                                        color: white;
+                                                        font-family: Inter;
+                                                        font-size: 0.7vw;
+                                                        font-style: normal;
+                                                        font-weight: 400;
+                                                        line-height: normal;
+                                                    "
+                                                >
+                                                    {{data.count}}
+                                                </h2>
+                                                <h2
+                                                    style="
+                                                        color: white;
+                                                        font-family: Inter;
+                                                        font-size: 0.7vw;
+                                                        font-style: normal;
+                                                        font-weight: 400;
+                                                        line-height: normal;
+                                                    "
+                                                >
+                                                    {{data.label}}
+                                                </h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <transition-group name="changeCategoryPage">
+                                        <div
+                                            v-if="playerSelected"
+                                            class="w-[17%] h-[56%] fixed z-[2] flex items-start justify-center flex-wrap no-scrollbar"
+                                            style="background: rgba(20, 20, 23, 0.9); overflow: auto"
+                                        >
+                                            <div
+                                                v-for="(data,index) in playerModalOption"
+                                                :style="playerSelectedIndex == index ? 'background: #E02849; border-radius:0.4vw' : 'border-radius: 10px;background: rgba(51, 51, 54, 0.47);box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.20) inset'"
+                                                class="w-[90%] h-[6%] category-element-playeroption flex mt-[0.5vh]"
+                                            >
+                                                <div class="w-[15%] h-full flex items-center justify-center">
+                                                    <img class="h-[50%]" :src="'./images/'+data.icon+'.png'" alt="" />
+                                                </div>
+                                                <div class="w-[85%] h-full flex items-center">
+                                                    <h2
+                                                        style="
+                                                            color: #fff;
+                                                            font-family: Inter;
+                                                            font-size: 0.7vw;
+                                                            font-style: normal;
+                                                            font-weight: 400;
+                                                            line-height: normal;
+                                                        "
+                                                    >
+                                                        {{data.label}}
+                                                    </h2>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </transition-group>
+                                    <transition-group name="changeCategoryPage">
+                                        <div
+                                            v-if="modalData.bannedPlayersModal"
+                                            class="w-[17%] h-[56%] fixed z-[2] flex items-start justify-center flex-wrap no-scrollbar"
+                                            style="background: rgba(20, 20, 23, 0.9); overflow: auto"
+                                        >
+                                            <div
+                                                v-for="(data,index) in bannedPlayers"
+                                                :style="selectedIndexBannedPlayers == index ? 'background: #E02849; border-radius:0.4vw' : 'border-radius: 10px;background: rgba(51, 51, 54, 0.47);box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.20) inset'"
+                                                class="w-[90%] h-[6%] category-element-playeroption flex mt-[0.5vh]"
+                                            >
+                                                <div class="w-[15%] h-full flex items-center justify-center">
+                                                    <img class="h-[80%] rounded-full" :src="data.profiledata.avatar" />
+                                                </div>
+                                                <div class="w-[85%] h-full flex items-center">
+                                                    <h2
+                                                        style="
+                                                            color: #fff;
+                                                            font-family: Inter;
+                                                            font-size: 0.7vw;
+                                                            font-style: normal;
+                                                            font-weight: 400;
+                                                            line-height: normal;
+                                                        "
+                                                    >
+                                                        {{data.profiledata.name}} - Ban ID {{data.bandata[0].BanId}}
+                                                    </h2>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </transition-group>
+                                    <transition-group name="changeCategoryPage">
+                                        <div
+                                            v-if="permissionSelected"
+                                            class="w-[17%] h-[56%] fixed z-[3] flex items-start justify-center flex-wrap no-scrollbar"
+                                            style="background: rgba(20, 20, 23, 0.9); overflow: auto"
+                                        >
+                                            <div
+                                                v-for="(data,index) in allowPermission"
+                                                :key="data.name"
+                                                :style="selectedIndexPermissionCategoryElement == index ? 'background: #E02849; border-radius:0.4vw' : 'border-radius: 10px;background: rgba(51, 51, 54, 0.47);box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.20) inset'"
+                                                class="w-[90%] relative h-[6%] category-element-permissionoption flex mt-[0.5vh]"
+                                            >
+                                                <div class="w-[15%] h-full flex items-center justify-center">
+                                                    <img class="h-[50%]" :src="'./images/'+data.icon+'.png'" alt="" />
+                                                </div>
+                                                <div class="w-[85%] h-full flex items-center">
+                                                    <h2
+                                                        style="
+                                                            color: #fff;
+                                                            font-family: Inter;
+                                                            font-size: 0.7vw;
+                                                            font-style: normal;
+                                                            font-weight: 400;
+                                                            line-height: normal;
+                                                        "
+                                                    >
+                                                        {{data.label}}
+                                                    </h2>
+                                                </div>
+                                                <div class="w-[10%] h-full absolute right-0">
+                                                    <div class="flex items-center w-full h-full justify-center">
+                                                        <input type="checkbox" :checked="lastPlayerData.permissiondata[data.name]" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </transition-group>
+                                    <transition-group name="changeCategoryPage">
+                                        <div
+                                            v-if="weatherSelected"
+                                            class="w-full h-full absolute z-[2] flex items-start justify-center flex-wrap no-scrollbar"
+                                            style="background-color: rgb(5, 5, 5); overflow: auto"
+                                        >
+                                            <div
+                                                v-for="(data,index) in weatherModalOption"
+                                                :style="selectedIndexCategoryElement == index ? 'background: #E02849; border-radius:0.4vw' : 'border-radius: 10px;background: rgba(51, 51, 54, 0.47);box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.20) inset'"
+                                                class="w-[90%] h-[6%] category-element flex mt-[0.5vh]"
+                                            >
+                                                <div class="w-[15%] h-full flex items-center justify-center">
+                                                    <img class="h-[50%]" :src="'./images/'+data.name+'.png'" alt="" />
+                                                </div>
+                                                <div class="w-[85%] h-full flex items-center">
+                                                    <h2
+                                                        style="
+                                                            color: #fff;
+                                                            font-family: Inter;
+                                                            font-size: 0.7vw;
+                                                            font-style: normal;
+                                                            font-weight: 400;
+                                                            line-height: normal;
+                                                        "
+                                                    >
+                                                        {{data.label}}
+                                                    </h2>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </transition-group>
+                                    <transition-group name="changeCategoryPage">
+                                        <div
+                                            v-if="spawnVehicleSelected"
+                                            class="w-full h-full absolute z-[2] flex items-start justify-center flex-wrap content-start no-scrollbar"
+                                            style="background-color: #141417; overflow: auto"
+                                        >
+                                            <div
+                                                class="w-[90%] h-[9%] category-element rounded-[0.3vw] flex items-center justify-center mt-[0.5vh]"
+                                                style="background-color: #e02849"
+                                            >
+                                                <img class="h-[50%]" src="./images/spawnvehicleicon.png" alt="" />
+                                                <h2
+                                                    style="
+                                                        color: #fff;
+                                                        font-family: Inter;
+                                                        font-size: 0.7vw;
+                                                        font-style: normal;
+                                                        font-weight: 400;
+                                                        text-indent: 0.3vw;
+                                                        line-height: normal;
+                                                    "
+                                                >
+                                                    Spawn Vehicle
+                                                </h2>
+                                            </div>
+                                            <div class="w-[90%] h-[15%] flex items-end justify-center">
+                                                <div
+                                                    class="w-[50%] h-[70%]"
+                                                    style="
+                                                        border-radius: 9px;
+                                                        border: 2.293px solid rgba(255, 255, 255, 0.35);
+                                                        background: radial-gradient(
+                                                            106.75% 106.75% at 50% 50%,
+                                                            rgba(255, 255, 255, 0.05) 0%,
+                                                            rgba(255, 255, 255, 0) 100%
+                                                        );
+                                                    "
+                                                >
+                                                    <input
+                                                        @focusin="onInputFocus"
+                                                        @focusout="onInputFocusRemove"
+                                                        type="text"
+                                                        class="w-full h-full text-center"
+                                                        placeholder="Vehicle Name"
+                                                        style="
+                                                            border: none;
+                                                            outline: none;
+                                                            font-family: Inter;
+                                                            color: white;
+                                                            font-size: 0.7vw;
+                                                            background-color: transparent;
+                                                        "
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div class="w-[90%] h-[15%] flex items-end justify-center">
+                                                <div
+                                                    class="w-[30%] h-[60%] rounded-[0.3vw]"
+                                                    style="background-image: url(./images/entericon.png); background-size: 100% 100%"
+                                                ></div>
+                                            </div>
+                                        </div>
+                                    </transition-group>
+                                    <transition-group name="changeCategoryPage">
+                                        <div
+                                            v-if="giveVehicleDatabaseSelected"
+                                            class="w-full h-full absolute z-[2] flex items-start justify-center flex-wrap content-start no-scrollbar"
+                                            style="background-color: #141417; overflow: auto"
+                                        >
+                                            <div
+                                                class="w-[90%] h-[9%] category-element rounded-[0.3vw] flex items-center justify-center mt-[0.5vh]"
+                                                style="background-color: #e02849"
+                                            >
+                                                <img class="h-[50%]" src="./images/givevehicledatabaseicon.png" alt="" />
+                                                <h2
+                                                    style="
+                                                        color: #fff;
+                                                        font-family: Inter;
+                                                        font-size: 0.7vw;
+                                                        font-style: normal;
+                                                        font-weight: 400;
+                                                        text-indent: 0.3vw;
+                                                        line-height: normal;
+                                                    "
+                                                >
+                                                    {{this.Locales['givevehicletodatabase']}}
+                                                </h2>
+                                            </div>
+                                            <div class="w-[90%] h-[15%] flex items-end justify-center">
+                                                <div
+                                                    class="w-[50%] h-[70%]"
+                                                    style="
+                                                        border-radius: 9px;
+                                                        border: 2.293px solid rgba(255, 255, 255, 0.35);
+                                                        background: radial-gradient(
+                                                            106.75% 106.75% at 50% 50%,
+                                                            rgba(255, 255, 255, 0.05) 0%,
+                                                            rgba(255, 255, 255, 0) 100%
+                                                        );
+                                                    "
+                                                >
+                                                    <input
+                                                        @focusin="onInputFocus"
+                                                        @focusout="onInputFocusRemove"
+                                                        type="text"
+                                                        class="w-full h-full text-center"
+                                                        placeholder="Vehicle Name"
+                                                        style="
+                                                            border: none;
+                                                            outline: none;
+                                                            font-family: Inter;
+                                                            color: white;
+                                                            font-size: 0.7vw;
+                                                            background-color: transparent;
+                                                        "
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div class="w-[90%] h-[15%] flex items-end justify-center">
+                                                <div
+                                                    class="w-[50%] h-[70%]"
+                                                    style="
+                                                        border-radius: 9px;
+                                                        border: 2.293px solid rgba(255, 255, 255, 0.35);
+                                                        background: radial-gradient(
+                                                            106.75% 106.75% at 50% 50%,
+                                                            rgba(255, 255, 255, 0.05) 0%,
+                                                            rgba(255, 255, 255, 0) 100%
+                                                        );
+                                                    "
+                                                >
+                                                    <input
+                                                        @focusin="onInputFocus"
+                                                        @focusout="onInputFocusRemove"
+                                                        type="text"
+                                                        class="w-full h-full text-center"
+                                                        placeholder="Player ID"
+                                                        style="
+                                                            border: none;
+                                                            outline: none;
+                                                            font-family: Inter;
+                                                            color: white;
+                                                            font-size: 0.7vw;
+                                                            background-color: transparent;
+                                                        "
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div class="w-[90%] h-[15%] flex items-end justify-center">
+                                                <div
+                                                    class="w-[30%] h-[60%] rounded-[0.3vw]"
+                                                    style="background-image: url(./images/entericon.png); background-size: 100% 100%"
+                                                ></div>
+                                            </div>
+                                        </div>
+                                    </transition-group>
+                                    <!-- ---------------------------------------- -->
+
+                                    <div
+                                        v-for="(data,index) in filterByTermCategoryData"
+                                        :style="selectedIndexCategoryElement == index ? '' : 'opacity : 0.5'"
+                                        class="category-element w-full h-[6%] mt-[0.5vh] flex items-center justify-center"
+                                    >
+                                        <div
+                                            v-if="categoryPage == 'adminoption'"
+                                            class="w-[90%] h-full flex relative"
+                                            :style="selectedIndexCategoryElement == index ? 'background: #E02849; border-radius:0.4vw' : ''"
+                                        >
+                                            <div v-if="data.name == 'searchbaradmin'">
+                                                <input
+                                                    @focusin="onInputFocus"
+                                                    @focusout="onInputFocusRemove"
+                                                    ref="searchbaradmin"
+                                                    v-model="searchBarAdmin"
+                                                    type="text"
+                                                    class="w-full h-full bg-transparent text-white"
+                                                    placeholder="Search Option"
+                                                    style="
+                                                        outline: none;
+                                                        border: none;
+                                                        color: white;
+                                                        font-family: Inter;
+                                                        font-size: 0.7vw;
+                                                        text-indent: 0.5vw;
+                                                    "
+                                                />
+                                            </div>
+                                            <div v-if="data.checked " class="w-[20%] h-full flex items-center justify-start absolute right-0">
+                                                <label class="relative inline-flex items-center cursor-pointer">
+                                                    <input v-model="playerCheckedData[data.name]" type="checkbox" value="" class="sr-only peer" />
+                                                    <div
+                                                        class="w-[2.3vw] h-[2.2vh] bg-[#39393D] peer-focus:outline-none rounded-full peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-[1.8vh] after:w-[1vw] after:transition-all dark:border-gray-600 peer-checked:bg-green-500"
+                                                    ></div>
+                                                </label>
+                                            </div>
+
+                                            <div class="w-[15%] h-full flex items-center justify-center">
+                                                <img class="h-[50%]" :src="'./images/'+data.icon+'.png'" alt="" />
+                                            </div>
+                                            <div class="w-[85%] h-full flex items-center">
+                                                <h2
+                                                    style="
+                                                        color: #fff;
+                                                        font-family: Inter;
+                                                        font-size: 0.7vw;
+                                                        font-style: normal;
+                                                        font-weight: 400;
+                                                        line-height: normal;
+                                                    "
+                                                >
+                                                    {{data.label}}
+                                                </h2>
+                                            </div>
+                                        </div>
+                                        <div
+                                            v-if="categoryPage == 'developeroption'"
+                                            class="w-[90%] h-full flex relative"
+                                            :style="selectedIndexCategoryElement == index ? 'background: #E02849; border-radius:0.4vw' : ''"
+                                        >
+                                            <div v-if="data.name == 'searchbaradmin'">
+                                                <input
+                                                    @focusin="onInputFocus"
+                                                    @focusout="onInputFocusRemove"
+                                                    ref="searchbaradmin"
+                                                    v-model="searchBarAdmin"
+                                                    type="text"
+                                                    class="w-full h-full bg-transparent text-white"
+                                                    placeholder="Search Option"
+                                                    style="
+                                                        outline: none;
+                                                        border: none;
+                                                        color: white;
+                                                        font-family: Inter;
+                                                        font-size: 0.7vw;
+                                                        text-indent: 0.5vw;
+                                                    "
+                                                />
+                                            </div>
+                                            <div v-if="data.copy " class="w-[20%] h-full flex items-center justify-center absolute right-0">
+                                                <img class="h-[50%]" src="./images/copy.png" alt="" />
+                                            </div>
+                                            <div v-if="data.checked " class="w-[20%] h-full flex items-center justify-start absolute right-0">
+                                                <label class="relative inline-flex items-center cursor-pointer">
+                                                    <input v-model="playerCheckedData[data.name]" type="checkbox" value="" class="sr-only peer" />
+                                                    <div
+                                                        class="w-[2.3vw] h-[2.2vh] bg-[#39393D] peer-focus:outline-none rounded-full peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-[1.8vh] after:w-[1vw] after:transition-all dark:border-gray-600 peer-checked:bg-green-500"
+                                                    ></div>
+                                                </label>
+                                            </div>
+
+                                            <div class="w-[15%] h-full flex items-center justify-center">
+                                                <img class="h-[50%]" :src="'./images/'+data.icon+'.png'" alt="" />
+                                            </div>
+                                            <div class="w-[85%] h-full flex items-center">
+                                                <h2
+                                                    style="
+                                                        color: #fff;
+                                                        font-family: Inter;
+                                                        font-size: 0.7vw;
+                                                        font-style: normal;
+                                                        font-weight: 400;
+                                                        line-height: normal;
+                                                    "
+                                                >
+                                                    {{data.label}}
+                                                </h2>
+                                            </div>
+                                        </div>
+                                        <div
+                                            v-if="categoryPage == 'playeroption'"
+                                            class="w-[90%] h-full flex relative"
+                                            :style="selectedIndexCategoryElement == index ? 'background: #E02849; border-radius:0.4vw' : 'border-radius: 10px;background: rgba(51, 51, 54, 0.47);box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.20) inset'"
+                                        >
+                                            <div v-if="data.name == 'searchbarplayer'">
+                                                <input
+                                                    @focusin="onInputFocus"
+                                                    @focusout="onInputFocusRemove"
+                                                    ref="searchbarplayer"
+                                                    v-model="searchBarAdmin"
+                                                    type="text"
+                                                    class="w-full h-full bg-transparent text-white"
+                                                    placeholder="Search Option"
+                                                    style="
+                                                        outline: none;
+                                                        border: none;
+                                                        color: white;
+                                                        font-family: Inter;
+                                                        font-size: 0.7vw;
+                                                        text-indent: 0.5vw;
+                                                    "
+                                                />
+                                            </div>
+                                            <div v-else class="w-full h-full flex">
+                                                <div class="w-[15%] h-full flex items-center justify-center">
+                                                    <img class="h-[80%] rounded-full" :src="data.avatar" />
+                                                </div>
+
+                                                <div class="w-[20%] h-full flex items-center justify-center">
+                                                    <div
+                                                        class="w-[80%] h-[60%] flex items-center justify-center rounded-[0.3vw]"
+                                                        style="background-color: #434343"
+                                                    >
+                                                        <h2
+                                                            style="
+                                                                color: #fff;
+                                                                font-family: Inter;
+                                                                font-size: 0.6vw;
+                                                                font-style: normal;
+                                                                font-weight: 400;
+                                                                line-height: normal;
+                                                            "
+                                                        >
+                                                            ID - {{data.id}}
+                                                        </h2>
+                                                    </div>
+                                                </div>
+                                                <div class="w-[80%] h-full flex items-center relative">
+                                                    <div class="w-[15%] h-full absolute right-0 flex items-center justify-center">
+                                                        <img class="h-[30%]" src="./images/menuright.png" alt="" />
+                                                    </div>
+                                                    <div
+                                                        v-if="data.jobicon !== 'none'"
+                                                        class="w-[15%] h-full absolute right-[1.5vw] flex items-center justify-center"
+                                                    >
+                                                        <img class="h-[90%]" :src="'./images/'+data.jobicon+'.png'" alt="" />
+                                                    </div>
+                                                    <h2
+                                                        style="
+                                                            color: #fff;
+                                                            font-family: Inter;
+                                                            font-size: 0.6vw;
+                                                            font-style: normal;
+                                                            font-weight: 400;
+                                                            line-height: normal;
+                                                        "
+                                                    >
+                                                        {{data.name}}
+                                                    </h2>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            v-if="categoryPage == 'serveroption'"
+                                            class="w-[90%] h-full flex relative"
+                                            :style="selectedIndexCategoryElement == index ? 'background: #E02849; border-radius:0.4vw' : 'border-radius: 10px;background: rgba(51, 51, 54, 0.47);box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.20) inset'"
+                                        >
+                                            <div
+                                                v-if="data.name == 'servertime'"
+                                                class="w-[25%] h-full absolute right-[1vw] flex items-center justify-between"
+                                            >
+                                                <img class="h-[50%]" style="rotate: 180deg" src="./images/lefticon.png" alt="" />
+                                                <h2
+                                                    style="
+                                                        color: #fff;
+                                                        font-family: Inter;
+                                                        font-size: 0.7vw;
+                                                        font-style: normal;
+                                                        font-weight: 400;
+                                                        line-height: normal;
+                                                    "
+                                                >
+                                                    {{serverTime}}
+                                                </h2>
+                                                <img class="h-[50%]" src="./images/lefticon.png" alt="" />
+                                            </div>
+                                            <div
+                                                v-if="data.name == 'clearvehicle'"
+                                                class="w-[25%] h-full absolute right-[1vw] flex items-center justify-between"
+                                            >
+                                                <img class="h-[50%]" style="rotate: 180deg" src="./images/lefticon.png" alt="" />
+                                                <h2
+                                                    style="
+                                                        color: #fff;
+                                                        font-family: Inter;
+                                                        font-size: 0.7vw;
+                                                        font-style: normal;
+                                                        font-weight: 400;
+                                                        line-height: normal;
+                                                    "
+                                                >
+                                                    {{vehicleDeleteDisantance}}
+                                                </h2>
+                                                <img class="h-[50%]" src="./images/lefticon.png" alt="" />
+                                            </div>
+                                            <div class="w-[15%] h-full flex items-center justify-center">
+                                                <img class="h-[50%]" :src="'./images/'+data.icon+'.png'" alt="" />
+                                            </div>
+                                            <div class="w-[85%] h-full flex items-center">
+                                                <h2
+                                                    style="
+                                                        color: #fff;
+                                                        font-family: Inter;
+                                                        font-size: 0.7vw;
+                                                        font-style: normal;
+                                                        font-weight: 400;
+                                                        line-height: normal;
+                                                    "
+                                                >
+                                                    {{data.label}}
+                                                </h2>
+                                            </div>
+                                        </div>
+                                        <div
+                                            v-if="categoryPage == 'vehicleoption'"
+                                            class="w-[90%] h-full flex relative"
+                                            :style="selectedIndexCategoryElement == index ? 'background: #E02849; border-radius:0.4vw' : 'border-radius: 10px;background: rgba(51, 51, 54, 0.47);box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.20) inset'"
+                                        >
+                                            <div class="w-[15%] h-full flex items-center justify-center">
+                                                <img class="h-[50%]" :src="'./images/'+data.icon+'.png'" alt="" />
+                                            </div>
+                                            <div class="w-[85%] h-full flex items-center">
+                                                <h2
+                                                    style="
+                                                        color: #fff;
+                                                        font-family: Inter;
+                                                        font-size: 0.7vw;
+                                                        font-style: normal;
+                                                        font-weight: 400;
+                                                        line-height: normal;
+                                                    "
+                                                >
+                                                    {{data.label}}
+                                                </h2>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="w-[15%] h-full border"></div>
+                                            <h2 class="text-white">{{data.label}}</h2> -->
+                                    </div>
+                                </div>
+                                <div class="w-full h-[7.5%] flex items-start justify-center">
+                                    <div
+                                        class="w-[90%] h-full flex items-center justify-center"
+                                        style="border-top: 2px solid rgba(255, 255, 255, 0.14)"
+                                    >
+                                        <h2 class="text-white">{{onlinePlayersCount}} {{this.Locales['playerattotal']}}</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="h-full opened-menu relative" style="background: #0a0a0b; border-radius: 0 30px 30px 0">
+                                <div
+                                    class="w-full h-[15%] absolute bottom-[-8vh] flex items-end justify-center"
+                                    style="background-size: 100% 100%"
+                                    :style="playerCheckedData.showmouse ? 'background-image: url(./images/showmouseicon.png)': 'background-image: url(./images/closemouseicon.png);'"
+                                >
+                                    <h2
+                                        style="
+                                            color: #fff;
+                                            font-family: Inter;
+                                            font-size: 0.7vw;
+                                            font-style: normal;
+                                            font-weight: 400;
+                                            line-height: normal;
+                                        "
+                                    >
+                                        ALT
+                                    </h2>
+                                </div>
+
+                                <div class="w-full h-[15%] flex items-end justify-center">
+                                    <div class="w-[70%] h-[70%] rounded-full flex items-center justify-center">
+                                        <img class="h-full rounded-full" :src="playerData.avatar" alt="" />
+                                    </div>
+                                </div>
+                                <div
+                                    class="w-full h-[85%] no-scrollbar flex items-center justify-center flex-wrap content-center"
+                                    style="overflow: auto"
+                                >
+                                    <div
+                                        v-for="(data,index) in mainCategory "
+                                        :key="index"
+                                        style="transition: 1s all"
+                                        class="menu-item w-full h-[15%] flex items-center justify-center relative"
+                                    >
+                                        <div
+                                            v-if="selectedIndexMainCategory == index "
+                                            class="w-[10%] h-full absolute right-0"
+                                            style="
+                                                background-color: #e02849;
+                                                border-radius: 20px 0px 0px 20px;
+                                                transition: 1s all;
+                                                filter: drop-shadow(0px 0px 20px #e02849);
+                                            "
+                                        ></div>
+
+                                        <img v-if="categoryPage == data.name" class="h-[40%]" :src="'./images/'+data.name+'active.png'" alt="" />
+                                        <img v-else class="h-[40%]" :src="'./images/'+data.name+'.png'" alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://unpkg.com/swiper@5.3.8/js/swiper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.min.js" type="text/javascript"></script>
+        <script src="./js/app.js" type="module"></script>
+    </body>
+</html>

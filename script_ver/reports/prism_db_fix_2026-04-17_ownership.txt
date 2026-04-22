@@ -1,0 +1,28 @@
+Prism Banking DB fix report - 2026-04-17
+
+Context:
+- User still reported ownership error ("you dont own this account").
+- DB audit found orphan banking records tied to identifier RFT64842, while active players table only had DCA73809.
+
+Applied changes:
+1) Updated prism_banking_accounts:
+   - identifier: RFT64842 -> DCA73809
+   - set `primary` = 0 on migrated rows to preserve single primary account consistency.
+2) Deleted orphan prism_banking_settings row for RFT64842.
+3) Updated prism_banking_nominees owner/nominee identifiers RFT64842 -> DCA73809 (no nominee rows existed).
+
+Post-fix snapshot:
+Accounts:
+- 2444192481 | DCA73809 | express | balance 0 | primary 0 | is_society 0
+- 3728181468 | DCA73809 | debit   | balance 4864 | primary 0 | is_society 0
+- 7739593764 | DCA73809 | debit   | balance 5000 | primary 1 | is_society 0
+
+Settings:
+- DCA73809 | creditscore 600 | allow_transfer 1 | is_optimized 1 | wit_level 1 | mcard_level 1
+
+Integrity checks:
+- personal_accounts_without_player = 0
+- nominees_total = 0
+
+Note:
+- Resource restart/reconnect test is still required to validate runtime behavior end-to-end after DB correction.

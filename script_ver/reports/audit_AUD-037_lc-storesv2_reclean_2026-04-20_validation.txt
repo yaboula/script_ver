@@ -1,0 +1,15 @@
+AUD-037 reclean validation
+date=2026-04-20
+root=c:\admirales\script_ver\script_ver\approved\[qb]\lc-storesv2
+files_total=159
+manifest_missing_lc-storesv2=0
+manifest_missing_lc_utils=0
+manifest_backslash_entries=0
+leak_marker_matches=0
+urls_detected_start
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-storesv2\lc-storesv2\nui\ui.html:26:		<script src="https://cfx-nui-lc_utils/nui/index.js" type="text/javascript"></script>
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-storesv2\lc-storesv2\nui\ui.html:83:											<!-- Blips and colors ID from there: https://docs.fivem.net/docs/game-references/blips/ -->
+c:\admirales\script_ver\script_ver\approved\[qb]\lc-storesv2\lc_utils\nui\index.js:162:    return `https://${resource_name}/${name}`;
+urls_detected_end
+critical_scan_start
+critical_scan_end

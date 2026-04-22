@@ -1,0 +1,38 @@
+.success {
+    background: rgba(19, 151, 110, 0.7);
+    border-right: 1px solid rgba(9,75,55,0.5);
+    border-bottom: 3px solid rgba(9,75,55,0.5);
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+    color: #fff;
+}
+
+.primary {
+    background-color: rgba(51, 112, 165, 0.7);
+    border-right: 1px solid rgba(25,56,82,0.5);
+    border-bottom: 3px solid rgba(25,56,82,0.5);
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+    color: #ffffff;
+}
+.error {
+    background-color: rgba(147, 62, 47, 0.7);
+    border-right: 1px solid rgba(73, 31, 23, 0.5);
+    border-bottom: 3px solid rgba(73, 31, 23, 0.5);
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+    color: #fff;
+}
+
+.police {
+    background: rgb(2,0,36);
+    background: linear-gradient(to right, rgba(255,0,0,0), #d8d8d8d8);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgb(29, 120, 255);
+    
+}
+
+.ambulance {
+    background: rgb(2,0,36);
+    background: linear-gradient(to right, rgba(255,0,0,0), #d8d8d8d8);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgb(29, 120, 255);
+    
+}

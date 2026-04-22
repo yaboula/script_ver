@@ -1,0 +1,474 @@
+﻿
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----         4/14/2026   8:20 PM                0r-farmingv2                                                         
+d-----         4/10/2026   2:24 PM                0r_farming_assets                                                    
+d-----         4/14/2026   7:38 PM                0r_lib                                                               
+d-----         4/10/2026   2:24 PM                0r_plantsnew                                                         
+d-----         4/10/2026   2:24 PM                0r_plant_assets                                                      
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r-farmingv2
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----         4/14/2026   7:29 PM                components                                                           
+d-----         4/10/2026   2:24 PM                core                                                                 
+d-----         4/14/2026   8:18 PM                locales                                                              
+d-----         4/10/2026   2:24 PM                modules                                                              
+d-----         4/10/2026   2:24 PM                shared                                                               
+d-----         4/10/2026   2:24 PM                ui                                                                   
+-a----        12/18/2025   3:58 AM           8631 client.lua                                                           
+-a----         4/14/2026   8:07 PM           6120 config.lua                                                           
+-a----        12/18/2025   3:51 AM            826 database.sql                                                         
+-a----         4/14/2026   7:29 PM            853 fxmanifest.lua                                                       
+-a----        12/18/2025   5:40 AM           3054 server.lua                                                           
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r-farmingv2\components
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----         4/14/2026   7:29 PM          14551 utils_lib.js                                                         
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r-farmingv2\core
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----         4/10/2026   2:24 PM                lobby                                                                
+d-----         4/10/2026   2:24 PM                market                                                               
+d-----         4/10/2026   2:24 PM                multiplayer_tasks                                                    
+d-----         4/10/2026   2:24 PM                personal_challenges                                                  
+d-----         4/10/2026   2:24 PM                profile                                                              
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r-farmingv2\core\lobby
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        12/18/2025   3:57 AM           2346 client.lua                                                           
+-a----        12/18/2025   3:58 AM           8563 server.lua                                                           
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r-farmingv2\core\market
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        12/18/2025   5:05 AM           5256 client.lua                                                           
+-a----         4/14/2026   8:09 PM           3845 config.lua                                                           
+-a----        12/18/2025   7:19 AM           6629 server.lua                                                           
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r-farmingv2\core\multiplayer_tasks
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----         4/10/2026   2:24 PM                freelance                                                            
+d-----         4/10/2026   2:24 PM                livestock_farming                                                    
+d-----         4/10/2026   2:24 PM                melon_pumpkin                                                        
+-a----        12/18/2025   5:05 AM           6608 client_index.lua                                                     
+-a----        12/18/2025   5:05 AM          11058 server_index.lua                                                     
+
+
+    Directory: 
+    C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r-farmingv2\core\multiplayer_tasks\freelance
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----          4/2/2026  12:27 AM          52676 client.lua                                                           
+-a----         4/14/2026   8:11 PM           5604 config.lua                                                           
+-a----        12/18/2025   6:50 AM          23155 server.lua                                                           
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r-farmingv2\core\multiplayer_tasks\li
+    vestock_farming
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        12/18/2025   6:47 AM          22448 client.lua                                                           
+-a----         4/14/2026   8:11 PM           3462 config.lua                                                           
+-a----        12/18/2025   6:37 AM           9434 server.lua                                                           
+
+
+    Directory: 
+    C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r-farmingv2\core\multiplayer_tasks\melon_pumpkin
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        12/18/2025   6:55 AM          34773 client.lua                                                           
+-a----         4/14/2026   8:10 PM           5223 config.lua                                                           
+-a----        12/18/2025   6:41 AM          18224 server.lua                                                           
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r-farmingv2\core\personal_challenges
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        12/18/2025   4:42 AM           2078 client.lua                                                           
+-a----        12/18/2025   3:51 AM          10824 config.lua                                                           
+-a----        12/18/2025   5:05 AM           8599 server.lua                                                           
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r-farmingv2\core\profile
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        12/18/2025   4:41 AM            762 client.lua                                                           
+-a----        12/18/2025   5:40 AM           3870 server.lua                                                           
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r-farmingv2\locales
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----         4/14/2026   8:16 PM          12194 en.json                                                              
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r-farmingv2\modules
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----         4/10/2026   2:24 PM                bridge                                                               
+d-----         4/10/2026   2:24 PM                exports                                                              
+d-----         4/10/2026   2:24 PM                inventory                                                            
+d-----         4/10/2026   2:24 PM                mysql                                                                
+d-----         4/10/2026   2:24 PM                target                                                               
+d-----         4/10/2026   2:24 PM                utils                                                                
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r-farmingv2\modules\bridge
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----         4/10/2026   2:24 PM                esx                                                                  
+d-----         4/10/2026   2:24 PM                qb                                                                   
+d-----         4/10/2026   2:24 PM                qbx                                                                  
+-a----        12/18/2025   3:51 AM            280 init.lua                                                             
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r-farmingv2\modules\bridge\esx
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        12/18/2025   3:51 AM           2323 client.lua                                                           
+-a----        12/18/2025   3:51 AM           2219 server.lua                                                           
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r-farmingv2\modules\bridge\qb
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        12/18/2025   3:51 AM           2084 client.lua                                                           
+-a----        12/18/2025   3:51 AM           2126 server.lua                                                           
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r-farmingv2\modules\bridge\qbx
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        12/18/2025   3:51 AM            621 client.lua                                                           
+-a----        12/18/2025   3:51 AM           2096 server.lua                                                           
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r-farmingv2\modules\exports
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        12/18/2025   3:51 AM           1376 client.lua                                                           
+-a----        12/18/2025   3:51 AM           1241 server.lua                                                           
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r-farmingv2\modules\inventory
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        12/18/2025   3:51 AM           2672 server.lua                                                           
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r-farmingv2\modules\mysql
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        12/18/2025   3:51 AM           4490 server.lua                                                           
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r-farmingv2\modules\target
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        12/18/2025   3:51 AM           3407 client.lua                                                           
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r-farmingv2\modules\utils
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        12/18/2025   3:51 AM           5423 client.lua                                                           
+-a----        12/18/2025   3:51 AM            390 server.lua                                                           
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r-farmingv2\shared
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----         4/10/2026   2:24 PM                types                                                                
+-a----        12/18/2025   3:51 AM           2588 init.lua                                                             
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r-farmingv2\shared\types
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        12/18/2025   3:51 AM            341 __lobby.lua                                                          
+-a----        12/18/2025   3:51 AM            442 __market.lua                                                         
+-a----        12/18/2025   3:51 AM           3037 __multiplayer_task.lua                                               
+-a----         4/14/2026   8:10 PM            715 __personal_challenge.lua                                             
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r-farmingv2\ui
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----         4/10/2026   2:24 PM                build                                                                
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r-farmingv2\ui\build
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----         4/10/2026   2:24 PM                assets                                                               
+d-----         4/10/2026   2:24 PM                images                                                               
+d-----         4/10/2026   2:24 PM                items                                                                
+-a----        12/18/2025   3:51 AM            891 index.html                                                           
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r-farmingv2\ui\build\assets
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        12/18/2025   3:51 AM         590402 index-DR3FTflN.js                                                    
+-a----        12/18/2025   3:51 AM          34186 index-Yod9b-0a.css                                                   
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r-farmingv2\ui\build\images
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----         4/10/2026   2:24 PM                common                                                               
+d-----         4/10/2026   2:24 PM                icons                                                                
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r-farmingv2\ui\build\images\common
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        12/18/2025   3:51 AM        2887952 farmer2.png                                                          
+-a----        12/18/2025   3:51 AM        3092532 farmer_new.png                                                       
+-a----        12/18/2025   3:51 AM         638150 freelance.png                                                        
+-a----        12/18/2025   3:51 AM            409 izgara_cart_item.png                                                 
+-a----        12/18/2025   3:51 AM            442 izgara_header.png                                                    
+-a----        12/18/2025   3:51 AM            608 izgara_information_left.png                                          
+-a----        12/18/2025   3:51 AM            774 izgara_market_item.png                                               
+-a----        12/18/2025   3:51 AM         689942 livestock_farming.png                                                
+-a----        12/18/2025   3:51 AM        2785943 melon_pumpkin.png                                                    
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r-farmingv2\ui\build\images\icons
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        12/18/2025   3:51 AM           1399 exp.svg                                                              
+-a----        12/18/2025   3:51 AM           1672 money.svg                                                            
+-a----        12/18/2025   3:51 AM        1314045 prism.png                                                            
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r-farmingv2\ui\build\items
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        12/18/2025   3:51 AM          15924 daisy.png                                                            
+-a----        12/18/2025   3:51 AM          14756 daisy_seed.png                                                       
+-a----        12/18/2025   3:51 AM           2977 default.png                                                          
+-a----        12/18/2025   3:51 AM          59439 farming_tablet.png                                                   
+-a----        12/18/2025   3:51 AM           5219 green.png                                                            
+-a----        12/18/2025   3:51 AM          15723 green_seed.png                                                       
+-a----        12/18/2025   3:51 AM          13648 melon.png                                                            
+-a----        12/18/2025   3:51 AM         923918 melon_seed.png                                                       
+-a----        12/18/2025   3:51 AM           9941 poppy.png                                                            
+-a----        12/18/2025   3:51 AM          17019 poppy_seed.png                                                       
+-a----        12/18/2025   3:51 AM           5121 pumpkin.png                                                          
+-a----        12/18/2025   3:51 AM           5591 pumpkin_seed.png                                                     
+-a----        12/18/2025   3:51 AM          17469 rose.png                                                             
+-a----        12/18/2025   3:51 AM          17987 rose_seed.png                                                        
+-a----        12/18/2025   3:51 AM           2327 watering_can.png                                                     
+-a----        12/18/2025   3:51 AM           5278 watermelon.png                                                       
+-a----        12/18/2025   3:51 AM           6037 watermelon_seed.png                                                  
+-a----        12/18/2025   3:51 AM           6867 wheat.png                                                            
+-a----        12/18/2025   3:51 AM           5735 wheat_seed.png                                                       
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r_farming_assets
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----         4/10/2026   2:24 PM                stream                                                               
+-a----        12/18/2025   3:44 AM            118 fxmanifest.lua                                                       
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r_farming_assets\stream
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        12/18/2025   3:44 AM         158770 baletrailer+hi.ytd                                                   
+-a----          4/1/2026   5:34 PM         640486 baletrailer.yft                                                      
+-a----        12/18/2025   3:44 AM          78192 baletrailer.ytd                                                      
+-a----          4/1/2026   5:34 PM         640486 baletrailer_hi.yft                                                   
+-a----          4/1/2026   5:34 PM         402258 prop_veg_crop_03_cab.yft                                             
+-a----        12/18/2025   3:44 AM         110302 res_markers.ytd                                                      
+-a----          4/1/2026   5:34 PM        1682862 tractor3.yft                                                         
+-a----        12/18/2025   3:44 AM         383313 tractor3.ytd                                                         
+-a----          4/1/2026   5:34 PM        1682862 tractor3_hi.yft                                                      
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r_lib
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----          2/1/2025   6:59 PM                modules                                                              
+d-----         4/14/2026   7:38 PM                shared                                                               
+d-----         4/14/2026   7:38 PM                web                                                                  
+-a----         2/16/2026   8:10 PM            919 config.lua                                                           
+-a----         2/16/2026   8:10 PM            709 fxmanifest.lua                                                       
+-a----          5/2/2025   1:01 PM            271 readme.md                                                            
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r_lib\modules
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----         4/14/2026   7:38 PM                client                                                               
+d-----         4/14/2026   7:38 PM                server                                                               
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r_lib\modules\client
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----         2/16/2026   9:13 PM           2372 events.lua                                                           
+-a----         2/16/2026   9:16 PM          33949 main.lua                                                             
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r_lib\modules\server
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----         2/16/2026   9:17 PM           3365 events.lua                                                           
+-a----         2/16/2026   9:21 PM          51871 main.lua                                                             
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r_lib\shared
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----         2/16/2026   9:26 PM          25535 blips.lua                                                            
+-a----         2/16/2026   9:27 PM           2424 common.lua                                                           
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r_lib\web
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----         2/16/2026   8:10 PM           3462 index.html                                                           
+-a----         2/16/2026   8:10 PM           3331 index.js                                                             
+-a----         2/16/2026   8:10 PM           5015 sound.mp3                                                            
+-a----         2/16/2026   8:10 PM           4606 style.css                                                            
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r_plantsnew
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----         4/10/2026   2:24 PM                stream                                                               
+-a----        12/18/2025   3:44 AM            619 fxmanifest.lua                                                       
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r_plantsnew\stream
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----          4/2/2026   4:04 AM        1007554 0r_melon.ydr                                                         
+-a----        12/18/2025   3:44 AM            552 0r_plantsnew.ytyp                                                    
+-a----          4/2/2026   4:04 AM        2355308 0r_sapling.ydr                                                       
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r_plant_assets
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----         4/10/2026   2:24 PM                stream                                                               
+-a----        12/18/2025   3:44 AM            678 fxmanifest.lua                                                       
+
+
+    Directory: C:\admirales\script_ver\script_ver\quarantine\under-review\[farm]\0r_plant_assets\stream
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        12/18/2025   3:44 AM            619 0r_farming_props.ytyp                                                
+-a----        12/18/2025   3:44 AM            561 0r_plant.ytyp                                                        
+-a----          4/2/2026   4:04 AM         728941 0r_seed_machine.ydr                                                  
+-a----          4/2/2026   4:04 AM         625406 prop_haybale_green.yft                                               
+-a----          4/2/2026   4:04 AM         625403 prop_haybale_rose.yft                                                
+-a----          4/2/2026   4:04 AM         437244 prop_veg_crop_daisy.ydr                                              
+-a----          4/2/2026   4:04 AM         434971 prop_veg_crop_green.ydr                                              
+-a----          4/2/2026   4:04 AM         441505 prop_veg_crop_poppy.ydr                                              
+-a----          4/2/2026   4:04 AM         438976 prop_veg_crop_rose.ydr                                               
+
+

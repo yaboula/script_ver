@@ -1,0 +1,661 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    margin: 0;
+}
+
+body {
+    display: block;
+    padding: 0;
+    margin: 0;
+    user-select: none;
+    background-color: transparent !important;
+    /* overflow: hidden; */
+}
+
+@font-face {
+    font-family: ttfirs;
+    src: url(fonts/ttfirs.ttf);
+}
+
+
+@font-face {
+    font-family: 'Gilroy-Regular';
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;
+    src: url('fonts/gilroy-regular-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Gilroy-Medium';
+    font-weight: 500;
+    font-style: italic;
+    font-display: block;
+    src: url('fonts/gilroy-medium-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Gilroy-SemiBold';
+    src: url('fonts/gilroy-semibold-webfont.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: AGENCYB;
+    src: url(fonts/AGENCYB.ttf);
+}
+
+@font-face {
+    font-family: AGENCYR;
+    src: url(fonts/AGENCYR.ttf);
+}
+
+::-webkit-scrollbar {
+	width: 0;
+}
+
+::-webkit-scrollbar-thumb {
+	background: transparent;
+}
+
+#mainDivEffect {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    display: none;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.90) 0%, rgba(0, 0, 0, 0.00) 29.77%), linear-gradient(270deg, rgba(0, 0, 0, 0.90) 0%, rgba(0, 0, 0, 0.00) 28.05%), linear-gradient(90deg, rgba(0, 0, 0, 0.49) 0%, rgba(0, 0, 0, 0.00) 51.02%), linear-gradient(270deg, rgba(0, 0, 0, 0.49) 0%, rgba(0, 0, 0, 0.00) 48.98%), linear-gradient(0deg, rgba(0, 0, 0, 0.90) 0%, rgba(0, 0, 0, 0.00) 42.87%), linear-gradient(0deg, rgba(0, 0, 0, 0.49) 0%, rgba(0, 0, 0, 0.00) 50%);
+    /* background: linear-gradient(90deg, rgba(21, 23, 29, 0.9) 0%, rgba(20, 22, 27, 0) 29.77%), linear-gradient(270deg, rgba(18, 19, 22, 0.9) 0%, rgba(17, 19, 24, 0) 28.05%), linear-gradient(90deg, rgba(21, 24, 31, 0.49) 0%, rgba(24, 26, 31, 0) 51.02%), linear-gradient(270deg, rgba(9, 10, 14, 0.49) 0%, rgba(15, 16, 19, 0) 48.98%), linear-gradient(0deg, rgba(16, 18, 22, 0.9) 0%, rgba(17, 19, 24, 0) 42.87%), linear-gradient(0deg, rgba(21, 24, 31, 0.49) 0%, rgba(27, 29, 34, 0) 50%); */
+    /* background: linear-gradient(271deg, rgba(82, 203, 255, 0.20) 0.87%, rgba(36, 40, 50, 0.00) 37.29%), linear-gradient(270deg, rgba(82, 203, 255, 0.15) 0%, rgba(36, 40, 50, 0.00) 39.51%); */
+    /* background: linear-gradient(271deg, rgba(36, 40, 50, 0.00) 0.87%, rgba(36, 40, 50, 0.50) 37.29%), linear-gradient(270deg, #242832 0%, rgba(36, 40, 50, 0.00) 39.51%); */
+    /* background: linear-gradient(271deg, rgba(12, 14, 17, 0.4) 0.87%, rgba(15, 16, 20, 0) 57.29%), linear-gradient(270deg, #0e0f13f6 0%, rgba(20, 22, 26, 0) 61.51%); */
+    z-index: -1;
+    transform: rotate(180deg);
+}
+
+#mainDiv {
+    width: 22%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.4vw;
+}
+
+#mainDivTop {
+    width: 94%;
+    height: 8.5%;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex-direction: column;
+    /* background-color: blue; */
+}
+
+#mainDivTopTop {
+    width: 78%;
+    height: 97%;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: row;
+    /* gap: 1.6vw; */
+}
+
+#mainDivTopTextDiv {
+    width: 90%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.2vw;
+    text-transform: uppercase;
+    /* background-color: red; */
+}
+
+#mainDivTop2 {
+    width: 80%;
+    height: 3.5%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    /* background-color: red; */
+}
+
+#mainDivTop2InputDiv {
+    width: 86%;
+    height: 100%;
+    position: relative;
+    border-radius: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background: rgba(255, 255, 255, 0.04);
+    color: #52CBFF;
+    font-size: 0.7vw;
+}
+
+#mainDivTop2Input {
+    width: 85%;
+    height: 85%;
+    position: relative;
+    background-color: transparent;
+    outline: 0;
+    border: 0;
+    font-family: 'Gilroy-Regular';
+    color: rgba(255, 255, 255, 0.48);
+    font-size: 0.7vw;
+}
+
+#mainDivTop2Input::placeholder {
+    font-family: 'Gilroy-Regular';
+    color: rgba(255, 255, 255, 0.48);
+}
+
+#mainDivTop2Btn {
+    width: 11%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1px;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(82, 203, 255, 0.04) 0%, rgba(82, 203, 255, 0.19) 100%);
+    color: #52CBFF;
+    font-size: 0.7vw;
+}
+
+#mainDivTop2Btn i {
+    margin-top: 8%;
+}
+
+#mainDivTop2Btn:hover {
+    cursor: pointer;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(82, 203, 255, 0.14) 0%, rgba(82, 203, 255, 0.29) 100%);
+}
+
+#mainDivInfoDiv {
+    width: 80%;
+    height: 12%;
+    position: relative;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4vw;
+    margin-top: 4%
+}
+
+#mainDivInfoTextDiv {
+    width: 88%;
+    height: fit-content;
+    position: relative;
+    color: #FFF;
+    font-weight: 600;
+    font-family: 'Gilroy-SemiBold';
+    font-size: 0.75vw;
+}
+
+#mainDivInfoDivInside {
+    width: 87%;
+    height: 50%;
+    position: relative;
+    border-radius: 1px;
+    border: 1px solid rgba(255, 255, 255, 0.53);
+    background: rgba(255, 255, 255, 0.11);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    font-family: 'Gilroy-Medium';
+    color: rgba(255, 255, 255, 0.54);
+    font-size: 0.55vw;
+    gap: 1.2vw;
+}
+
+#mainDivOutfitsDiv {
+    width: 80%;
+    height: 76%;
+    position: relative;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8vw;
+    margin-top: 4%
+}
+
+/* Dialog */
+
+#mainDivDialog {
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    left: 0;
+    right: 0;
+    /* top: 0; */
+    bottom: 2%;
+    margin: auto;
+    border-radius: 15px;
+    background: rgba(26, 26, 26, 0);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 1.5vw;
+    padding-right: 1.5vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    gap: 0.6vw;
+    z-index: 3;
+}
+
+#mainDivDialog h4 {
+    color: #FFF;
+    font-family: 'Gilroy-SemiBold';
+    font-weight: 600;
+    font-size: 0.9vw;
+}
+
+#mainDivDialog span {
+    color: rgba(255, 255, 255, 0.48);
+    font-family: 'Gilroy-Regular';
+    font-weight: 500;
+    font-size: 0.6vw;
+}
+
+#mainDivDialogButtons {
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    font-family: 'Gilroy-Medium';
+    font-weight: 500;
+    font-size: 0.6vw;
+    gap: 0.4vw;
+}
+
+.mainDivDialogButtonGreen {
+    width: 31%;
+    height: fit-content;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    background: radial-gradient(132.55% 105.85% at 50% 50%, rgba(82, 203, 255, 0.61) 0%, rgba(82, 203, 255, 0.00) 100%);
+    color: #FFF;
+    padding-left: 1.4vw;
+    padding-right: 1.4vw;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-top: 0.5vw;
+    padding-bottom: 0.5vw;
+}
+
+.mainDivDialogButtonGreen:hover {
+    cursor: pointer;
+    background: radial-gradient(132.55% 105.85% at 50% 50%, rgba(82, 203, 255, 0.71) 0%, rgba(82, 203, 255, 0.00) 100%);
+}
+
+.mainDivDialogButtonRed {
+    width: 31%;
+    height: fit-content;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    background: rgba(255, 97, 97, 0.42);
+    color: #FFF;
+    padding-left: 1.4vw;
+    padding-right: 1.4vw;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-top: 0.5vw;
+    padding-bottom: 0.5vw;
+}
+
+.mainDivDialogButtonRed:hover {
+    cursor: pointer;
+    background: rgba(255, 97, 97, 0.22);
+}
+
+.mainDivDialogInput {
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    border: 0;
+    outline: 0;
+    text-align: center;
+    font-family: 'Gilroy-Regular';
+    color: rgba(255, 255, 255, 0.60);
+    border-radius: 3px;
+    background: radial-gradient(87.66% 87.66% at 50% 50%, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.00) 100%);
+    padding-top: 0.6vw;
+    padding-bottom: 0.6vw;
+    padding-left: 1.9vw;
+    padding-right: 1.9vw;
+    font-size: 0.7vw;
+}
+
+.mainDivDialogInput::placeholder {
+    font-family: 'Gilroy-Regular';
+    color: rgba(255, 255, 255, 0.21);
+    font-size: 0.55vw;
+}
+
+#mainDivOutfitsDivTop {
+    width: 90%;
+    height: fit-content;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#mainDivOutfitsDivInside {
+    width: 89%;
+    height: 88%;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    gap: 0.8vw;
+}
+
+#mainDivOutfitDiv {
+    width: 100%;
+    height: 16%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    /* background-color: red; */
+}
+
+#mainDivOutfitDivTop {
+    width: 100%;
+    height: 66%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+#mainDivOutfitDivTopLeft {
+    width: 25%;
+    height: 97%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    border: 1px solid #52CBFF;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(82, 203, 255, 0.14) 0%, rgba(82, 203, 255, 0.29) 100%);
+    color: #52CBFF;
+    font-size: 1.5vw;
+}
+
+#mainDivOutfitDivTopRight {
+    width: 70%;
+    height: 100%;
+    position: relative;
+    border-radius: 2px;
+    background: radial-gradient(87.66% 87.66% at 50% 50%, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.00) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#mainDivOutfitDivTopRightInside {
+    width: 82%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    color: #FFF;
+    font-weight: 600;
+    font-family: 'Gilroy-SemiBold';
+    gap: 0.3vw;
+}
+
+.mainDivOutfitDivTopRightInsideTags {
+    width: 100%;
+    min-height: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* flex-wrap: wrap; */
+    flex-direction: row;
+    overflow: scroll;
+    gap: 0.4vw;
+    /* background-color: red; */
+}
+
+#mainDivOutfitDivTopRightInsideTags::-webkit-scrollbar {
+	width: 0;
+    height: 0;
+}
+
+#mainDivOutfitDivTopRightInsideTags::-webkit-scrollbar-thumb {
+	background: transparent;
+}
+
+#mainDivOutfitDivTopRightInsideTag {
+    width: fit-content;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    font-weight: 400;
+    font-family: 'Gilroy-Regular';
+    background: rgba(0, 0, 0, 0.37);
+    font-size: 0.5vw;
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
+}
+
+#mainDivOutfitDivTopRightInsideTag h4 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#mainDivOutfitDivBottom {
+    width: 100%;
+    height: 25%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#mainDivOutfitDivBottomBtn {
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6vw;
+}
+
+.mainDivOutfitDivBottomBtnBlue {
+    width: 27.5%;
+    background: rgba(10, 158, 245, 0.14);
+    color: #0E9DEF;
+}
+
+.mainDivOutfitDivBottomBtnBlue:hover {
+    cursor: pointer;
+    background: rgba(10, 158, 245, 0.24);
+}
+
+.mainDivOutfitDivBottomBtnOrange {
+    width: 28.5%;
+    background: radial-gradient(82.37% 92.14% at 50% 50%, rgba(255, 255, 255, 0.30) 0%, rgba(255, 255, 255, 0.00) 100%);
+    color: #FFF;
+}
+
+.mainDivOutfitDivBottomBtnOrange:hover {
+    cursor: pointer;
+    background: radial-gradient(82.37% 92.14% at 50% 50%, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.10) 100%);
+}
+
+.mainDivOutfitDivBottomBtnLime {
+    width: 22%;
+    background: radial-gradient(82.37% 92.14% at 50% 50%, rgba(255, 255, 255, 0.30) 0%, rgba(255, 255, 255, 0.00) 100%);
+    color: #FFF;
+}
+
+.mainDivOutfitDivBottomBtnLime:hover {
+    cursor: pointer;
+    background: radial-gradient(82.37% 92.14% at 50% 50%, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.10) 100%);
+}
+
+.mainDivOutfitDivBottomBtnRed {
+    width: 22%;
+    background: rgba(245, 10, 10, 0.07);
+    color: #FF6A6A8C;
+}
+
+.mainDivOutfitDivBottomBtnRed:hover {
+    cursor: pointer;
+    background: rgba(245, 10, 10, 0.17);
+}
+
+#pedDiv {
+    width: 30%;
+    height: 80%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 0;
+    /* background-color: red; */
+}
+
+#mainDivOutsideButtons {
+    width: 27%;
+    height: 71.5%;
+    position: absolute;
+    left: 20.5%;
+    display: none;
+    top: 13.5%;
+    /* bottom: 0; */
+    /* margin: auto; */
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 0.4vw;
+    z-index: 2;
+    /* background-color: red; */
+}
+
+#mainDivOutsideButtonDiv {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 0.4vw;
+    /* background-color: red; */
+}
+
+.mainDivOutsideButton {
+    width: 30px; /* Sabit genişlik */
+    height: 30px; /* Sabit yükseklik */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6vw;
+    border-radius: 4px;
+    border: 1px solid #ffffff1c;
+    background: #ffffff1c;
+    flex-shrink: 0;
+    color: #FFf;
+}
+
+.mainDivOutsideButton i {
+    font-size: 0.5vw; /* İkon boyutunu sabit tut */
+}
+
+.mainDivOutsideButton:hover {
+    cursor: pointer;
+    border: 1px solid #52CBFF;
+    background: #52cbff2d;
+}
+
+.mainDivOutsideButtonActive {
+    border: 1px solid #52CBFF;
+    background: #52cbff2d;
+}
+
+#mouseInfosDiv {
+    position: absolute;
+    right: 2%;
+    top: 7%;
+    width: 220px;
+    /* background: rgba(0, 0, 0, 0.6); */
+    background: radial-gradient(124.16% 111.18% at 50% 50%, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.00) 100%);
+    padding: 12px;
+    border-radius: 8px;
+    font-family: 'Gilroy-Medium', sans-serif;
+    font-size: 13px;
+    color: #fff;
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.mouseInfo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* background: rgba(255, 255, 255, 0.1); */
+    background: radial-gradient(124.16% 111.18% at 50% 50%, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.00) 100%);
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+.mouseInfo i {
+    font-size: 16px;
+    color: #fff;
+    min-width: 18px;
+}

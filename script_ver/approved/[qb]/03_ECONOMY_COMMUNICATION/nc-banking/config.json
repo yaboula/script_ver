@@ -1,0 +1,116 @@
+{
+    "TargetSystem_options": ["qb-target", "ox_target"],
+    "TargetSystem_description": "Choose which target system your server uses",
+    "TargetSystem": "qb-target",
+    
+    "BankLocations_description": "List of all bank locations with coordinates and headings",
+    "BankLocations": [
+      {
+        "x": 149.46,
+        "y": -1042.09,
+        "z": 29.37,
+        "w": 335.43,
+        "name": "Legion Square Bank"
+      },
+      {
+        "x": 313.84,
+        "y": -280.58,
+        "z": 54.16,
+        "w": 338.31,
+        "name": "Pacific Standard Bank"
+      },
+      {
+        "x": -351.23,
+        "y": -51.28,
+        "z": 49.04,
+        "w": 341.73,
+        "name": "Hawick Ave Bank"
+      },
+      {
+        "x": -1211.9,
+        "y": -331.9,
+        "z": 37.78,
+        "w": 20.07,
+        "name": "Rockford Hills Bank"
+      },
+      {
+        "x": -2961.14,
+        "y": 483.09,
+        "z": 15.7,
+        "w": 83.84,
+        "name": "Great Ocean Highway Bank"
+      },
+      {
+        "x": 1174.8,
+        "y": 2708.2,
+        "z": 38.09,
+        "w": 178.52,
+        "name": "Sandy Shores Bank"
+      },
+      {
+        "x": 242.82017,
+        "y": 226.6354,
+        "z": 107.2873,
+        "w": 159.48873,
+        "name": "Pacific Standard Bank"
+      },
+      {
+        "x": -112.22,
+        "y": 6471.01,
+        "z": 31.63,
+        "w": 134.18,
+        "name": "Pluto Standard Bank"
+      }
+    ],
+    
+    "UseBankPeds_description": "Enable or disable NPC bank tellers",
+    "UseBankPeds": true,
+    
+    "BankPed_description": "The model to use for bank tellers (NPC)",
+    "BankPed": "ig_bankman",
+    
+    "SharedAccounts_description": "Settings for the shared accounts feature",
+    "SharedAccounts": {
+      "EnableFeature_description": "Turn the shared accounts feature on or off",
+      "EnableFeature": true,
+      
+      "MaxMembersPerAccount_description": "Maximum number of players in one shared account",
+      "MaxMembersPerAccount": 5,
+      
+      "CreationFee_description": "Cost to create a new shared account (bank money)",
+      "CreationFee": 1000,
+      
+      "CodeLength_description": "Number of digits in account join codes",
+      "CodeLength": 3
+    },
+    
+    "LogTypes_description": "Transaction types mapping (do not change unless you know what you're doing)",
+    "LogTypes": {
+      "deposit": 1,
+      "withdraw": 2,
+      "society_deposit": 3,
+      "society_withdraw": 4,
+      "transfer": 5,
+      "shared_deposit": 6,
+      "shared_withdraw": 7,
+      "shared_transfer": 8,
+      "1": "deposit",
+      "2": "withdraw",
+      "3": "society_deposit",
+      "4": "society_withdraw",
+      "5": "transfer",
+      "6": "shared_deposit",
+      "7": "shared_withdraw",
+      "8": "shared_transfer"
+    },
+    
+    "ATMProps_description": "List of ATM prop models that can be interacted with",
+    "ATMProps": [
+      "prop_atm_01",
+      "prop_atm_02",
+      "prop_atm_03",
+      "prop_fleeca_atm",
+      "v_5_b_atm1",
+      "v_5_b_atm"
+    ]
+  }

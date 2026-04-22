@@ -1,0 +1,19 @@
+AUD-038 scan summary
+date=2026-04-20
+root=c:\admirales\script_ver\script_ver\approved\[qb]\lc-gasstationsv2
+scope=source-only-excluding-vendor
+[C-01] count=2 pattern=PerformHttpRequest
+[C-02] count=0 pattern=PerformHttpRequestInternal
+[C-03] count=2 pattern=load\(
+[C-04] count=0 pattern=loadstring\(
+[C-06] count=0 pattern=RunString\(
+[C-09] count=0 pattern=os\.execute\(
+[C-10] count=0 pattern=io\.popen\(
+[C-11] count=0 pattern=io\.open\(
+[A-05] count=4 pattern=RegisterCommand\(
+[A-06] count=87 pattern=RegisterNetEvent\(
+[A-08] count=0 pattern=GetConvar\(
+[A-09] count=0 pattern=ExecuteCommand\(
+[M-02] count=5 pattern=innerHTML
+[M-03] count=2 pattern=eval\(
+[NUI-REMOTE-SCRIPT] count=1 pattern=<script[^>]+src=.*https?://

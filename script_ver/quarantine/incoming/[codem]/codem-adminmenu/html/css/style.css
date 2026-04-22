@@ -1,0 +1,449 @@
+@font-face {
+    font-family: "Zen Dots";
+    src: url("../fonts/ZenDotsRegular.ttf");
+}
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/InterRegular.ttf");
+}
+@font-face {
+    font-family: "SF Compact Rounded";
+    src: url("../fonts/SF-Compact-Rounded-Semibold.ttf");
+}
+
+body {
+    overflow: hidden;
+    user-select: none;
+    /* background-color: rgba(0, 0, 0, 0.502);  */
+}
+
+.text-1 {
+    font-family: "Gilroy-SemiBold";
+
+    color: #b51c29;
+    -webkit-text-fill-color: rgba(255, 0, 0, 0); /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: #b51c29;
+}
+
+.mayhemhudsettingspageallsvg {
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    left: 39.5%;
+    top: 37%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.changeCategoryPage-enter-active {
+    animation: changeCategoryPage-enter 0.3s ease forwards;
+}
+.changeCategoryPage-leave-active {
+    animation: changeCategoryPage-leave 0.3s ease forwards;
+}
+
+@keyframes changeCategoryPage-enter {
+    0% {
+        transform: scaleX(0);
+        transform-origin: left;
+        opacity: 0;
+    }
+    100% {
+        transform: scaleX(1);
+        transform-origin: left;
+        opacity: 1;
+    }
+}
+@keyframes changeCategoryPage-leave {
+    0% {
+        transform: scaleX(1);
+        transform-origin: right;
+        opacity: 1;
+    }
+    100% {
+        transform: scaleX(0);
+        transform-origin: right;
+        opacity: 0;
+    }
+}
+.element-enter-active {
+    animation: element-enter 0.3s ease forwards;
+}
+.element-leave-active {
+    animation: element-leave 0.3s ease forwards;
+}
+@keyframes element-enter {
+    0% {
+        transform: scaleX(0);
+        transform-origin: left;
+        opacity: 0;
+    }
+    100% {
+        transform: scaleX(1);
+        transform-origin: left;
+        opacity: 1;
+    }
+}
+@keyframes element-leave {
+    0% {
+        transform: scaleX(1);
+        transform-origin: left;
+        opacity: 1;
+    }
+    100% {
+        transform: scaleX(0);
+        transform-origin: left;
+        opacity: 0;
+    }
+}
+@keyframes coords {
+    0% {
+        transform: translateY(100%) translateX(-50%);
+    }
+    100% {
+        transform: translateY(0%) translateX(-50%);
+    }
+}
+@keyframes laser {
+    0% {
+        transform: translateX(-100%) translateY(-50%);
+    }
+    100% {
+        transform: translateX(0%) translateY(-50%);
+    }
+}
+.coords-enter-active {
+    animation: coords 0.65s ease;
+}
+.coords-leave-active {
+    animation: coords 0.65s ease reverse;
+}
+
+.laser-enter-active {
+    animation: laser 0.65s ease;
+}
+.laser-leave-active {
+    animation: laser 0.65s ease reverse;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: all 0.5s ease;
+}
+.fade-enter {
+    opacity: 0;
+    transform: translateY(0);
+}
+
+.fade-enter-to {
+    opacity: 1;
+    transform: translateY(-8px);
+}
+.fade-leave {
+    opacity: 1;
+    transform: translateY(-8px);
+}
+.fade-leave-to {
+    opacity: 0;
+    transform: translateY(60px);
+}
+
+.menu-item.selected {
+    opacity: 1;
+}
+
+.category-element {
+    opacity: 1;
+}
+
+.opened-menu {
+    transition: 0.2s all ease-in-out;
+    width: 17%;
+    /* border-radius: 30px 0px 0px 30px; */
+}
+
+.default-menu {
+    transition: 0.7s width ease-in-out;
+    width: 100%;
+    border-radius: 0.3vw;
+}
+
+input[type="checkbox"] {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    /* Remove most all native input styles */
+    appearance: none;
+    /* For iOS < 15 */
+    background: rgba(255, 156, 101, 0.3);
+    /* Not removed via appearance */
+    margin: 0;
+    cursor: pointer;
+    font: inherit;
+    color: currentColor;
+    width: 20px;
+    height: 20px;
+    border: 0.15em solid #ff9c65;
+    border-radius: 6px;
+
+    display: grid;
+    place-content: center;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    width: 0.5em;
+    height: 0.5em;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    transform: scale(0);
+    transform-origin: bottom left;
+    transition: 120ms transform ease-in-out;
+    /* Windows High Contrast Mode */
+    background-color: #75482f;
+}
+input[type="checkbox"]:checked {
+    background: #ff9c65;
+}
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+.coords-display {
+    position: absolute;
+    left: 50%;
+    bottom: 2rem;
+    transform: translateX(-50%);
+    width: 27.4375rem;
+    height: 5.375rem;
+    border-radius: 2.6875rem;
+    background: #000;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.coordinates-header {
+    color: #fff;
+    color: color(display-p3 1 1 1);
+    leading-trim: both;
+    text-edge: cap;
+    font-family: SF Compact Rounded;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.coordinates-value {
+    color: rgba(255, 255, 255, 0.5);
+    color: color(display-p3 1 1 1 / 0.5);
+    leading-trim: both;
+    text-edge: cap;
+    font-family: SF Compact Rounded;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.compass {
+    width: 4rem;
+    height: 4rem;
+    background-image: url(../images/compass.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    color: color(display-p3 1 1 1);
+    leading-trim: both;
+    text-edge: cap;
+    font-family: SF Compact Rounded;
+    font-size: 1.0625rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.devlaser {
+    width: 26.25rem;
+    position: absolute;
+    left: 8rem;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 2.6875rem;
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.1rem;
+    padding: 2rem 1.5rem;
+    min-height: 25rem;
+}
+
+.laser-element {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+.laser-element.laserborder::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -50%;
+    transform: translateY(50%);
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.laser-element-label {
+    display: flex;
+    align-items: center;
+    column-gap: 0.4rem;
+    leading-trim: both;
+    color: #fff;
+    text-edge: cap;
+    font-family: SF Compact Rounded;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.laser-border {
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.laser-element-value {
+    leading-trim: both;
+    color: #fff;
+
+    text-edge: cap;
+    font-family: SF Compact Rounded;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.givevehiclemodal {
+    width: 31.25rem;
+    min-height: 11.625rem;
+    border-radius: 1.0625rem;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    padding: 1rem;
+    position: absolute;
+    left: 37vw;
+    top: 38.5vh;
+}
+
+.givevehicletome {
+    color: #ff4c3a;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: SF Compact Rounded;
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.backspace {
+    color: #f50044;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: SF Compact Rounded;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.activechangejob {
+    border: 2px solid #8b5ec5 !important;
+}
+.activeadditem {
+    border: 2px solid #ce548f !important;
+}
+
+.activeaddmoney {
+    border: 2px solid #519450 !important;
+}
+.activeban {
+    border: 2px solid #ff0d0d !important;
+}
+
+.changejob-input {
+    appearance: none;
+    border: none;
+    outline: none;
+    border-radius: 0.625rem;
+    background: rgba(217, 217, 217, 0.14);
+    width: 100%;
+    padding: 0.625rem 0.75rem;
+    height: 2.5rem;
+    color: rgba(255, 255, 255, 0.31);
+    font-family: SF Compact Rounded;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    resize: none;
+}
+
+.vehicle-code-input {
+    appearance: none;
+    border: none;
+    outline: none;
+    border-radius: 0.625rem;
+    border: 1px solid #ff4c3a;
+    background: rgba(217, 217, 217, 0.14);
+    width: 100%;
+    padding: 0.625rem 0.75rem;
+    height: 2.5rem;
+    color: rgba(255, 255, 255, 0.31);
+    font-family: SF Compact Rounded;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    resize: none;
+}
+
+.spawn-button {
+    height: 2.5rem;
+    width: 100%;
+    border-radius: 0.375rem;
+    background: #ff4c3a;
+    color: #fff;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: SF Compact Rounded;
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+textarea::-webkit-scrollbar {
+    display: none;
+}
+
+.activeSearchBan {
+    background: #f50044 !important;
+}

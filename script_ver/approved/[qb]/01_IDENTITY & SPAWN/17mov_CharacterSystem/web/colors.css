@@ -1,0 +1,18 @@
+/* Here you can adjust NUI colors */
+/* DONT CHANGE COLOR FORMAT! It's must stay as 3 numbers separated with spaces representing rgb format */
+
+:root {
+	--color-accent: 180 30 40;
+	--color-danger: 255 0 61;
+	--color-background-primary: 40 0 0;
+	--color-text-primary: 255 255 255;
+	--color-text-secondary: 235 235 245;
+}
+
+/*:root {
+	--color-accent: 180 30 40; /* Deep red accent 
+	--color-danger: 255 50 50; /* Vivid red for alerts
+	--color-background-primary: 40 0 0; /* Dark red background
+	--color-text-primary: 255 230 230; /* Light pinkish white text
+	--color-text-secondary: 200 150 150; /* Softer secondary text 
+}*/
