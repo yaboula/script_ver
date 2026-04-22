@@ -47,18 +47,4 @@ files {
 
 }
 
-escrow_ignore {
-	'shared/config.lua',
-	'shared/GetCore.lua',
-	'client/animatons.lua',
-	'client/dealer.lua',
-	'client/editable.lua',
-	'client/interaction.lua',
-	'client/PlayerLoaded.lua',
-	'client/weed.lua',
-	'server/botToken.lua',
-	'server/dealer.lua',
-	'server/weed.lua',
-}
-
 dependency '/assetpacks'
