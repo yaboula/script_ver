@@ -120,9 +120,11 @@ The resource is a clean vehicle asset pack with **zero executable code** and **z
 | Code scan (Lua/JS/HTML) | ✅ **COMPLETED** | No executable code present. |
 | Wildcard review | ✅ **COMPLETED** | Acceptable for asset-only resource. |
 
+## Applied Hardening (Post-Audit)
+1. ✅ **fx_version upgraded:** `'adamant'` → `'cerulean'` in `fxmanifest.lua` (commit `78c80b8`). Improves compatibility with current FiveM server versions.
+
 ## Minor Recommendations (Optional)
-1. Consider upgrading `fx_version 'adamant'` to `'cerulean'` in `fxmanifest.lua` for future-proofing.
-2. If strict manifest policy requires explicit file lists, replace `data/**/*.meta` with per-subfolder declarations.
+1. If strict manifest policy requires explicit file lists, replace `data/**/*.meta` with per-subfolder declarations.
 
 ---
 
