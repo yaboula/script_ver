@@ -1,7 +1,7 @@
 -- DL Sheriff Pack Resource File
 -- https://digitiallatvia.com/
 
-fx_version 'adamant'
+fx_version 'cerulean'
 game 'gta5'
 description 'Debadged Sheriff Pack'
 author 'DigitalLatvia'
